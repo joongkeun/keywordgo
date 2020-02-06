@@ -154,7 +154,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cafe-512.ico" />
     <Content Include="flip_flops_sandals_summer_shoes_icon_123959.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
