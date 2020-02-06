@@ -274,6 +274,15 @@ namespace keywordGOGO
         private void saveBtn_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+
+
+
+            if (keywordTbox.Text.Length < 1)
+            {
+                MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (radioButton1.Checked == true) RefMaxCount = 50;
             if (radioButton2.Checked == true) RefMaxCount = 100;
             if (radioButton3.Checked == true) RefMaxCount = 200;
