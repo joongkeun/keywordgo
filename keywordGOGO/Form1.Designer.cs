@@ -62,6 +62,7 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -191,6 +192,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(6, 91);
@@ -203,7 +205,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 71);
+            this.checkBox1.Location = new System.Drawing.Point(115, 71);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(104, 16);
             this.checkBox1.TabIndex = 0;
@@ -328,9 +330,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(429, 521);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 12);
+            this.label3.Size = new System.Drawing.Size(96, 12);
             this.label3.TabIndex = 38;
-            this.label3.Text = "* 함께쓰인 태그";
+            this.label3.Text = "* SEO 태그 목록";
             // 
             // dataGridView1
             // 
@@ -417,6 +419,16 @@
             this.webBrowser1.Size = new System.Drawing.Size(1240, 904);
             this.webBrowser1.TabIndex = 0;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(8, 72);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(101, 16);
+            this.checkBox2.TabIndex = 28;
+            this.checkBox2.Text = "SEO 태그검색";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -483,6 +495,7 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 

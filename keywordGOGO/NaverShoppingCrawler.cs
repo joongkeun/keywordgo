@@ -164,7 +164,7 @@ namespace keywordGOGO
                     {
                         if (classInfo != "ad _itemSection")
                         {
-                            if (rowidx < 2)
+                            if (rowidx < 20)
                             {
                                 string key = string.Empty;
                                 string value = string.Empty;
