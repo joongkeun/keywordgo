@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -62,7 +63,6 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -202,6 +202,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색조건";
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(8, 72);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(101, 16);
+            this.checkBox2.TabIndex = 28;
+            this.checkBox2.Text = "SEO 태그검색";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -324,6 +334,7 @@
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView7.Size = new System.Drawing.Size(583, 368);
             this.dataGridView7.TabIndex = 39;
+            this.dataGridView7.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView7_SortCompare);
             // 
             // label3
             // 
@@ -360,6 +371,7 @@
             this.dataGridView4.RowTemplate.Height = 23;
             this.dataGridView4.Size = new System.Drawing.Size(226, 368);
             this.dataGridView4.TabIndex = 35;
+            this.dataGridView4.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView4_SortCompare);
             // 
             // dataGridView5
             // 
@@ -398,6 +410,7 @@
             this.dataGridView6.Size = new System.Drawing.Size(1224, 288);
             this.dataGridView6.TabIndex = 31;
             this.dataGridView6.SelectionChanged += new System.EventHandler(this.dataGridView6_SelectionChanged);
+            this.dataGridView6.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView6_SortCompare);
             // 
             // tabPage2
             // 
@@ -419,16 +432,6 @@
             this.webBrowser1.Size = new System.Drawing.Size(1240, 904);
             this.webBrowser1.TabIndex = 0;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 72);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(101, 16);
-            this.checkBox2.TabIndex = 28;
-            this.checkBox2.Text = "SEO 태그검색";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -437,7 +440,7 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "키워드고고(v1.0.1)";
+            this.Text = "키워드고고(v1.1.0)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -213,7 +213,8 @@ namespace keywordGOGO
                                     foreach (var data in tagDataList)
                                     {
                                         ReturnToLabel(data);
-                                        tagList.Add(new KeywordList() { Keyword = data, Kind = "T" });
+                                        if(data.Length > 0)
+                                            tagList.Add(new KeywordList() { Keyword = data, Kind = "T" });
                                     }
 
                                     Console.WriteLine(tagNode.InnerText.Replace("\n", "").Replace("#", ",").Replace("Tag", "").Replace("				", "").Trim());

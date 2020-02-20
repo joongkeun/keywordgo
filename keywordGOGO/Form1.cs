@@ -323,7 +323,16 @@ namespace keywordGOGO
 
                 foreach (var r in collection)
                 {
-                    dataGridView.Rows.Add(r.RelKeyword, r.MonthlyPcQcCnt, r.MonthlyMobileQcCnt, r.MonthlyAvePcClkCnt, r.MonthlyAveMobileClkCnt, r.MonthlyAvePcCtr, r.MonthlyAveMobileCtr, r.PlAvgDepth, r.CompIdx, r.SellPrdQcCnt);
+                    int MonthlyPcQcCnt = Convert.ToInt32(r.MonthlyPcQcCnt);
+                    int MonthlyMobileQcCnt = Convert.ToInt32(r.MonthlyMobileQcCnt);
+                    int SellPrdQcCnt = Convert.ToInt32(r.SellPrdQcCnt);
+                    double MonthlyAvePcClkCnt = Convert.ToDouble(r.MonthlyAvePcClkCnt);
+                    double MonthlyAveMobileClkCnt = Convert.ToDouble(r.MonthlyAveMobileClkCnt);
+                    double MonthlyAvePcCtr = Convert.ToDouble(r.MonthlyAvePcCtr);
+                    double MonthlyAveMobileCtr = Convert.ToDouble(r.MonthlyAveMobileCtr);
+
+
+                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, r.PlAvgDepth, r.CompIdx, string.Format("{0:#,0}", SellPrdQcCnt));
                 }
             }
         }
@@ -390,7 +399,7 @@ namespace keywordGOGO
         {
 
             SetGrid(false);
-
+            SetButton(false);
 
             GridResultData SubDataResult = new GridResultData();
 
@@ -466,7 +475,7 @@ namespace keywordGOGO
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
             
             SetGrid(true);
-
+            SetButton(true);
         }
 
         public void SetDataGrid2(object msgData, DataGridView dataGridView)
@@ -496,7 +505,10 @@ namespace keywordGOGO
 
                 foreach (var r in collection)
                 {
-                    dataGridView.Rows.Add(r.value, r.count);
+
+                    int count = Convert.ToInt32(r.count);
+
+                    dataGridView.Rows.Add(r.value, count);
                 }
             }
         }
@@ -542,7 +554,12 @@ namespace keywordGOGO
                         mall = a.MallName;
                     }
 
-                    dataGridView.Rows.Add(a.Title, mall, a.Lprice, a.Hprice, a.ProductId, a.Link);
+
+
+                    int Lprice = Convert.ToInt32(a.Lprice);
+                    int Hprice = Convert.ToInt32(a.Hprice);
+
+                    dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link);
                 }
             }
         }
@@ -589,6 +606,51 @@ namespace keywordGOGO
             dataGridView4.Rows.Clear();
             dataGridView5.Rows.Clear();
             dataGridView7.Rows.Clear();
+        }
+
+        private void dataGridView6_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 1 || e.Column.Index == 2 || e.Column.Index == 9)    // 정렬할 컬럼의 이름
+
+            {
+
+                int a = int.Parse(e.CellValue1.ToString().Replace(",","")), b = int.Parse(e.CellValue2.ToString().Replace(",",""));
+
+                e.SortResult = a.CompareTo(b);
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void dataGridView7_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 2 || e.Column.Index == 3)    // 정렬할 컬럼의 이름
+
+            {
+
+                int a = int.Parse(e.CellValue1.ToString().Replace(",", "")), b = int.Parse(e.CellValue2.ToString().Replace(",", ""));
+
+                e.SortResult = a.CompareTo(b);
+
+                e.Handled = true;
+
+            }
+        }
+
+        private void dataGridView4_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 1)    // 정렬할 컬럼의 이름
+
+            {
+
+                int a = int.Parse(e.CellValue1.ToString().Replace(",", "")), b = int.Parse(e.CellValue2.ToString().Replace(",", ""));
+
+                e.SortResult = a.CompareTo(b);
+
+                e.Handled = true;
+
+            }
         }
     }
 }
