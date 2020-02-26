@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
+using System.Net;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using Newtonsoft.Json.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Threading;
 using System.Diagnostics;
@@ -194,10 +196,52 @@ namespace keywordGOGO
             }
         }
 
+
+        public string VersionChk()
+        {
+            try
+            {
+                string url = "http://221.154.72.203:8000/version"; // 결과가 JSON 포맷
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+                string text = reader.ReadToEnd();
+
+                JObject obj = JObject.Parse(text);
+                string version = obj["version"].ToString();
+
+                Console.WriteLine(version);
+                return version;
+            }
+            catch
+            {
+
+                return string.Empty;
+            }
+
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
+                string  version= "1.1.1";
+
+                this.Text = "키워드고고(v"+ version + ")";
+                
+                // 버전확인
+                string versionchk = VersionChk();
+                if(versionchk != version)
+                {
+                    MessageBox.Show("새버전이 있습니다. 도움말을 참고하여 업데이트 하십시오.", "경고", MessageBoxButtons.OK);
+                }
+
+
+
+
                 string strConn = @"Data Source=" + Application.StartupPath + "\\apiQc.db";
                 conn = new SQLiteConnection(strConn);
                 conn.Open();
