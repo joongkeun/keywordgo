@@ -43,7 +43,6 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -51,9 +50,13 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.g5_btn = new System.Windows.Forms.Button();
+            this.g4_btn = new System.Windows.Forms.Button();
+            this.g3_btn = new System.Windows.Forms.Button();
+            this.g2_btn = new System.Windows.Forms.Button();
+            this.g1_btn = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -138,7 +141,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(734, 32);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(502, 160);
+            this.listBox1.Size = new System.Drawing.Size(502, 148);
             this.listBox1.TabIndex = 13;
             // 
             // label10
@@ -184,7 +187,7 @@
             // 
             this.saveBtn.Location = new System.Drawing.Point(380, 60);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(335, 132);
+            this.saveBtn.Size = new System.Drawing.Size(335, 120);
             this.saveBtn.TabIndex = 16;
             this.saveBtn.Text = "키워드 분석";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -192,12 +195,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(6, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 101);
+            this.groupBox2.Size = new System.Drawing.Size(368, 89);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "검색조건";
@@ -205,22 +206,12 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 72);
+            this.checkBox2.Location = new System.Drawing.Point(435, 515);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(101, 16);
             this.checkBox2.TabIndex = 28;
             this.checkBox2.Text = "SEO 태그검색";
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(115, 71);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "엑셀 출력 하기";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -230,7 +221,7 @@
             this.groupBox3.Controls.Add(this.radioButton3);
             this.groupBox3.Location = new System.Drawing.Point(6, 20);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(354, 45);
+            this.groupBox3.Size = new System.Drawing.Size(354, 55);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "광고센터 연관 검색량 선택";
@@ -291,9 +282,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.g5_btn);
+            this.tabPage1.Controls.Add(this.g4_btn);
+            this.tabPage1.Controls.Add(this.g3_btn);
+            this.tabPage1.Controls.Add(this.g2_btn);
+            this.tabPage1.Controls.Add(this.g1_btn);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Controls.Add(this.dataGridView7);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.dataGridView4);
@@ -316,6 +312,56 @@
             this.tabPage1.Text = "키워드검색";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // g5_btn
+            // 
+            this.g5_btn.Location = new System.Drawing.Point(1160, 510);
+            this.g5_btn.Name = "g5_btn";
+            this.g5_btn.Size = new System.Drawing.Size(75, 23);
+            this.g5_btn.TabIndex = 45;
+            this.g5_btn.Text = "엑셀출력";
+            this.g5_btn.UseVisualStyleBackColor = true;
+            this.g5_btn.Click += new System.EventHandler(this.g5_btn_Click);
+            // 
+            // g4_btn
+            // 
+            this.g4_btn.Location = new System.Drawing.Point(586, 512);
+            this.g4_btn.Name = "g4_btn";
+            this.g4_btn.Size = new System.Drawing.Size(49, 23);
+            this.g4_btn.TabIndex = 44;
+            this.g4_btn.Text = "엑셀";
+            this.g4_btn.UseVisualStyleBackColor = true;
+            this.g4_btn.Click += new System.EventHandler(this.g4_btn_Click);
+            // 
+            // g3_btn
+            // 
+            this.g3_btn.Location = new System.Drawing.Point(367, 512);
+            this.g3_btn.Name = "g3_btn";
+            this.g3_btn.Size = new System.Drawing.Size(49, 23);
+            this.g3_btn.TabIndex = 43;
+            this.g3_btn.Text = "엑셀";
+            this.g3_btn.UseVisualStyleBackColor = true;
+            this.g3_btn.Click += new System.EventHandler(this.g3_btn_Click);
+            // 
+            // g2_btn
+            // 
+            this.g2_btn.Location = new System.Drawing.Point(127, 512);
+            this.g2_btn.Name = "g2_btn";
+            this.g2_btn.Size = new System.Drawing.Size(49, 23);
+            this.g2_btn.TabIndex = 42;
+            this.g2_btn.Text = "엑셀";
+            this.g2_btn.UseVisualStyleBackColor = true;
+            this.g2_btn.Click += new System.EventHandler(this.g2_btn_Click);
+            // 
+            // g1_btn
+            // 
+            this.g1_btn.Location = new System.Drawing.Point(1160, 187);
+            this.g1_btn.Name = "g1_btn";
+            this.g1_btn.Size = new System.Drawing.Size(75, 23);
+            this.g1_btn.TabIndex = 41;
+            this.g1_btn.Text = "엑셀출력";
+            this.g1_btn.UseVisualStyleBackColor = true;
+            this.g1_btn.Click += new System.EventHandler(this.g1_btn_Click);
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -335,15 +381,6 @@
             this.dataGridView7.Size = new System.Drawing.Size(583, 368);
             this.dataGridView7.TabIndex = 39;
             this.dataGridView7.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView7_SortCompare);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(429, 521);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 12);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "* SEO 태그 목록";
             // 
             // dataGridView1
             // 
@@ -447,7 +484,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -478,7 +514,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton4;
@@ -491,7 +526,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView4;
@@ -499,6 +533,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button g5_btn;
+        private System.Windows.Forms.Button g4_btn;
+        private System.Windows.Forms.Button g3_btn;
+        private System.Windows.Forms.Button g2_btn;
+        private System.Windows.Forms.Button g1_btn;
     }
 }
 

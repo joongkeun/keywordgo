@@ -223,12 +223,38 @@ namespace keywordGOGO
 
         }
 
+        private bool sqlliteDBChk()
+        {
+            string DbFile = "apiQc.db";
+            string strConn = @"Data Source=" + Application.StartupPath + "\\apiQc.db";
+            try
+            {
+                // 파일생성
+                SQLiteConnection.CreateFile(DbFile);
+                // 테이블 생성 코드
+                SQLiteConnection sqliteConn = new SQLiteConnection(strConn);
+                sqliteConn.Open();
+
+                string strsql = "create table if not exists apicount (date text, count int,primary key(date))";
+
+                SQLiteCommand cmd = new SQLiteCommand(strsql, sqliteConn);
+                cmd.ExecuteNonQuery();
+                sqliteConn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                string  version= "1.1.1";
+                string  version= "1.2.0";
 
                 this.Text = "키워드고고(v"+ version + ")";
                 
@@ -288,8 +314,9 @@ namespace keywordGOGO
             }
             catch
             {
-                SetButton(false);
-                SetListBox("데이터베이스 연결에 실패했습니다.");
+                //SetButton(false);
+                sqlliteDBChk();
+                SetListBox("데이터베이스 연결에 실패하여 새로 생성하였습니다.");
             }
 
 
@@ -313,6 +340,8 @@ namespace keywordGOGO
             }
 
             webBrowser1.Navigate("https://vitdeul.tistory.com/8");
+
+            checkBox2.Checked = true;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -419,6 +448,9 @@ namespace keywordGOGO
         /// <param name="e"></param>
         private void dataGridView6_SelectionChanged(object sender, EventArgs e)
         {
+            // SEO태그 검색유무
+            bool tagYn = checkBox2.Checked;
+
             if (dataGridView6.CurrentRow.Index != curRow)
             {
                 if (dataGridView6.CurrentRow.Index != DataResult.AdRefGrid.Count)
@@ -431,7 +463,7 @@ namespace keywordGOGO
 
                     SetDataGridClear();
 
-                    Thread t2 = new Thread(() => SubDataReturn(data));
+                    Thread t2 = new Thread(() => SubDataReturn(data, tagYn));
                     t2.Start();
 
 
@@ -439,9 +471,9 @@ namespace keywordGOGO
             }
         }
 
-        public void SubDataReturn(string data)
+        public void SubDataReturn(string data, bool tagYn)
         {
-
+           
             SetGrid(false);
             SetButton(false);
 
@@ -501,7 +533,7 @@ namespace keywordGOGO
             }
 
   
-            SubDataResult = outData.SubGridDataSet(data);
+            SubDataResult = outData.SubGridDataSet(data, tagYn);
 
             // 상품정보
             foreach (var result in shopResult)
@@ -520,6 +552,7 @@ namespace keywordGOGO
             
             SetGrid(true);
             SetButton(true);
+            
         }
 
         public void SetDataGrid2(object msgData, DataGridView dataGridView)
@@ -652,6 +685,7 @@ namespace keywordGOGO
             dataGridView7.Rows.Clear();
         }
 
+
         private void dataGridView6_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
             if (e.Column.Index == 1 || e.Column.Index == 2 || e.Column.Index == 9)    // 정렬할 컬럼의 이름
@@ -696,5 +730,131 @@ namespace keywordGOGO
 
             }
         }
+
+        private void g1_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "연관 검색어";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView6);
+            }
+        }
+
+        private void g2_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "쇼핑 연관";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView5);
+            }
+        }
+
+        private void g3_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "상품명";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView4);
+            }
+        }
+
+        private void g4_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "SEO";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView1);
+            }
+        }
+
+        private void g5_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "쇼핑몰정보";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView7);
+            }
+            
+        }
+
+
+        private void dataGridView_ExportToExcel(string fileName, DataGridView dgv)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            if (excelApp == null)
+            {
+                MessageBox.Show("엑셀이 설치되지 않았습니다");
+                return;
+            }
+            Excel.Workbook wb = excelApp.Workbooks.Add(true);
+            Excel._Worksheet workSheet = wb.Worksheets.get_Item(1) as Excel._Worksheet;
+            workSheet.Name = "정보";
+
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("출력할 데이터가 없습니다");
+                return;
+            }
+
+            // storing header part in Excel  
+            for (int i = 1; i < dgv.Columns.Count + 1; i++)
+            {
+                workSheet.Cells[1, i] = dgv.Columns[i - 1].HeaderText;
+            }
+            // storing Each row and column value to excel sheet  
+            for (int i = 0; i < dgv.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    workSheet.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // 엑셀 2003 으로만 저장이 됨
+            wb.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            wb.Close(Type.Missing, Type.Missing, Type.Missing);
+            excelApp.Quit();
+            releaseObject(excelApp);
+            releaseObject(workSheet);
+            releaseObject(wb);
+
+            SetListBox("엑셀파일 생성을 완료하였습니다.");
+        }
+
+
+        private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception e)
+            {
+                obj = null;
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
     }
 }

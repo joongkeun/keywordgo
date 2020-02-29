@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
@@ -128,7 +126,7 @@ namespace keywordGOGO
             return Result;
         }
 
-        public GridResultData SubGridDataSet(string KeyWord)
+        public GridResultData SubGridDataSet(string KeyWord, bool tagYn)
         {
             GridResultData Result = new GridResultData();
 
@@ -148,11 +146,17 @@ namespace keywordGOGO
 
             // 네이버 쇼핑 연관 검색어 + 태그 정보
             RefShopKeyWord = naverApi.ShopRelKeyword(KeyWord, out int TotalProdutCount);
+            ShopWebResult webResult = new ShopWebResult();
+            if (tagYn == true) { 
+                ReturnToMessage("태그정보를 분석합니다.");
+                webResult = shoppingCrawler.SmartStoreInfoFinder(KeyWord);
+            }
+            else
+            {
+                
+                ReturnToMessage("SEO 태그 분석을 제외하였습니다.");
+            }
 
-            ReturnToMessage("태그정보를 분석합니다.");
-            ShopWebResult webResult = shoppingCrawler.SmartStoreInfoFinder(KeyWord);
-
-           
             Console.WriteLine("전 : " + RefShopKeyWord.Count);
 
             Result = new GridResultData() { ShoppingRefGrid = RefShopKeyWord, ShopWebDataResult = webResult };
