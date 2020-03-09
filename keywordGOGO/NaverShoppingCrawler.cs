@@ -179,29 +179,31 @@ namespace keywordGOGO
 
                                 IList<agi.HtmlNode> nodes = redoc.DocumentNode.SelectNodes("//*[@class='tb_view2']");
 
-                                if (nodes.Count > 0)
-                                {
+                                if(nodes != null) {
 
-                                    int nodeCnt = 0;
-                                    foreach (var node in nodes)
+                                    if (nodes.Count > 0)
                                     {
-                                        if (nodeCnt == 0)
-                                        {
-                                            IList<agi.HtmlNode> thNodes = nodes.QuerySelectorAll("tbody > tr > th");
-                                            IList<agi.HtmlNode> tdNodes = nodes.QuerySelectorAll("tbody > tr > td");
-                                            int node2Cnt = 0;
-                                            foreach (var node2 in thNodes)
-                                            {
 
-                                                key = node2.InnerText;
-                                                value = tdNodes[node2Cnt].InnerText;
-                                                dicData[key] = value;
-                                                node2Cnt++;
+                                        int nodeCnt = 0;
+                                        foreach (var node in nodes)
+                                        {
+                                            if (nodeCnt == 0)
+                                            {
+                                                IList<agi.HtmlNode> thNodes = nodes.QuerySelectorAll("tbody > tr > th");
+                                                IList<agi.HtmlNode> tdNodes = nodes.QuerySelectorAll("tbody > tr > td");
+                                                int node2Cnt = 0;
+                                                foreach (var node2 in thNodes)
+                                                {
+
+                                                    key = node2.InnerText;
+                                                    value = tdNodes[node2Cnt].InnerText;
+                                                    dicData[key] = value;
+                                                    node2Cnt++;
+                                                }
                                             }
                                         }
                                     }
                                 }
-
                                 agi.HtmlNode tagNode = redoc.DocumentNode.SelectSingleNode("//*[@class='goods_tag']");
 
 
