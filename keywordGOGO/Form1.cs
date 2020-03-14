@@ -263,7 +263,7 @@ namespace keywordGOGO
         {
             try
             {
-                string  version= "1.3.0";
+                string  version= "1.4.0";
 
                 this.Text = "키워드고고(v"+ version + ")";
                 
@@ -352,9 +352,17 @@ namespace keywordGOGO
             SetBrowserEmulationVersion();
 
 
+            var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
+                                        "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
+                                        "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
+
+            this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
+
 
             webBrowser1.Navigate("https://vitdeul.tistory.com/8");
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
+            
+            webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
 
             checkBox2.Checked = true;
         }
@@ -1218,5 +1226,44 @@ namespace keywordGOGO
             }
         }
 
+        private void keyword()
+        {
+
+            string keyword = Uri.EscapeUriString(textBox1.Text);
+
+
+
+            string url = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&cat_id=&frm=NVSHATC";
+            string murl = "https://msearch.shopping.naver.com/search/all?query=" + keyword + "&cat_id=&frm=NVSHATC";
+
+            var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
+                                        "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
+                                        "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
+
+            this.webBrowser3.Navigate(murl, null, null, additionalHeaders);
+
+
+
+
+            webBrowser4.Navigate(url);
+        }
+
+        // 쇼핑검색
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            keyword();
+        
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                keyword();
+            }
+
+  
+        }
     }
 }
