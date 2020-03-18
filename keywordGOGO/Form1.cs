@@ -261,6 +261,9 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Remove(tabPage5);
+            tabControl1.TabPages.Remove(tabPage6);
+
             try
             {
                 string  version= "1.5.0";
@@ -363,8 +366,8 @@ namespace keywordGOGO
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
             
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
-            webBrowser5.Navigate("https://blackkiwi.net/result?keyword=%EB%A1%9C%EC%B9%B4%ED%8B%B0&is_saved_keyword=true");
-            webBrowser6.Navigate("http://www.bzranking.co.kr/bbs/new.php");
+            //webBrowser5.Navigate("https://blackkiwi.net/result?keyword=%EB%A1%9C%EC%B9%B4%ED%8B%B0&is_saved_keyword=true");
+            //webBrowser6.Navigate("http://www.bzranking.co.kr/bbs/new.php");
 
             checkBox2.Checked = true;
         }

@@ -559,7 +559,7 @@
             this.webBrowser4.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser4.Name = "webBrowser4";
             this.webBrowser4.ScriptErrorsSuppressed = true;
-            this.webBrowser4.Size = new System.Drawing.Size(685, 792);
+            this.webBrowser4.Size = new System.Drawing.Size(900, 792);
             this.webBrowser4.TabIndex = 1;
             // 
             // webBrowser3
