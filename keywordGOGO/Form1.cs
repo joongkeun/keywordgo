@@ -263,7 +263,7 @@ namespace keywordGOGO
         {
             try
             {
-                string  version= "1.4.0";
+                string  version= "1.5.0";
 
                 this.Text = "키워드고고(v"+ version + ")";
                 
@@ -994,6 +994,9 @@ namespace keywordGOGO
                 foreach (var a in collection)
                 {
                     string mall = string.Empty;
+                    int Lprice = 0;
+                    int Hprice = 0;
+
                     if (a.MallName == "네이버")
                     {
                         mall = "가격비교";
@@ -1003,10 +1006,26 @@ namespace keywordGOGO
                         mall = a.MallName;
                     }
 
+                    if (a.Lprice.Equals(""))
+                    {
+                        Lprice = 0;
+                    }
+                    else
+                    {
+                        Lprice = Convert.ToInt32(a.Lprice);
+                    }
 
+                    if (a.Hprice.Equals(""))
+                    {
+                        Hprice = 0;
+                    }
+                    else
+                    {
+                        Hprice = Convert.ToInt32(a.Hprice);
+                    }
 
-                    int Lprice = Convert.ToInt32(a.Lprice);
-                    int Hprice = Convert.ToInt32(a.Hprice);
+                    
+                    
 
                     dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link);
                 }

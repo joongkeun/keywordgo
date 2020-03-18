@@ -74,12 +74,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.webBrowser4 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.webBrowser5 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,9 +94,9 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -160,7 +160,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(734, 32);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(502, 148);
+            this.listBox1.Size = new System.Drawing.Size(721, 148);
             this.listBox1.TabIndex = 13;
             // 
             // label10
@@ -300,7 +300,7 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1254, 936);
+            this.tabControl1.Size = new System.Drawing.Size(1469, 936);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -330,14 +330,14 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1246, 910);
+            this.tabPage1.Size = new System.Drawing.Size(1461, 910);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "키워드검색";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // g5_btn
             // 
-            this.g5_btn.Location = new System.Drawing.Point(1160, 510);
+            this.g5_btn.Location = new System.Drawing.Point(1380, 508);
             this.g5_btn.Name = "g5_btn";
             this.g5_btn.Size = new System.Drawing.Size(75, 23);
             this.g5_btn.TabIndex = 45;
@@ -377,7 +377,7 @@
             // 
             // g1_btn
             // 
-            this.g1_btn.Location = new System.Drawing.Point(1160, 187);
+            this.g1_btn.Location = new System.Drawing.Point(1380, 186);
             this.g1_btn.Name = "g1_btn";
             this.g1_btn.Size = new System.Drawing.Size(75, 23);
             this.g1_btn.TabIndex = 41;
@@ -401,7 +401,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowTemplate.Height = 23;
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(583, 368);
+            this.dataGridView7.Size = new System.Drawing.Size(802, 368);
             this.dataGridView7.TabIndex = 39;
             this.dataGridView7.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView7_SortCompare);
             // 
@@ -466,7 +466,7 @@
             this.dataGridView6.Location = new System.Drawing.Point(12, 216);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.RowTemplate.Height = 23;
-            this.dataGridView6.Size = new System.Drawing.Size(1224, 288);
+            this.dataGridView6.Size = new System.Drawing.Size(1443, 288);
             this.dataGridView6.TabIndex = 31;
             this.dataGridView6.SelectionChanged += new System.EventHandler(this.dataGridView6_SelectionChanged);
             this.dataGridView6.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView6_SortCompare);
@@ -476,7 +476,7 @@
             this.tabPage3.Controls.Add(this.webBrowser2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1246, 910);
+            this.tabPage3.Size = new System.Drawing.Size(1461, 910);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "쇼핑인사이트";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -487,7 +487,7 @@
             this.webBrowser2.Location = new System.Drawing.Point(0, 0);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(1246, 910);
+            this.webBrowser2.Size = new System.Drawing.Size(1461, 910);
             this.webBrowser2.TabIndex = 0;
             // 
             // tabPage4
@@ -499,7 +499,7 @@
             this.tabPage4.Controls.Add(this.webBrowser3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1246, 910);
+            this.tabPage4.Size = new System.Drawing.Size(1461, 910);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "쇼핑검색";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -571,42 +571,32 @@
             this.webBrowser3.Size = new System.Drawing.Size(533, 792);
             this.webBrowser3.TabIndex = 0;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.webBrowser1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1246, 910);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "도움말";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1240, 904);
-            this.webBrowser1.TabIndex = 0;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.webBrowser6);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1246, 910);
+            this.tabPage5.Size = new System.Drawing.Size(1461, 910);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser6
+            // 
+            this.webBrowser6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser6.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser6.Name = "webBrowser6";
+            this.webBrowser6.ScriptErrorsSuppressed = true;
+            this.webBrowser6.Size = new System.Drawing.Size(1461, 910);
+            this.webBrowser6.TabIndex = 0;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.webBrowser5);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1246, 910);
+            this.tabPage6.Size = new System.Drawing.Size(1461, 910);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "블랙키위";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -617,24 +607,36 @@
             this.webBrowser5.Location = new System.Drawing.Point(0, 0);
             this.webBrowser5.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser5.Name = "webBrowser5";
-            this.webBrowser5.Size = new System.Drawing.Size(1246, 910);
+            this.webBrowser5.ScriptErrorsSuppressed = true;
+            this.webBrowser5.Size = new System.Drawing.Size(1461, 910);
             this.webBrowser5.TabIndex = 0;
             // 
-            // webBrowser6
+            // tabPage2
             // 
-            this.webBrowser6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser6.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser6.Name = "webBrowser6";
-            this.webBrowser6.Size = new System.Drawing.Size(1246, 910);
-            this.webBrowser6.TabIndex = 0;
+            this.tabPage2.Controls.Add(this.webBrowser1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "도움말";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1455, 904);
+            this.webBrowser1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1275, 959);
+            this.ClientSize = new System.Drawing.Size(1491, 959);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -660,9 +662,9 @@
             this.tabPage4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
