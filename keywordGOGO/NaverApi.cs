@@ -129,6 +129,17 @@ namespace keywordGOGO
                         string productId = itemObj["productId"].ToString();//해당 상품에 대한 ID 이다.
                         string productType = itemObj["productType"].ToString();//상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다.
 
+                        if (lprice.Equals(""))
+                        {
+                            lprice = "0";
+                        }
+
+                        if (hprice.Equals(""))
+                        {
+                            hprice = "0";
+                        }
+
+
                         title = title.Replace("<b>", "").Replace("</b>", "");
                         List<string> titleKeywordList = title.Split(' ').ToList();
                         titleKeywordListResult.AddRange(titleKeywordList);
@@ -157,6 +168,17 @@ namespace keywordGOGO
                         string mallName = itemObj["mallName"].ToString();//상품을 판매하는 쇼핑몰의 상호이다. 정보가 없을 경우 네이버로 표기된다.
                         string productId = itemObj["productId"].ToString();//해당 상품에 대한 ID 이다.
                         string productType = itemObj["productType"].ToString();//상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다.
+
+
+                        if (lprice.Equals(""))
+                        {
+                            lprice = "0";
+                        }
+
+                        if (hprice.Equals(""))
+                        {
+                            hprice = "0";
+                        }
 
                         title = title.Replace("<b>", "").Replace("</b>", "");
                         List<string> titleKeywordList = title.Split(' ').ToList();

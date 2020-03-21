@@ -261,9 +261,12 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Remove(tabPage5);
+            //tabControl1.TabPages.Remove(tabPage6);
+
             try
             {
-                string  version= "1.4.0";
+                string  version= "1.5.1";
 
                 this.Text = "키워드고고(v"+ version + ")";
                 
@@ -363,6 +366,8 @@ namespace keywordGOGO
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
             
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
+            webBrowser5.Navigate("https://blackkiwi.net");
+            //webBrowser6.Navigate("http://www.bzranking.co.kr/bbs/new.php");
 
             checkBox2.Checked = true;
         }
@@ -992,6 +997,9 @@ namespace keywordGOGO
                 foreach (var a in collection)
                 {
                     string mall = string.Empty;
+                    int Lprice = 0;
+                    int Hprice = 0;
+
                     if (a.MallName == "네이버")
                     {
                         mall = "가격비교";
@@ -1001,10 +1009,26 @@ namespace keywordGOGO
                         mall = a.MallName;
                     }
 
+                    if (a.Lprice.Equals(""))
+                    {
+                        Lprice = 0;
+                    }
+                    else
+                    {
+                        Lprice = Convert.ToInt32(a.Lprice);
+                    }
 
+                    if (a.Hprice.Equals(""))
+                    {
+                        Hprice = 0;
+                    }
+                    else
+                    {
+                        Hprice = Convert.ToInt32(a.Hprice);
+                    }
 
-                    int Lprice = Convert.ToInt32(a.Lprice);
-                    int Hprice = Convert.ToInt32(a.Hprice);
+                    
+                    
 
                     dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link);
                 }
