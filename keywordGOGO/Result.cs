@@ -114,6 +114,28 @@ namespace keywordGOGO
     }
 
 
+    class RankingList
+    {
+        public string rank { get; set; }
+        public string count { get; set; }
+        public string mallName { get; set; }
+        public string Keyword { get; set; }
+        public string productUrl { get; set; }
+        public string productPrice { get; set; }
+        public string categoryName { get; set; }
+     
+    }
+
+    class GridResultData2
+    {
+        private List<KeywordList> shoppingRankingRefGrid = new List<KeywordList>();
+        public List<KeywordList> ShoppingRankingRefGrid
+        {
+            set { shoppingRankingRefGrid = value; }
+            get { return shoppingRankingRefGrid; }
+        }
+    }
+
 
     class ShopWebResult
     {

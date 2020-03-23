@@ -73,6 +73,7 @@ namespace keywordGOGO
             int count = 1;
             foreach (var node in nodes)
             {
+                int rank = 1;
                 Dictionary<string, string> dicData = new Dictionary<string, string>();
 
                 var naverArea = node.Attributes["data-expose-area"].Value; // 조회 데이터 영역정보
@@ -81,7 +82,7 @@ namespace keywordGOGO
                 var productUrl = node.QuerySelector("div.info > div > a").Attributes["href"].Value; //상품url
                 var productPrice = node.QuerySelector("div.info > span.price > em > span"); //상품가격
                 var mallName = node.QuerySelector("div.info_mall > p > a.mall_img"); //쇼핑몰명
-
+                
                 string categoryName = string.Empty;
 
                 IList<agi.HtmlNode> categoryNodes = node.QuerySelectorAll("div.info > span.depth > a");
@@ -99,6 +100,7 @@ namespace keywordGOGO
                 dicData.Add("classInfo", classInfo);
                 dicData.Add("productName", productName.InnerText.Replace("\n", "").Trim());
                 dicData.Add("productPrice", productPrice.InnerText.Replace("\n", "").Trim());
+                dicData.Add("rank", Convert.ToString(rank));
 
                 if (mallName != null)
                 {
@@ -121,7 +123,7 @@ namespace keywordGOGO
                 Console.WriteLine(mallName.InnerText.Replace("\n", "").Trim());
                 Console.WriteLine(categoryName.Replace("cat_id_", ""));
                 **/
-
+                rank++;
                 count++;
                 dataList.Add(dicData);
             }
@@ -129,7 +131,52 @@ namespace keywordGOGO
             return dataList;
         }
 
+        public int totalProdutCount(string textHtml)
+        {
+            int totalNo = 0;
+            string tempProductSet_total = "0";
+            string outtext = string.Empty;
+            agi.HtmlDocument doc = new agi.HtmlDocument();
+            doc.LoadHtml(textHtml);
+            var _productSet_total = doc.QuerySelector("#snb > ul > li.snb_all.on > a");
+            if (_productSet_total != null)
+            {
+                tempProductSet_total = Convert.ToString(_productSet_total.InnerText).Replace(",", "").Replace("전체", "").Trim(); ;
+            }
 
+            totalNo = Convert.ToInt32(tempProductSet_total);
+            return totalNo;
+        }
+
+        public void SamartStoreRankingSearch(string keyword,int lastPageNo)
+        {
+            List<Dictionary<string, string>> resultDataList = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> tempDataList = new List<Dictionary<string, string>>();
+
+            string countUrl = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&frm=NVSCVUI";
+            string countHtml = httpWebRequestText(countUrl);
+            int product_totoal = totalProdutCount(countHtml);
+
+            Console.WriteLine(Convert.ToString(product_totoal));
+
+            if (product_totoal > 0)
+            {
+
+                for (int pageNo = 1; pageNo <= lastPageNo; pageNo++)
+                {
+                    string url = "https://search.shopping.naver.com/search/all.nhn?origQuery=" + keyword + "&pagingIndex=" + Convert.ToString(pageNo) + "&pagingSize=40&viewType=list&sort=rel&frm=NVSHPAG&query=" + keyword;
+
+                    //Thread.Sleep(1000);
+                    string textHtml = httpWebRequestText(url);
+
+                    tempDataList = HTMLParser(textHtml, pageNo, keyword);
+                    resultDataList.AddRange(tempDataList);
+
+                }
+
+            }
+                //Console.WriteLine(productUrl);
+        }
 
     }
 }

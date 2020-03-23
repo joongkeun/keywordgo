@@ -76,12 +76,12 @@ namespace keywordGOGO
 
         private void Bizranking_ReturnToMessage(string msgText)
         {
-            SetListBox(msgText);
+            SetListBox2(msgText);
         }
 
         private void Bizranking_ReturnToLabel(string msgText)
         {
-            SetLabel(msgText);
+            SetLabel2(msgText);
         }
 
         private void OutData_ReturnToMessage(string msgText)
@@ -154,6 +154,20 @@ namespace keywordGOGO
             }
         }
 
+        public void SetLabel2(string data)
+        {
+            if (label12.InvokeRequired)
+            {
+                DsetLabel call = new DsetLabel(SetLabel2);
+                this.Invoke(call, data);
+            }
+            else
+            {
+
+                label15.Text = data;
+            }
+        }
+
         public void SetApiCntLabel(string data)
         {
             if (label10.InvokeRequired)
@@ -179,6 +193,21 @@ namespace keywordGOGO
             {
                 listBox1.Items.Add(data);
                 listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            }
+        }
+
+        public void SetListBox2(string data)
+        {
+            if (listBox1.InvokeRequired)
+            {
+
+                DsetListBox call = new DsetListBox(SetListBox2);
+                this.Invoke(call, data);
+            }
+            else
+            {
+                listBox2.Items.Add(data);
+                listBox2.SelectedIndex = listBox2.Items.Count - 1;
             }
         }
 
@@ -1298,6 +1327,12 @@ namespace keywordGOGO
             }
 
   
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bizranking ranking = new bizranking();
+            ranking.SamartStoreRankingSearch("로카티",3);
         }
     }
 }

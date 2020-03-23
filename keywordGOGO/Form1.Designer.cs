@@ -64,6 +64,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -74,20 +83,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.webBrowser4 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,14 +101,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -481,6 +483,94 @@
             this.dataGridView6.SelectionChanged += new System.EventHandler(this.dataGridView6_SelectionChanged);
             this.dataGridView6.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView6_SortCompare);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label14);
+            this.tabPage5.Controls.Add(this.dataGridView2);
+            this.tabPage5.Controls.Add(this.listBox2);
+            this.tabPage5.Controls.Add(this.groupBox6);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "순위검색";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 136);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(1455, 771);
+            this.dataGridView2.TabIndex = 9;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(797, 26);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(661, 100);
+            this.listBox2.TabIndex = 8;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.textBox3);
+            this.groupBox6.Location = new System.Drawing.Point(12, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(779, 123);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "순위조회";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(75, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(245, 21);
+            this.textBox2.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "쇼핑몰명 : ";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(662, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "조회";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(341, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "키워드 : ";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(397, 20);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(245, 21);
+            this.textBox3.TabIndex = 3;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.webBrowser2);
@@ -581,18 +671,6 @@
             this.webBrowser3.Size = new System.Drawing.Size(533, 792);
             this.webBrowser3.TabIndex = 0;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.dataGridView2);
-            this.tabPage5.Controls.Add(this.listBox2);
-            this.tabPage5.Controls.Add(this.groupBox6);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1461, 910);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "순위검색";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.webBrowser5);
@@ -622,13 +700,6 @@
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "도움말";
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
-            this.webBrowser1.TabIndex = 0;
-            // 
             // webBrowser7
             // 
             this.webBrowser7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -638,78 +709,30 @@
             this.webBrowser7.Size = new System.Drawing.Size(1461, 910);
             this.webBrowser7.TabIndex = 0;
             // 
-            // groupBox6
+            // webBrowser1
             // 
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Location = new System.Drawing.Point(3, 14);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(779, 100);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "순위조회";
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
+            this.webBrowser1.TabIndex = 0;
             // 
-            // textBox2
+            // label14
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 21);
-            this.textBox2.TabIndex = 0;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(798, 8);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 12);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "진행사항 : ";
             // 
-            // label6
+            // label15
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "쇼핑몰명 : ";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(662, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "조회";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(341, 23);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "키워드 : ";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(397, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 21);
-            this.textBox3.TabIndex = 3;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Location = new System.Drawing.Point(797, 14);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(441, 100);
-            this.listBox2.TabIndex = 8;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 136);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1455, 771);
-            this.dataGridView2.TabIndex = 9;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(869, 8);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 12);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "-";
             // 
             // Form1
             // 
@@ -737,17 +760,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -813,6 +837,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
