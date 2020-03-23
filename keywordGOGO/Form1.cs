@@ -69,7 +69,19 @@ namespace keywordGOGO
             OutData.ReturnToLabel += OutData_ReturnToLabel; ;
             OutData.ReturnToMessage += OutData_ReturnToMessage; ;
             NaverShoppingCrawler.ReturnToLabel += NaverShoppingCrawler_ReturnToLabel;
+            bizranking.ReturnToLabel += Bizranking_ReturnToLabel;
+            bizranking.ReturnToMessage += Bizranking_ReturnToMessage;
 
+        }
+
+        private void Bizranking_ReturnToMessage(string msgText)
+        {
+            SetListBox(msgText);
+        }
+
+        private void Bizranking_ReturnToLabel(string msgText)
+        {
+            SetLabel(msgText);
         }
 
         private void OutData_ReturnToMessage(string msgText)
@@ -261,9 +273,7 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabPage5);
-            //tabControl1.TabPages.Remove(tabPage6);
-
+           
             try
             {
                 string  version= "1.5.1";
@@ -362,12 +372,12 @@ namespace keywordGOGO
             this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
 
 
-            webBrowser1.Navigate("https://vitdeul.tistory.com/8");
+            webBrowser7.Navigate("https://vitdeul.tistory.com/8");
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
             
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
             webBrowser5.Navigate("https://blackkiwi.net");
-            //webBrowser6.Navigate("http://www.bzranking.co.kr/bbs/new.php");
+           
 
             checkBox2.Checked = true;
         }
