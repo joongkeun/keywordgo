@@ -581,16 +581,6 @@
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // webBrowser6
-            // 
-            this.webBrowser6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser6.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser6.Name = "webBrowser6";
-            this.webBrowser6.ScriptErrorsSuppressed = true;
-            this.webBrowser6.Size = new System.Drawing.Size(1461, 910);
-            this.webBrowser6.TabIndex = 0;
-            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.webBrowser5);
@@ -611,25 +601,14 @@
             this.webBrowser5.Size = new System.Drawing.Size(1461, 910);
             this.webBrowser5.TabIndex = 0;
             // 
-            // tabPage2
+            // webBrowser6
             // 
-            this.tabPage2.Controls.Add(this.webBrowser1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1461, 910);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "도움말";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1455, 904);
-            this.webBrowser1.TabIndex = 0;
+            this.webBrowser6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser6.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser6.Name = "webBrowser6";
+            this.webBrowser6.Size = new System.Drawing.Size(1246, 910);
+            this.webBrowser6.TabIndex = 0;
             // 
             // Form1
             // 
