@@ -113,7 +113,7 @@ namespace keywordGOGO
 
                 dicData.Add("categoryName", categoryName.Replace("cat_id_", ""));
 
-                /**
+                /*
                 Console.WriteLine(Convert.ToString(count));
                 Console.WriteLine(productUrl);
                 Console.WriteLine(productName.InnerText.Replace("\n","").Trim());
@@ -122,7 +122,7 @@ namespace keywordGOGO
                 Console.WriteLine(productPrice.InnerText.Replace("\n", "").Trim());
                 Console.WriteLine(mallName.InnerText.Replace("\n", "").Trim());
                 Console.WriteLine(categoryName.Replace("cat_id_", ""));
-                **/
+                */
                 rank++;
                 count++;
                 dataList.Add(dicData);
@@ -148,10 +148,12 @@ namespace keywordGOGO
             return totalNo;
         }
 
-        public void SamartStoreRankingSearch(string keyword,int lastPageNo)
+        public void SamartStoreRankingSearch(string keyword)
         {
             List<Dictionary<string, string>> resultDataList = new List<Dictionary<string, string>>();
             List<Dictionary<string, string>> tempDataList = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> nonAdItemDataList = new List<Dictionary<string, string>>();
+            List<Dictionary<string, string>> adItemDataList = new List<Dictionary<string, string>>();
 
             string countUrl = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&frm=NVSCVUI";
             string countHtml = httpWebRequestText(countUrl);
@@ -159,8 +161,21 @@ namespace keywordGOGO
 
             Console.WriteLine(Convert.ToString(product_totoal));
 
+            int lastPageNo = 0;
+
             if (product_totoal > 0)
             {
+                double dTotal = product_totoal / 40;
+                if (Math.Ceiling(dTotal) >= 10)
+                {
+                    lastPageNo = 10;
+                }
+                else
+                {
+                    lastPageNo = Convert.ToInt32(Math.Ceiling(dTotal));
+                }
+
+
 
                 for (int pageNo = 1; pageNo <= lastPageNo; pageNo++)
                 {
@@ -174,6 +189,33 @@ namespace keywordGOGO
 
                 }
 
+                int Idx = 1;
+                foreach (Dictionary<string, string> resultDic in resultDataList)
+                {
+                    string count = resultDic["count"];
+                    string naverArea = resultDic["naverArea"];
+                    string classInfo = resultDic["classInfo"];
+                    string productUrl = resultDic["productUrl"];
+                    string productPrice = resultDic["productPrice"];
+                    string productName = resultDic["productName"];
+                    string mallName = resultDic["mallName"];
+                    string categoryName = resultDic["categoryName"];
+                    string pageNo = resultDic["pageNo"];
+                    string Keyword = resultDic["Keyword"];
+                    string rank = resultDic["rank"];
+
+                    if (classInfo != "ad _itemSection")
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+
+
+                   Idx++;
+                }
             }
                 //Console.WriteLine(productUrl);
         }

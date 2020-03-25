@@ -1332,7 +1332,7 @@ namespace keywordGOGO
         private void button2_Click(object sender, EventArgs e)
         {
             bizranking ranking = new bizranking();
-            ranking.SamartStoreRankingSearch("로카티",3);
+            ranking.SamartStoreRankingSearch("로카티");
         }
     }
 }
