@@ -117,22 +117,36 @@ namespace keywordGOGO
     class RankingList
     {
         public string rank { get; set; }
+        public string oldrank { get; set; }
+        public string pageNo { get; set; }
+        public string oldPageNo { get; set; }
+        public string productNo { get; set; }
         public string count { get; set; }
         public string mallName { get; set; }
-        public string Keyword { get; set; }
+        public string productName { get; set; }
+        public string keyword { get; set; }
         public string productUrl { get; set; }
         public string productPrice { get; set; }
         public string categoryName { get; set; }
-     
+        public string adprice { get; set; }
+        public string oldadprice { get; set; }
+
     }
 
     class GridResultData2
     {
-        private List<KeywordList> shoppingRankingRefGrid = new List<KeywordList>();
-        public List<KeywordList> ShoppingRankingRefGrid
+        private List<RankingList> nonadRankingRefGrid = new List<RankingList>();
+        public List<RankingList> NonAdRankingRefGrid
         {
-            set { shoppingRankingRefGrid = value; }
-            get { return shoppingRankingRefGrid; }
+            set { nonadRankingRefGrid = value; }
+            get { return nonadRankingRefGrid; }
+        }
+
+        private List<RankingList> adRankingRefGrid = new List<RankingList>();
+        public List<RankingList> AdRankingRefGrid
+        {
+            set { adRankingRefGrid = value; }
+            get { return adRankingRefGrid; }
         }
     }
 

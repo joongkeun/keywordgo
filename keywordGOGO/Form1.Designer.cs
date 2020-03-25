@@ -70,6 +70,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -90,8 +92,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -111,6 +115,7 @@
             this.groupBox5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -487,6 +492,9 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.dataGridView3);
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.label14);
             this.tabPage5.Controls.Add(this.dataGridView2);
@@ -520,10 +528,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 136);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 156);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1455, 771);
+            this.dataGridView2.Size = new System.Drawing.Size(698, 734);
             this.dataGridView2.TabIndex = 9;
             // 
             // listBox2
@@ -537,6 +545,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.textBox4);
             this.groupBox6.Controls.Add(this.textBox2);
@@ -550,6 +559,22 @@
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "순위조회";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 62);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 12);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "광고비 : ";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(75, 57);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(245, 21);
+            this.textBox4.TabIndex = 5;
             // 
             // textBox2
             // 
@@ -738,21 +763,41 @@
             this.webBrowser1.Size = new System.Drawing.Size(250, 250);
             this.webBrowser1.TabIndex = 0;
             // 
-            // textBox4
+            // dataGridView3
             // 
-            this.textBox4.Location = new System.Drawing.Point(75, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 21);
-            this.textBox4.TabIndex = 5;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(716, 156);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(742, 734);
+            this.dataGridView3.TabIndex = 12;
             // 
-            // label16
+            // label17
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 62);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 12);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "광고비 : ";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 141);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 12);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "광고상품 순위";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(714, 141);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 12);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "일반상품 순위";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(341, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(195, 12);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "* 키워드에 쓰인 광고비를 넣으세요";
             // 
             // Form1
             // 
@@ -792,6 +837,7 @@
             this.groupBox5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -861,6 +907,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label label19;
     }
 }
 

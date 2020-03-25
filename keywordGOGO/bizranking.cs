@@ -24,7 +24,7 @@ namespace keywordGOGO
         // 메인폼 전달 이벤트 선언
         public static event listBoxText ReturnToMessage;
         public static event labelText ReturnToLabel;
-
+        private SQLiteConnection conn = null;
         /// <summary>
         /// 타겟 URL 부터 HTML 코드를 가져온다.
         /// </summary>
@@ -71,12 +71,14 @@ namespace keywordGOGO
             List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
 
             int count = 1;
+            int rank = 1;
             foreach (var node in nodes)
             {
-                int rank = 1;
+               
                 Dictionary<string, string> dicData = new Dictionary<string, string>();
 
                 var naverArea = node.Attributes["data-expose-area"].Value; // 조회 데이터 영역정보
+                var productNo = node.Attributes["data-nv-mid"].Value; // 상품번호
                 var classInfo = node.Attributes["class"].Value; // 조회데이터 클래스 정보 
                 var productName = node.QuerySelector("div.info > div > a"); //상품명
                 var productUrl = node.QuerySelector("div.info > div > a").Attributes["href"].Value; //상품url
@@ -94,6 +96,7 @@ namespace keywordGOGO
 
                 dicData.Add("count", Convert.ToString(count));
                 dicData.Add("Keyword", keyword);
+                dicData.Add("productNo", productNo);
                 dicData.Add("pageNo", Convert.ToString(pageNo));
                 dicData.Add("naverArea", naverArea);
                 dicData.Add("productUrl", productUrl);
@@ -101,6 +104,9 @@ namespace keywordGOGO
                 dicData.Add("productName", productName.InnerText.Replace("\n", "").Trim());
                 dicData.Add("productPrice", productPrice.InnerText.Replace("\n", "").Trim());
                 dicData.Add("rank", Convert.ToString(rank));
+
+
+                ReturnToLabel(productName.InnerText.Replace("\n", "").Trim());
 
                 if (mallName != null)
                 {
@@ -148,18 +154,25 @@ namespace keywordGOGO
             return totalNo;
         }
 
-        public void SamartStoreRankingSearch(string keyword)
+        public GridResultData2 SamartStoreRankingSearch(string keyword,string mallNamedata,string adpricedata)
         {
+            string strConn = @"Data Source=" + Application.StartupPath + "\\apiQc.db";
+            conn = new SQLiteConnection(strConn);
+            conn.Open();
+
+            GridResultData2 Result = new GridResultData2();
             List<Dictionary<string, string>> resultDataList = new List<Dictionary<string, string>>();
             List<Dictionary<string, string>> tempDataList = new List<Dictionary<string, string>>();
-            List<Dictionary<string, string>> nonAdItemDataList = new List<Dictionary<string, string>>();
-            List<Dictionary<string, string>> adItemDataList = new List<Dictionary<string, string>>();
+
+            List<RankingList> ADResult = new List<RankingList>();
+            List<RankingList> NonADResult = new List<RankingList>();
 
             string countUrl = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&frm=NVSCVUI";
             string countHtml = httpWebRequestText(countUrl);
             int product_totoal = totalProdutCount(countHtml);
 
-            Console.WriteLine(Convert.ToString(product_totoal));
+            ReturnToMessage("상품을 "+Convert.ToString(product_totoal)+"개 찾았습니다.");
+            //Console.WriteLine(Convert.ToString(product_totoal));
 
             int lastPageNo = 0;
 
@@ -189,11 +202,12 @@ namespace keywordGOGO
 
                 }
 
-                int Idx = 1;
+
                 foreach (Dictionary<string, string> resultDic in resultDataList)
                 {
                     string count = resultDic["count"];
                     string naverArea = resultDic["naverArea"];
+                    string productNo = resultDic["productNo"];
                     string classInfo = resultDic["classInfo"];
                     string productUrl = resultDic["productUrl"];
                     string productPrice = resultDic["productPrice"];
@@ -201,23 +215,88 @@ namespace keywordGOGO
                     string mallName = resultDic["mallName"];
                     string categoryName = resultDic["categoryName"];
                     string pageNo = resultDic["pageNo"];
-                    string Keyword = resultDic["Keyword"];
+                    string reKeyword = resultDic["Keyword"];
                     string rank = resultDic["rank"];
 
-                    if (classInfo != "ad _itemSection")
-                    {
+                    ReturnToLabel(productName);
 
+                    if (classInfo == "ad _itemSection")
+                    {
+                        if (mallName == mallNamedata) {
+
+                            string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            String sql1 = "insert into adrank (mallname, keyword,rank,page,price,productNo,date) values('" + mallName + "','" + reKeyword + "','" + rank + "','" + pageNo + "','" + adpricedata + "','" + productNo + "','" + sqlFormattedDate + "')";
+                            SQLiteCommand command = new SQLiteCommand(sql1, conn);
+                            int result = command.ExecuteNonQuery();
+                            Console.WriteLine("--------------------------------------");
+                            Console.WriteLine("데이터베이스 입력결과: " + Convert.ToString(result));
+
+                            string oldRank = string.Empty;
+                            string oldprice = string.Empty;
+                            string oldPage = string.Empty;
+                            string sql2 = "select* from adrank where adrank.productNo ='" + productNo + "' and adrank.mallname ='" + mallName + "' order by date desc limit 2";
+                            SQLiteCommand cmd = new SQLiteCommand(sql2, conn);
+                            SQLiteDataReader rdr = cmd.ExecuteReader();
+
+                            int idxRank = 0;
+
+                            while (rdr.Read())
+                            {
+                                if (idxRank == 1)
+                                {
+                                    oldRank = Convert.ToString(rdr["rank"]);
+                                    oldprice = Convert.ToString(rdr["price"]);
+                                    oldPage = Convert.ToString(rdr["page"]);
+                                }
+
+                                idxRank++;
+                            }
+
+                            ADResult.Add(new RankingList() {rank = Convert.ToString(rank), pageNo= pageNo, productNo = productNo, oldPageNo = oldPage, count = count, mallName= mallName, productName= productName, keyword= reKeyword, productUrl= productUrl, productPrice= productPrice, categoryName= categoryName, oldrank= oldRank, adprice = adpricedata, oldadprice= oldprice });
+                        }
                     }
                     else
                     {
+                        if (mallName == mallNamedata)
+                        {
+                            string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            String sql1 = "insert into nadrank (mallname, keyword,rank,page,productNo,date) values('" + mallName + "','" + reKeyword + "','" + rank + "','" + pageNo + "','" + productNo + "','" + sqlFormattedDate + "')";
+                            SQLiteCommand command = new SQLiteCommand(sql1, conn);
+                            int result = command.ExecuteNonQuery();
+                            Console.WriteLine("--------------------------------------");
+                            Console.WriteLine("데이터베이스 입력결과: " + Convert.ToString(result));
 
+                            string oldRank = string.Empty;
+                            string oldprice = string.Empty;
+                            string oldPage = string.Empty;
+                            string sql2 = "select* from nadrank where nadrank.productNo ='" + productNo + "' and nadrank.mallname ='" + mallName + "' order by date desc limit 2";
+                            SQLiteCommand cmd = new SQLiteCommand(sql2, conn);
+                            SQLiteDataReader rdr = cmd.ExecuteReader();
+
+                            int idxRank = 0;
+
+                            while (rdr.Read())
+                            {
+                                if (idxRank == 1)
+                                {
+                                    oldRank = Convert.ToString(rdr["rank"]);
+                                    oldPage = Convert.ToString(rdr["page"]);
+                                    
+                                }
+
+                                idxRank++;
+                            }
+
+                            NonADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, oldPageNo = oldPage, productNo= productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank , adprice  = "-" });
+                        }
                     }
-
-
-                   Idx++;
                 }
             }
-                //Console.WriteLine(productUrl);
+            ReturnToMessage("데이터를 출력합니다.");
+            Result = new GridResultData2() { AdRankingRefGrid = ADResult, NonAdRankingRefGrid = NonADResult };
+            conn.Close();
+            return Result;
+
         }
 
     }

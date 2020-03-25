@@ -36,6 +36,12 @@ namespace keywordGOGO
         delegate void DataGrid3(List<string> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid4(List<ShopAPIResult> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid5(List<KeywordList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+
+        // 순위
+        delegate void DataGrid6(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+        delegate void DataGrid7(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+
+
         delegate void ButtonEnable(bool data);
         delegate void GridEnable(bool data);
 
@@ -229,6 +235,24 @@ namespace keywordGOGO
         }
 
 
+        private void SetButton2(bool data)
+        {
+            if (button2.InvokeRequired)
+
+            {
+
+                ButtonEnable call = new ButtonEnable(SetButton2);
+                this.Invoke(call, data);
+
+            }
+
+            else
+            {
+                button2.Enabled = data;
+            }
+        }
+
+
         private void SetGrid(bool data)
         {
             if (dataGridView6.InvokeRequired)
@@ -302,16 +326,16 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
             try
             {
-                string  version= "1.5.1";
+                string version = "1.6.0";
 
-                this.Text = "키워드고고(v"+ version + ")";
-                
+                this.Text = "키워드고고(v" + version + ")";
+
                 // 버전확인
                 string versionchk = VersionChk();
-                if(versionchk != version)
+                if (versionchk != version)
                 {
                     MessageBox.Show("새버전이 있습니다. 도움말을 참고하여 업데이트 하십시오.", "경고", MessageBoxButtons.OK);
                 }
@@ -373,14 +397,14 @@ namespace keywordGOGO
 
             iniUtil ini = new iniUtil(Application.StartupPath + "\\config.ini");
 
-   
+
             string apiKey = ini.GetIniValue("ADAPI", "apiKey");
             string secretKey = ini.GetIniValue("ADAPI", "secretKey");
             string managerCustomerId = ini.GetIniValue("ADAPI", "managerCustomerId");
-            string ClientId  =ini.GetIniValue("OPENAPI", "ClientId"); // 클라이언트 아이디
+            string ClientId = ini.GetIniValue("OPENAPI", "ClientId"); // 클라이언트 아이디
             string ClientSecret = ini.GetIniValue("OPENAPI", "ClientSecret");       // 클라이언트 시크릿
 
-            if(string.IsNullOrEmpty(apiKey) || string.IsNullOrEmpty(secretKey) || string.IsNullOrEmpty(managerCustomerId) || string.IsNullOrEmpty(ClientId) || string.IsNullOrEmpty(ClientSecret))
+            if (string.IsNullOrEmpty(apiKey) || string.IsNullOrEmpty(secretKey) || string.IsNullOrEmpty(managerCustomerId) || string.IsNullOrEmpty(ClientId) || string.IsNullOrEmpty(ClientSecret))
             {
                 MessageBox.Show("config.ini 파일을 확인 하십시오.", "경고", MessageBoxButtons.OK);
                 Process.Start("notepad.exe", "config.ini");
@@ -389,7 +413,7 @@ namespace keywordGOGO
                 Environment.Exit(0);
 
             }
-           
+
 
             SetBrowserEmulationVersion();
 
@@ -403,10 +427,10 @@ namespace keywordGOGO
 
             webBrowser7.Navigate("https://vitdeul.tistory.com/8");
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
-            
+
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
             webBrowser5.Navigate("https://blackkiwi.net");
-           
+
 
             checkBox2.Checked = true;
         }
@@ -887,7 +911,7 @@ namespace keywordGOGO
 
         public void SubDataReturn(string data, bool tagYn)
         {
-           
+
             SetGrid(false);
             SetButton(false);
 
@@ -899,7 +923,7 @@ namespace keywordGOGO
             OutData outData = new OutData();
 
             var shopResult = (from a in DataResult.AdRefGrid where a.RelKeyword == data select a.ShopResult);
-           
+
             foreach (var result in shopResult)
             {
                 foreach (var a in result)
@@ -946,7 +970,7 @@ namespace keywordGOGO
                 ProductWordList.Add(new ProductKeyWordList() { value = temp.Value, count = temp.Count });
             }
 
-  
+
             SubDataResult = outData.SubGridDataSet(data, tagYn);
 
             // 상품정보
@@ -963,10 +987,10 @@ namespace keywordGOGO
 
             //연관검색어
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
-            
+
             SetGrid(true);
             SetButton(true);
-            
+
         }
 
         public void SetDataGrid2(object msgData, DataGridView dataGridView)
@@ -1066,8 +1090,8 @@ namespace keywordGOGO
                         Hprice = Convert.ToInt32(a.Hprice);
                     }
 
-                    
-                    
+
+
 
                     dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link);
                 }
@@ -1110,8 +1134,113 @@ namespace keywordGOGO
             }
         }
 
-       public void SetDataGridClear()
-       {
+
+        public void SetDataAdRankGrid(object msgData, DataGridView dataGridView)
+        {
+            if (dataGridView.InvokeRequired)
+            {
+                DataGrid6 call = new DataGrid6(SetDataAdRankGrid);
+                this.Invoke(call, msgData, dataGridView);
+            }
+            else
+            {
+                dataGridView.Rows.Clear();
+
+                List<RankingList> collection = msgData as List<RankingList>;
+
+                dataGridView.Rows.Clear();
+
+                dataGridView.ColumnHeadersVisible = true;
+                dataGridView.RowHeadersVisible = false;
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
+                columnHeaderStyle.BackColor = Color.Beige;
+                dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                dataGridView.ColumnCount = 8;
+                dataGridView.Columns[0].HeaderCell.Value = "현재순위";
+                dataGridView.Columns[1].HeaderCell.Value = "과거순위";
+                dataGridView.Columns[2].HeaderCell.Value = "현재광고비";
+                dataGridView.Columns[3].HeaderCell.Value = "과거광고비";
+                dataGridView.Columns[4].HeaderCell.Value = "상품명";
+                dataGridView.Columns[5].HeaderCell.Value = "상품번호";
+                dataGridView.Columns[6].HeaderCell.Value = "카테고리";
+                dataGridView.Columns[7].HeaderCell.Value = "상품주소";
+
+                int count = 1;
+                foreach (var r in collection)
+                {
+
+                    dataGridView.Rows.Add(r.pageNo + "페이지 " + r.rank + "위",
+                    r.oldPageNo + "페이지 " + r.oldrank + "위",
+                    r.adprice,
+                    r.oldadprice,
+                    r.productName,
+                    r.productNo,
+                    r.categoryName,
+                    r.productUrl);
+
+                }
+            }
+        }
+
+        public void SetDataRankGrid(object msgData, DataGridView dataGridView)
+        {
+            if (dataGridView.InvokeRequired)
+            {
+                DataGrid7 call = new DataGrid7(SetDataRankGrid);
+                this.Invoke(call, msgData, dataGridView);
+            }
+            else
+            {
+                dataGridView.Rows.Clear();
+
+                List<RankingList> collection = msgData as List<RankingList>;
+
+                dataGridView.Rows.Clear();
+
+                dataGridView.ColumnHeadersVisible = true;
+                dataGridView.RowHeadersVisible = false;
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
+                columnHeaderStyle.BackColor = Color.Beige;
+                dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                dataGridView.ColumnCount = 6;
+                dataGridView.Columns[0].HeaderCell.Value = "현재순위";
+                dataGridView.Columns[1].HeaderCell.Value = "과거순위";
+                //dataGridView.Columns[2].HeaderCell.Value = "현재광고비";
+                //dataGridView.Columns[3].HeaderCell.Value = "과거광고비";
+                dataGridView.Columns[2].HeaderCell.Value = "상품명";
+                dataGridView.Columns[3].HeaderCell.Value = "상품번호";
+                dataGridView.Columns[4].HeaderCell.Value = "카테고리";
+                dataGridView.Columns[5].HeaderCell.Value = "상품주소";
+
+                int count = 1;
+
+                foreach (var r in collection)
+                {
+
+                    dataGridView.Rows.Add(r.pageNo + "페이지 " + r.rank + "위",
+                    r.oldPageNo + "페이지 " + r.oldrank + "위",
+                    r.productName,
+                    r.productNo,
+                    r.categoryName,
+                    r.productUrl);
+
+                }
+            }
+        }
+
+
+        public void SetDataGridClear2()
+        {
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+
+        }
+
+
+        public void SetDataGridClear()
+        {
             dataGridView1.Rows.Clear();
             dataGridView4.Rows.Clear();
             dataGridView5.Rows.Clear();
@@ -1125,7 +1254,7 @@ namespace keywordGOGO
 
             {
 
-                int a = int.Parse(e.CellValue1.ToString().Replace(",","")), b = int.Parse(e.CellValue2.ToString().Replace(",",""));
+                int a = int.Parse(e.CellValue1.ToString().Replace(",", "")), b = int.Parse(e.CellValue2.ToString().Replace(",", ""));
 
                 e.SortResult = a.CompareTo(b);
 
@@ -1222,7 +1351,7 @@ namespace keywordGOGO
             {
                 dataGridView_ExportToExcel(sfd.FileName, dataGridView7);
             }
-            
+
         }
 
 
@@ -1316,23 +1445,61 @@ namespace keywordGOGO
         {
 
             keyword();
-        
+
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) 
+            if (e.KeyCode == Keys.Enter)
             {
                 keyword();
             }
 
-  
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bizranking ranking = new bizranking();
-            ranking.SamartStoreRankingSearch("로카티");
+
+            listBox2.Items.Clear();
+
+
+
+            if (textBox2.Text.Length < 1)
+            {
+                MessageBox.Show("쇼핑몰명을 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (textBox3.Text.Length < 1)
+            {
+                MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (textBox4.Text.Length < 1)
+            {
+                MessageBox.Show("광고비를 넣어주세요! 없으면 0 을 넣어주세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Thread t1 = new Thread(new ThreadStart(AdDataReturn));
+            t1.Start();
+
+        }
+
+        public void AdDataReturn()
+        {
+            SetButton2(false);
+            GridResultData2 gridResultData2 = new GridResultData2();
+            SetListBox2("데이터를 조회하기 위해 초기화 중입니다.");
+            bizranking outData = new bizranking();
+            gridResultData2 = outData.SamartStoreRankingSearch(textBox3.Text, textBox2.Text, textBox4.Text);
+
+            SetDataAdRankGrid(gridResultData2.AdRankingRefGrid, dataGridView2); //전체 연관 검색어 리스트
+            SetDataRankGrid(gridResultData2.NonAdRankingRefGrid, dataGridView3);
+
+            SetButton2(true);
         }
     }
 }
