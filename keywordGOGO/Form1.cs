@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp;
-using System.Net;
-using System.Windows.Forms;
-using System.Data.SQLite;
+﻿using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
-using Excel = Microsoft.Office.Interop.Excel;
-using System.Threading;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
-using Microsoft.Win32;
+using System.Linq;
+using System.Net;
 using System.Security;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace keywordGOGO
 {
@@ -297,6 +294,34 @@ namespace keywordGOGO
 
         }
 
+
+        public string NoticeChk()
+        {
+            try
+            {
+                string url = "http://221.154.72.203:8000/notice"; // 결과가 JSON 포맷
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                Stream stream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+                string text = reader.ReadToEnd();
+
+                JObject obj = JObject.Parse(text);
+                string notice = obj["notice"].ToString();
+
+                Console.WriteLine(notice);
+                return notice;
+            }
+            catch
+            {
+
+                return string.Empty;
+            }
+
+        }
+
+
         private bool sqlliteDBChk()
         {
             string DbFile = "apiQc.db";
@@ -326,6 +351,17 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string notice = "";
+            try
+            {
+                 notice = NoticeChk();
+            }
+            catch
+            {
+                 notice = "";
+            }
+
+            label20.Text = notice;
 
             try
             {

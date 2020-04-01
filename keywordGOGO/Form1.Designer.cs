@@ -65,11 +65,15 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -92,10 +96,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -115,7 +118,6 @@
             this.groupBox5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -316,10 +318,11 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(10, 11);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Location = new System.Drawing.Point(10, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1469, 936);
+            this.tabControl1.Size = new System.Drawing.Size(1469, 923);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
@@ -349,7 +352,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage1.Size = new System.Drawing.Size(1461, 897);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "키워드검색";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -420,7 +423,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.RowTemplate.Height = 23;
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(802, 368);
+            this.dataGridView7.Size = new System.Drawing.Size(802, 352);
             this.dataGridView7.TabIndex = 39;
             this.dataGridView7.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView7_SortCompare);
             // 
@@ -430,7 +433,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(431, 536);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(204, 368);
+            this.dataGridView1.Size = new System.Drawing.Size(204, 352);
             this.dataGridView1.TabIndex = 37;
             // 
             // label7
@@ -448,7 +451,7 @@
             this.dataGridView4.Location = new System.Drawing.Point(190, 536);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.Size = new System.Drawing.Size(226, 368);
+            this.dataGridView4.Size = new System.Drawing.Size(226, 352);
             this.dataGridView4.TabIndex = 35;
             this.dataGridView4.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView4_SortCompare);
             // 
@@ -458,7 +461,7 @@
             this.dataGridView5.Location = new System.Drawing.Point(13, 536);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 23;
-            this.dataGridView5.Size = new System.Drawing.Size(163, 368);
+            this.dataGridView5.Size = new System.Drawing.Size(163, 352);
             this.dataGridView5.TabIndex = 34;
             // 
             // label8
@@ -502,10 +505,37 @@
             this.tabPage5.Controls.Add(this.groupBox6);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage5.Size = new System.Drawing.Size(1461, 897);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(714, 141);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 12);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "일반상품 순위";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 141);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 12);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "광고상품 순위";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(716, 156);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(742, 734);
+            this.dataGridView3.TabIndex = 12;
             // 
             // label15
             // 
@@ -559,6 +589,15 @@
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "순위조회";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(341, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(195, 12);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "* 키워드에 쓰인 광고비를 넣으세요";
             // 
             // label16
             // 
@@ -623,7 +662,7 @@
             this.tabPage3.Controls.Add(this.webBrowser2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage3.Size = new System.Drawing.Size(1461, 897);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "쇼핑인사이트";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -634,7 +673,7 @@
             this.webBrowser2.Location = new System.Drawing.Point(0, 0);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(1461, 910);
+            this.webBrowser2.Size = new System.Drawing.Size(1461, 897);
             this.webBrowser2.TabIndex = 0;
             // 
             // tabPage4
@@ -646,7 +685,7 @@
             this.tabPage4.Controls.Add(this.webBrowser3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage4.Size = new System.Drawing.Size(1461, 897);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "쇼핑검색";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -723,7 +762,7 @@
             this.tabPage6.Controls.Add(this.webBrowser5);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage6.Size = new System.Drawing.Size(1461, 897);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "블랙키위";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -735,7 +774,7 @@
             this.webBrowser5.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser5.Name = "webBrowser5";
             this.webBrowser5.ScriptErrorsSuppressed = true;
-            this.webBrowser5.Size = new System.Drawing.Size(1461, 910);
+            this.webBrowser5.Size = new System.Drawing.Size(1461, 897);
             this.webBrowser5.TabIndex = 0;
             // 
             // tabPage2
@@ -743,7 +782,7 @@
             this.tabPage2.Controls.Add(this.webBrowser7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1461, 910);
+            this.tabPage2.Size = new System.Drawing.Size(1461, 897);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "도움말";
             // 
@@ -753,7 +792,7 @@
             this.webBrowser7.Location = new System.Drawing.Point(0, 0);
             this.webBrowser7.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser7.Name = "webBrowser7";
-            this.webBrowser7.Size = new System.Drawing.Size(1461, 910);
+            this.webBrowser7.Size = new System.Drawing.Size(1461, 897);
             this.webBrowser7.TabIndex = 0;
             // 
             // webBrowser1
@@ -763,41 +802,23 @@
             this.webBrowser1.Size = new System.Drawing.Size(250, 250);
             this.webBrowser1.TabIndex = 0;
             // 
-            // dataGridView3
+            // label20
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(716, 156);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(742, 734);
-            this.dataGridView3.TabIndex = 12;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(821, 9);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(11, 12);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "-";
             // 
-            // label17
+            // tabPage7
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(10, 141);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 12);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "광고상품 순위";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(714, 141);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(81, 12);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "일반상품 순위";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(341, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(195, 12);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "* 키워드에 쓰인 광고비를 넣으세요";
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage7.TabIndex = 7;
+            this.tabPage7.Text = "개발후원하기";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -805,6 +826,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1491, 959);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -827,6 +849,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -837,8 +860,8 @@
             this.groupBox5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -911,6 +934,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage7;
     }
 }
 
