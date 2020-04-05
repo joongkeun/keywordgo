@@ -65,6 +65,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.g7_btn = new System.Windows.Forms.Button();
+            this.g6_btn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -96,18 +98,18 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.g6_btn = new System.Windows.Forms.Button();
-            this.g7_btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,6 +132,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -524,6 +527,26 @@
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // g7_btn
+            // 
+            this.g7_btn.Location = new System.Drawing.Point(1383, 130);
+            this.g7_btn.Name = "g7_btn";
+            this.g7_btn.Size = new System.Drawing.Size(75, 23);
+            this.g7_btn.TabIndex = 47;
+            this.g7_btn.Text = "엑셀출력";
+            this.g7_btn.UseVisualStyleBackColor = true;
+            this.g7_btn.Click += new System.EventHandler(this.g7_btn_Click);
+            // 
+            // g6_btn
+            // 
+            this.g6_btn.Location = new System.Drawing.Point(635, 130);
+            this.g6_btn.Name = "g6_btn";
+            this.g6_btn.Size = new System.Drawing.Size(75, 23);
+            this.g6_btn.TabIndex = 46;
+            this.g6_btn.Text = "엑셀출력";
+            this.g6_btn.UseVisualStyleBackColor = true;
+            this.g6_btn.Click += new System.EventHandler(this.g6_btn_Click);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -811,6 +834,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.label30);
+            this.tabPage7.Controls.Add(this.pictureBox1);
             this.tabPage7.Controls.Add(this.label29);
             this.tabPage7.Controls.Add(this.label28);
             this.tabPage7.Controls.Add(this.label27);
@@ -824,6 +849,61 @@
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "개발후원하기";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(535, 172);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(333, 12);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "본업외의 시간을 투자하여 개발및 업데이트를 하고 있습니다.";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(567, 199);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(278, 12);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "지속적인 업데이트와 개발을 위해 후원해주세요 : )";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(612, 247);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(157, 12);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "본 프로그램이 유용하셨다면";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(554, 145);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(309, 12);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "본 프로그램은 개인이 제작하여 무료 배포하고 있습니다.";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(583, 292);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(215, 12);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.Location = new System.Drawing.Point(657, 101);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(76, 16);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "후원안내";
             // 
             // label21
             // 
@@ -860,80 +940,24 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // label24
+            // pictureBox1
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label24.Location = new System.Drawing.Point(671, 101);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(76, 16);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "후원안내";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(633, 346);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
-            // label25
+            // label30
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(583, 292);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(215, 12);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(554, 145);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(309, 12);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "본 프로그램은 개인이 제작하여 무료 배포하고 있습니다.";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(612, 247);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(157, 12);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "본 프로그램이 유용하셨다면";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(567, 199);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(278, 12);
-            this.label28.TabIndex = 5;
-            this.label28.Text = "지속적인 업데이트와 개발을 위해 후원해주세요 : )";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(522, 172);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(361, 12);
-            this.label29.TabIndex = 6;
-            this.label29.Text = "또한 본업외의 시간을 투자하여 개발및 업데이트를 하고 있습니다.";
-            // 
-            // g6_btn
-            // 
-            this.g6_btn.Location = new System.Drawing.Point(635, 130);
-            this.g6_btn.Name = "g6_btn";
-            this.g6_btn.Size = new System.Drawing.Size(75, 23);
-            this.g6_btn.TabIndex = 46;
-            this.g6_btn.Text = "엑셀출력";
-            this.g6_btn.UseVisualStyleBackColor = true;
-            this.g6_btn.Click += new System.EventHandler(this.g6_btn_Click);
-            // 
-            // g7_btn
-            // 
-            this.g7_btn.Location = new System.Drawing.Point(1383, 130);
-            this.g7_btn.Name = "g7_btn";
-            this.g7_btn.Size = new System.Drawing.Size(75, 23);
-            this.g7_btn.TabIndex = 47;
-            this.g7_btn.Text = "엑셀출력";
-            this.g7_btn.UseVisualStyleBackColor = true;
-            this.g7_btn.Click += new System.EventHandler(this.g7_btn_Click);
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(650, 326);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(65, 12);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "카카오페이";
             // 
             // Form1
             // 
@@ -979,6 +1003,7 @@
             this.tabPage7.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1064,6 +1089,8 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button g7_btn;
         private System.Windows.Forms.Button g6_btn;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
