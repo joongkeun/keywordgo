@@ -354,18 +354,18 @@ namespace keywordGOGO
             string notice = "";
             try
             {
-                 notice = NoticeChk();
+                notice = NoticeChk();
             }
             catch
             {
-                 notice = "";
+                notice = "";
             }
 
             label20.Text = notice;
 
             try
             {
-                string version = "1.6.0";
+                string version = "1.6.1";
 
                 this.Text = "키워드고고(v" + version + ")";
 
