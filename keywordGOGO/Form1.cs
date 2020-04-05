@@ -1469,10 +1469,6 @@ namespace keywordGOGO
                                         "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
 
             this.webBrowser3.Navigate(murl, null, null, additionalHeaders);
-
-
-
-
             webBrowser4.Navigate(url);
         }
 
@@ -1536,6 +1532,32 @@ namespace keywordGOGO
             SetDataRankGrid(gridResultData2.NonAdRankingRefGrid, dataGridView3);
 
             SetButton2(true);
+        }
+
+        private void g6_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "광고상품순위";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView2);
+            }
+
+        }
+
+        private void g7_btn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "일반상품순위";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView3);
+            }
+
         }
     }
 }

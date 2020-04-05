@@ -95,9 +95,19 @@
             this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.g6_btn = new System.Windows.Forms.Button();
+            this.g7_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,6 +128,8 @@
             this.groupBox5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -495,6 +507,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.g7_btn);
+            this.tabPage5.Controls.Add(this.g6_btn);
             this.tabPage5.Controls.Add(this.label18);
             this.tabPage5.Controls.Add(this.label17);
             this.tabPage5.Controls.Add(this.dataGridView3);
@@ -795,6 +809,31 @@
             this.webBrowser7.Size = new System.Drawing.Size(1461, 897);
             this.webBrowser7.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.label29);
+            this.tabPage7.Controls.Add(this.label28);
+            this.tabPage7.Controls.Add(this.label27);
+            this.tabPage7.Controls.Add(this.label26);
+            this.tabPage7.Controls.Add(this.label25);
+            this.tabPage7.Controls.Add(this.label24);
+            this.tabPage7.Controls.Add(this.label21);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage7.TabIndex = 7;
+            this.tabPage7.Text = "개발후원하기";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(626, 270);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(121, 12);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "개발자에게 커피 한잔";
+            // 
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
@@ -805,20 +844,96 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(821, 9);
+            this.label20.Location = new System.Drawing.Point(10, 17);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(11, 12);
             this.label20.TabIndex = 19;
             this.label20.Text = "-";
             // 
-            // tabPage7
+            // groupBox7
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1461, 897);
-            this.tabPage7.TabIndex = 7;
-            this.tabPage7.Text = "개발후원하기";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Location = new System.Drawing.Point(630, 4);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(845, 36);
+            this.groupBox7.TabIndex = 20;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Notice";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.Location = new System.Drawing.Point(671, 101);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(76, 16);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "후원안내";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(583, 292);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(215, 12);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(554, 145);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(309, 12);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "본 프로그램은 개인이 제작하여 무료 배포하고 있습니다.";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(612, 247);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(157, 12);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "본 프로그램이 유용하셨다면";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(567, 199);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(278, 12);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "지속적인 업데이트와 개발을 위해 후원해주세요 : )";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(522, 172);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(361, 12);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "또한 본업외의 시간을 투자하여 개발및 업데이트를 하고 있습니다.";
+            // 
+            // g6_btn
+            // 
+            this.g6_btn.Location = new System.Drawing.Point(635, 130);
+            this.g6_btn.Name = "g6_btn";
+            this.g6_btn.Size = new System.Drawing.Size(75, 23);
+            this.g6_btn.TabIndex = 46;
+            this.g6_btn.Text = "엑셀출력";
+            this.g6_btn.UseVisualStyleBackColor = true;
+            this.g6_btn.Click += new System.EventHandler(this.g6_btn_Click);
+            // 
+            // g7_btn
+            // 
+            this.g7_btn.Location = new System.Drawing.Point(1383, 130);
+            this.g7_btn.Name = "g7_btn";
+            this.g7_btn.Size = new System.Drawing.Size(75, 23);
+            this.g7_btn.TabIndex = 47;
+            this.g7_btn.Text = "엑셀출력";
+            this.g7_btn.UseVisualStyleBackColor = true;
+            this.g7_btn.Click += new System.EventHandler(this.g7_btn_Click);
             // 
             // Form1
             // 
@@ -826,7 +941,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1491, 959);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -860,8 +975,11 @@
             this.groupBox5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -936,6 +1054,16 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button g7_btn;
+        private System.Windows.Forms.Button g6_btn;
     }
 }
 
