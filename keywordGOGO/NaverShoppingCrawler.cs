@@ -304,27 +304,42 @@ namespace keywordGOGO
         public string HttpWebRequestText(string tagetUrl)
         {
             string responseText = string.Empty;
-            string url = tagetUrl;
-            Thread.Sleep(1000);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            request.Timeout = 30 * 1000; // 30초
-            request.Headers.Add("Authorization", "BASIC SGVsbG8="); // 헤더 추가 방법
-
-            using (HttpWebResponse resp = (HttpWebResponse)request.GetResponse())
+            
+            try
             {
-                HttpStatusCode status = resp.StatusCode;
+                string url = tagetUrl;
+                Thread.Sleep(1000);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-                Console.WriteLine(status);  // 정상이면 "OK"
+                request.Timeout = 30 * 1000; // 30초
+                request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8;";
+                request.Headers.Add("Accept-Language", "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");
+                //request.Headers.Add("Accept-Encoding", "gzip, deflate, sdch");
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
+                request.ContentType = "application / x-www-form-urlencoded";
+                request.Headers.Add("Authorization", "BASIC SGVsbG8="); // 헤더 추가 방법
+                request.Method = "GET";
 
-                //listBox1.Items.Add("네이버와 통신결과 : "+status);
-
-                Stream respStream = resp.GetResponseStream();
-                using (StreamReader sr = new StreamReader(respStream))
+                using (HttpWebResponse resp = (HttpWebResponse)request.GetResponse())
                 {
-                    responseText = sr.ReadToEnd();
+                    HttpStatusCode status = resp.StatusCode;
+
+                    Console.WriteLine(status);  // 정상이면 "OK"
+
+                    //listBox1.Items.Add("네이버와 통신결과 : "+status);
+
+                    Stream respStream = resp.GetResponseStream();
+                    using (StreamReader sr = new StreamReader(respStream))
+                    {
+                        responseText = sr.ReadToEnd();
+                    }
                 }
             }
+            catch
+            {
+                responseText = string.Empty;
+            }
+
             return responseText;
         }
     }

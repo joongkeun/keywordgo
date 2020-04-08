@@ -365,7 +365,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.6.2";
+                string version = "1.6.3";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -1603,6 +1603,26 @@ namespace keywordGOGO
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b"); 
+        }
+
+        private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView7.CurrentCell == null || dataGridView7.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (dataGridView7.CurrentCell.ColumnIndex.Equals(5))
+            {
+                string linkurl = dataGridView7.CurrentCell.Value.ToString();
+                System.Diagnostics.Process.Start(linkurl);
+
+            }
+        }
+
+        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.parcelman.kr/");
         }
     }
 }

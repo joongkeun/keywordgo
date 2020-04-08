@@ -49,6 +49,63 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.g5_btn = new System.Windows.Forms.Button();
             this.g4_btn = new System.Windows.Forms.Button();
@@ -75,6 +132,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -97,72 +155,25 @@
             this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.label30 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label33 = new System.Windows.Forms.Label();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.label34 = new System.Windows.Forms.Label();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.label35 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
-            this.label65 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.linkLabel10 = new System.Windows.Forms.LinkLabel();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -178,13 +189,9 @@
             this.groupBox5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -392,6 +399,624 @@
             this.tabControl1.Size = new System.Drawing.Size(1469, 923);
             this.tabControl1.TabIndex = 18;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.groupBox12);
+            this.tabPage7.Controls.Add(this.groupBox11);
+            this.tabPage7.Controls.Add(this.groupBox10);
+            this.tabPage7.Controls.Add(this.groupBox9);
+            this.tabPage7.Controls.Add(this.groupBox8);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage7.TabIndex = 7;
+            this.tabPage7.Text = "프로그램 안내";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.linkLabel9);
+            this.groupBox11.Controls.Add(this.label64);
+            this.groupBox11.Controls.Add(this.label63);
+            this.groupBox11.Controls.Add(this.label62);
+            this.groupBox11.Controls.Add(this.label61);
+            this.groupBox11.Controls.Add(this.label60);
+            this.groupBox11.Controls.Add(this.label59);
+            this.groupBox11.Controls.Add(this.label58);
+            this.groupBox11.Controls.Add(this.label56);
+            this.groupBox11.Controls.Add(this.label57);
+            this.groupBox11.Location = new System.Drawing.Point(1024, 540);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(417, 343);
+            this.groupBox11.TabIndex = 12;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "프로그램 정보";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(19, 270);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(101, 12);
+            this.label65.TabIndex = 40;
+            this.label65.Text = "참여코드 : GOGO";
+            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(19, 246);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(217, 12);
+            this.linkLabel9.TabIndex = 15;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "https://open.kakao.com/o/g4wjxW1b";
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("굴림", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label64.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label64.Location = new System.Drawing.Point(19, 223);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(326, 12);
+            this.label64.TabIndex = 39;
+            this.label64.Text = "+ 오픈채팅 커뮤니티 (사용방법, 정보공유) 참여하기 +";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(19, 147);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(176, 12);
+            this.label63.TabIndex = 38;
+            this.label63.Text = "- 여유 저장공간 100Mbyte 이상";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(19, 189);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(317, 12);
+            this.label62.TabIndex = 37;
+            this.label62.Text = ":: 이하 사양에서는 정상 동작을 하지 않을 수도 있습니다. ";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(19, 125);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(113, 12);
+            this.label61.TabIndex = 36;
+            this.label61.Text = "- 메모리 4기가 이상";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(19, 103);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(110, 12);
+            this.label60.TabIndex = 35;
+            this.label60.Text = "- intel Core i3 이상";
+            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(19, 167);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(192, 12);
+            this.label59.TabIndex = 34;
+            this.label59.Text = "- .NET  프레임워크 4.6 이상 설치 ";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label58.Location = new System.Drawing.Point(19, 39);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(57, 12);
+            this.label58.TabIndex = 33;
+            this.label58.Text = "권장사양";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(19, 81);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(163, 12);
+            this.label56.TabIndex = 32;
+            this.label56.Text = "- 운영체제 : 윈도우10 64비트";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label57.Location = new System.Drawing.Point(19, 59);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(157, 12);
+            this.label57.TabIndex = 31;
+            this.label57.Text = "- 화면크기 : 1920*1080 이상";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label54);
+            this.groupBox10.Controls.Add(this.label55);
+            this.groupBox10.Controls.Add(this.label52);
+            this.groupBox10.Controls.Add(this.label53);
+            this.groupBox10.Controls.Add(this.label50);
+            this.groupBox10.Controls.Add(this.label51);
+            this.groupBox10.Controls.Add(this.label48);
+            this.groupBox10.Controls.Add(this.label49);
+            this.groupBox10.Controls.Add(this.label47);
+            this.groupBox10.Controls.Add(this.label45);
+            this.groupBox10.Controls.Add(this.label44);
+            this.groupBox10.Controls.Add(this.label43);
+            this.groupBox10.Controls.Add(this.label42);
+            this.groupBox10.Controls.Add(this.label40);
+            this.groupBox10.Controls.Add(this.label41);
+            this.groupBox10.Controls.Add(this.label39);
+            this.groupBox10.Controls.Add(this.label38);
+            this.groupBox10.Location = new System.Drawing.Point(20, 14);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(602, 520);
+            this.groupBox10.TabIndex = 11;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "메뉴설명";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(6, 438);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(251, 12);
+            this.label54.TabIndex = 30;
+            this.label54.Text = "- 프로그램 업데이트 버전 정보를 확인하세요.";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label55.Location = new System.Drawing.Point(6, 416);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(88, 12);
+            this.label55.TabIndex = 29;
+            this.label55.Text = "업데이트 정보";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 372);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(327, 12);
+            this.label52.TabIndex = 28;
+            this.label52.Text = "- 빅데이터 기반 키워드 통계, 분석 서비스 웹페이지 입니다.";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label53.Location = new System.Drawing.Point(6, 350);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(57, 12);
+            this.label53.TabIndex = 27;
+            this.label53.Text = "블랙키위";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(6, 316);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(159, 12);
+            this.label50.TabIndex = 26;
+            this.label50.Text = "- 모바일, 데스크탑 동시검색";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label51.Location = new System.Drawing.Point(6, 294);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(57, 12);
+            this.label51.TabIndex = 25;
+            this.label51.Text = "쇼핑검색";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(6, 259);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(195, 12);
+            this.label48.TabIndex = 24;
+            this.label48.Text = "- 네이버 데이터랩 웹페이지입니다.";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label49.Location = new System.Drawing.Point(6, 237);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(83, 12);
+            this.label49.TabIndex = 23;
+            this.label49.Text = "쇼핑인사이트";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(6, 202);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(159, 12);
+            this.label47.TabIndex = 22;
+            this.label47.Text = "- 조회 데이터 엑셀 출력기능";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 182);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(375, 12);
+            this.label45.TabIndex = 21;
+            this.label45.Text = "- 키워드 광고시 광고비를 입력하여 현재와 직전 검색 광고비를 비교 ";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 161);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(183, 12);
+            this.label44.TabIndex = 20;
+            this.label44.Text = "- 현재와 직전검색 과거순위 제공";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 161);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(0, 12);
+            this.label43.TabIndex = 19;
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 86);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(159, 12);
+            this.label42.TabIndex = 18;
+            this.label42.Text = "- 조회 데이터 엑셀 출력기능";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 141);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(203, 12);
+            this.label40.TabIndex = 17;
+            this.label40.Text = "- 광고상품 순위, 일반상품 순위 검색";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.Location = new System.Drawing.Point(6, 119);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(57, 12);
+            this.label41.TabIndex = 16;
+            this.label41.Text = "순위검색";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 64);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(512, 12);
+            this.label39.TabIndex = 15;
+            this.label39.Text = "- 광고연관검색, 쇼핑연관검색어, 상품에 많이 쓰인단어, SEO 태그, 연관검색어 관련 상품조회";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label38.Location = new System.Drawing.Point(6, 42);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(75, 12);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "키워드 검색";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.linkLabel8);
+            this.groupBox9.Controls.Add(this.label37);
+            this.groupBox9.Controls.Add(this.linkLabel7);
+            this.groupBox9.Controls.Add(this.label36);
+            this.groupBox9.Controls.Add(this.linkLabel6);
+            this.groupBox9.Controls.Add(this.label35);
+            this.groupBox9.Controls.Add(this.linkLabel5);
+            this.groupBox9.Controls.Add(this.label34);
+            this.groupBox9.Controls.Add(this.linkLabel4);
+            this.groupBox9.Controls.Add(this.linkLabel3);
+            this.groupBox9.Controls.Add(this.label33);
+            this.groupBox9.Controls.Add(this.linkLabel2);
+            this.groupBox9.Controls.Add(this.label32);
+            this.groupBox9.Controls.Add(this.linkLabel1);
+            this.groupBox9.Controls.Add(this.label31);
+            this.groupBox9.Location = new System.Drawing.Point(628, 14);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(390, 520);
+            this.groupBox9.TabIndex = 10;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "유용한 사이트";
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(19, 405);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(278, 12);
+            this.linkLabel8.TabIndex = 14;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "https://gongu.copyright.or.kr/freeFontEvent.html";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(19, 389);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(81, 12);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "안심 글꼴파일";
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(19, 361);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(183, 12);
+            this.linkLabel7.TabIndex = 12;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "https://modu-print.tistory.com/";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(19, 345);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(81, 12);
+            this.label36.TabIndex = 11;
+            this.label36.Text = "모두의 프린터";
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Location = new System.Drawing.Point(19, 314);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(204, 12);
+            this.linkLabel6.TabIndex = 10;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "https://blog.naver.com/darkwalk77";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(19, 298);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(133, 12);
+            this.label35.TabIndex = 9;
+            this.label35.Text = "파일명 한번에 변경하기";
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.Location = new System.Drawing.Point(19, 259);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(146, 12);
+            this.linkLabel5.TabIndex = 8;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "http://x.photoscape.org/";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(19, 241);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(139, 12);
+            this.label34.TabIndex = 7;
+            this.label34.Text = "포토스케이프 (사진편집)";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(19, 204);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(184, 12);
+            this.linkLabel4.TabIndex = 6;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "https://www.mangoboard.net/ ";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Location = new System.Drawing.Point(19, 182);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(151, 12);
+            this.linkLabel3.TabIndex = 5;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "https://www.canva.com/";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(19, 161);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(133, 12);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "배너 상세페이지 만들기";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(19, 122);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(161, 12);
+            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "https://www.remove.bg/ko";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(19, 103);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(279, 12);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "누끼만들어주는 사이트(무료 최대 사이즈 500X500)";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(19, 64);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(169, 12);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://www.photopea.com/";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(19, 46);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 12);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "웹포토샵";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.label30);
+            this.groupBox8.Controls.Add(this.label21);
+            this.groupBox8.Controls.Add(this.pictureBox1);
+            this.groupBox8.Controls.Add(this.label25);
+            this.groupBox8.Controls.Add(this.label29);
+            this.groupBox8.Controls.Add(this.label26);
+            this.groupBox8.Controls.Add(this.label28);
+            this.groupBox8.Controls.Add(this.label27);
+            this.groupBox8.Location = new System.Drawing.Point(1024, 14);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(417, 520);
+            this.groupBox8.TabIndex = 9;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "후원안내";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.Location = new System.Drawing.Point(163, 42);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(76, 16);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "후원안내";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(169, 306);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(65, 12);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "카카오페이";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(141, 215);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(121, 12);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "개발자에게 커피 한잔";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(151, 329);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(94, 260);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(215, 12);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(57, 117);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(289, 12);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "개인시간을 투자하여 개발및 업데이트를 하고 있으며";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(41, 90);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(321, 12);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "본 프로그램은 개인이 제작하여 무료로 배포하고 있습니다.";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(62, 144);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(278, 12);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "지속적인 업데이트와 개발을 위해 후원해주세요 : )";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(123, 192);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(157, 12);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "본 프로그램이 유용하셨다면";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.checkBox2);
@@ -492,6 +1117,7 @@
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView7.Size = new System.Drawing.Size(802, 352);
             this.dataGridView7.TabIndex = 39;
+            this.dataGridView7.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellClick);
             this.dataGridView7.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView7_SortCompare);
             // 
             // dataGridView1
@@ -679,6 +1305,15 @@
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "순위조회";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(73, 102);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(185, 12);
+            this.label46.TabIndex = 8;
+            this.label46.Text = "* 광고를 안한 경우 0을 넣으세요.";
             // 
             // label19
             // 
@@ -885,102 +1520,6 @@
             this.webBrowser7.Size = new System.Drawing.Size(1461, 897);
             this.webBrowser7.TabIndex = 0;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.groupBox11);
-            this.tabPage7.Controls.Add(this.groupBox10);
-            this.tabPage7.Controls.Add(this.groupBox9);
-            this.tabPage7.Controls.Add(this.groupBox8);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1461, 897);
-            this.tabPage7.TabIndex = 7;
-            this.tabPage7.Text = "프로그램 안내";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(169, 306);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(65, 12);
-            this.label30.TabIndex = 8;
-            this.label30.Text = "카카오페이";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(151, 329);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(57, 117);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(289, 12);
-            this.label29.TabIndex = 6;
-            this.label29.Text = "개인시간을 투자하여 개발및 업데이트를 하고 있으며";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(62, 144);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(278, 12);
-            this.label28.TabIndex = 5;
-            this.label28.Text = "지속적인 업데이트와 개발을 위해 후원해주세요 : )";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(123, 192);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(157, 12);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "본 프로그램이 유용하셨다면";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(41, 90);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(321, 12);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "본 프로그램은 개인이 제작하여 무료로 배포하고 있습니다.";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(94, 260);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(215, 12);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label24.Location = new System.Drawing.Point(163, 42);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(76, 16);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "후원안내";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(141, 215);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 12);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "개발자에게 커피 한잔";
-            // 
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
@@ -1007,535 +1546,56 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label24);
-            this.groupBox8.Controls.Add(this.label30);
-            this.groupBox8.Controls.Add(this.label21);
-            this.groupBox8.Controls.Add(this.pictureBox1);
-            this.groupBox8.Controls.Add(this.label25);
-            this.groupBox8.Controls.Add(this.label29);
-            this.groupBox8.Controls.Add(this.label26);
-            this.groupBox8.Controls.Add(this.label28);
-            this.groupBox8.Controls.Add(this.label27);
-            this.groupBox8.Location = new System.Drawing.Point(1024, 14);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(417, 520);
-            this.groupBox8.TabIndex = 9;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "후원안내";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.linkLabel8);
-            this.groupBox9.Controls.Add(this.label37);
-            this.groupBox9.Controls.Add(this.linkLabel7);
-            this.groupBox9.Controls.Add(this.label36);
-            this.groupBox9.Controls.Add(this.linkLabel6);
-            this.groupBox9.Controls.Add(this.label35);
-            this.groupBox9.Controls.Add(this.linkLabel5);
-            this.groupBox9.Controls.Add(this.label34);
-            this.groupBox9.Controls.Add(this.linkLabel4);
-            this.groupBox9.Controls.Add(this.linkLabel3);
-            this.groupBox9.Controls.Add(this.label33);
-            this.groupBox9.Controls.Add(this.linkLabel2);
-            this.groupBox9.Controls.Add(this.label32);
-            this.groupBox9.Controls.Add(this.linkLabel1);
-            this.groupBox9.Controls.Add(this.label31);
-            this.groupBox9.Location = new System.Drawing.Point(628, 14);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(390, 520);
-            this.groupBox9.TabIndex = 10;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "유용한 사이트";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(19, 46);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 12);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "웹포토샵";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(19, 64);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(169, 12);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://www.photopea.com/";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(19, 103);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(279, 12);
-            this.label32.TabIndex = 2;
-            this.label32.Text = "누끼만들어주는 사이트(무료 최대 사이즈 500X500)";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(19, 122);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(161, 12);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "https://www.remove.bg/ko";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(19, 161);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(133, 12);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "배너 상세페이지 만들기";
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(19, 182);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(151, 12);
-            this.linkLabel3.TabIndex = 5;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "https://www.canva.com/";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(19, 204);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(184, 12);
-            this.linkLabel4.TabIndex = 6;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "https://www.mangoboard.net/ ";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(19, 241);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(139, 12);
-            this.label34.TabIndex = 7;
-            this.label34.Text = "포토스케이프 (사진편집)";
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(19, 259);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(146, 12);
-            this.linkLabel5.TabIndex = 8;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "http://x.photoscape.org/";
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(19, 298);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(133, 12);
-            this.label35.TabIndex = 9;
-            this.label35.Text = "파일명 한번에 변경하기";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(19, 314);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(204, 12);
-            this.linkLabel6.TabIndex = 10;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "https://blog.naver.com/darkwalk77";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(19, 361);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(183, 12);
-            this.linkLabel7.TabIndex = 12;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "https://modu-print.tistory.com/";
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(19, 345);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(81, 12);
-            this.label36.TabIndex = 11;
-            this.label36.Text = "모두의 프린터";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(19, 389);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(81, 12);
-            this.label37.TabIndex = 13;
-            this.label37.Text = "안심 글꼴파일";
-            // 
-            // linkLabel8
-            // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Location = new System.Drawing.Point(19, 405);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(278, 12);
-            this.linkLabel8.TabIndex = 14;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "https://gongu.copyright.or.kr/freeFontEvent.html";
-            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label54);
-            this.groupBox10.Controls.Add(this.label55);
-            this.groupBox10.Controls.Add(this.label52);
-            this.groupBox10.Controls.Add(this.label53);
-            this.groupBox10.Controls.Add(this.label50);
-            this.groupBox10.Controls.Add(this.label51);
-            this.groupBox10.Controls.Add(this.label48);
-            this.groupBox10.Controls.Add(this.label49);
-            this.groupBox10.Controls.Add(this.label47);
-            this.groupBox10.Controls.Add(this.label45);
-            this.groupBox10.Controls.Add(this.label44);
-            this.groupBox10.Controls.Add(this.label43);
-            this.groupBox10.Controls.Add(this.label42);
-            this.groupBox10.Controls.Add(this.label40);
-            this.groupBox10.Controls.Add(this.label41);
-            this.groupBox10.Controls.Add(this.label39);
-            this.groupBox10.Controls.Add(this.label38);
-            this.groupBox10.Location = new System.Drawing.Point(20, 14);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(602, 869);
-            this.groupBox10.TabIndex = 11;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "메뉴설명";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label38.Location = new System.Drawing.Point(6, 42);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(75, 12);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "키워드 검색";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 64);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(512, 12);
-            this.label39.TabIndex = 15;
-            this.label39.Text = "- 광고연관검색, 쇼핑연관검색어, 상품에 많이 쓰인단어, SEO 태그, 연관검색어 관련 상품조회";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(6, 141);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(203, 12);
-            this.label40.TabIndex = 17;
-            this.label40.Text = "- 광고상품 순위, 일반상품 순위 검색";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.Location = new System.Drawing.Point(6, 119);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(57, 12);
-            this.label41.TabIndex = 16;
-            this.label41.Text = "순위검색";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 86);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(159, 12);
-            this.label42.TabIndex = 18;
-            this.label42.Text = "- 조회 데이터 엑셀 출력기능";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(6, 161);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(0, 12);
-            this.label43.TabIndex = 19;
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 161);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(183, 12);
-            this.label44.TabIndex = 20;
-            this.label44.Text = "- 현재와 직전검색 과거순위 제공";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 182);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(375, 12);
-            this.label45.TabIndex = 21;
-            this.label45.Text = "- 키워드 광고시 광고비를 입력하여 현재와 직전 검색 광고비를 비교 ";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(73, 102);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(185, 12);
-            this.label46.TabIndex = 8;
-            this.label46.Text = "* 광고를 안한 경우 0을 넣으세요.";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(6, 202);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(159, 12);
-            this.label47.TabIndex = 22;
-            this.label47.Text = "- 조회 데이터 엑셀 출력기능";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 259);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(195, 12);
-            this.label48.TabIndex = 24;
-            this.label48.Text = "- 네이버 데이터랩 웹페이지입니다.";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label49.Location = new System.Drawing.Point(6, 237);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(83, 12);
-            this.label49.TabIndex = 23;
-            this.label49.Text = "쇼핑인사이트";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 316);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(159, 12);
-            this.label50.TabIndex = 26;
-            this.label50.Text = "- 모바일, 데스크탑 동시검색";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label51.Location = new System.Drawing.Point(6, 294);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(57, 12);
-            this.label51.TabIndex = 25;
-            this.label51.Text = "쇼핑검색";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 372);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(327, 12);
-            this.label52.TabIndex = 28;
-            this.label52.Text = "- 빅데이터 기반 키워드 통계, 분석 서비스 웹페이지 입니다.";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label53.Location = new System.Drawing.Point(6, 350);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(57, 12);
-            this.label53.TabIndex = 27;
-            this.label53.Text = "블랙키위";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 438);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(251, 12);
-            this.label54.TabIndex = 30;
-            this.label54.Text = "- 프로그램 업데이트 버전 정보를 확인하세요.";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label55.Location = new System.Drawing.Point(6, 416);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(88, 12);
-            this.label55.TabIndex = 29;
-            this.label55.Text = "업데이트 정보";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.label65);
-            this.groupBox11.Controls.Add(this.linkLabel9);
-            this.groupBox11.Controls.Add(this.label64);
-            this.groupBox11.Controls.Add(this.label63);
-            this.groupBox11.Controls.Add(this.label62);
-            this.groupBox11.Controls.Add(this.label61);
-            this.groupBox11.Controls.Add(this.label60);
-            this.groupBox11.Controls.Add(this.label59);
-            this.groupBox11.Controls.Add(this.label58);
-            this.groupBox11.Controls.Add(this.label56);
-            this.groupBox11.Controls.Add(this.label57);
-            this.groupBox11.Location = new System.Drawing.Point(628, 540);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(813, 343);
-            this.groupBox11.TabIndex = 12;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "프로그램 정보";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(19, 81);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(163, 12);
-            this.label56.TabIndex = 32;
-            this.label56.Text = "- 운영체제 : 윈도우10 64비트";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label57.Location = new System.Drawing.Point(19, 59);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(157, 12);
-            this.label57.TabIndex = 31;
-            this.label57.Text = "- 화면크기 : 1920*1080 이상";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label58.Location = new System.Drawing.Point(19, 39);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(57, 12);
-            this.label58.TabIndex = 33;
-            this.label58.Text = "권장사양";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(19, 167);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(192, 12);
-            this.label59.TabIndex = 34;
-            this.label59.Text = "- .NET  프레임워크 4.6 이상 설치 ";
-            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(19, 103);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(110, 12);
-            this.label60.TabIndex = 35;
-            this.label60.Text = "- intel Core i3 이상";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(19, 125);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(113, 12);
-            this.label61.TabIndex = 36;
-            this.label61.Text = "- 메모리 4기가 이상";
-            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(19, 189);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(317, 12);
-            this.label62.TabIndex = 37;
-            this.label62.Text = ":: 이하 사양에서는 정상 동작을 하지 않을 수도 있습니다. ";
-            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(19, 147);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(176, 12);
-            this.label63.TabIndex = 38;
-            this.label63.Text = "- 여유 저장공간 100Mbyte 이상";
-            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("굴림", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label64.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label64.Location = new System.Drawing.Point(19, 223);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(326, 12);
-            this.label64.TabIndex = 39;
-            this.label64.Text = "+ 오픈채팅 커뮤니티 (사용방법, 정보공유) 참여하기 +";
-            // 
-            // linkLabel9
-            // 
-            this.linkLabel9.AutoSize = true;
-            this.linkLabel9.Location = new System.Drawing.Point(19, 246);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(217, 12);
-            this.linkLabel9.TabIndex = 15;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "https://open.kakao.com/o/g4wjxW1b";
-            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(19, 270);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(101, 12);
-            this.label65.TabIndex = 40;
-            this.label65.Text = "참여코드 : GOGO";
-            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label67);
+            this.groupBox12.Controls.Add(this.linkLabel10);
+            this.groupBox12.Controls.Add(this.label66);
+            this.groupBox12.Controls.Add(this.pictureBox2);
+            this.groupBox12.Location = new System.Drawing.Point(20, 541);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(998, 342);
+            this.groupBox12.TabIndex = 13;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "유용한 어플";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(33, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(210, 83);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // linkLabel10
+            // 
+            this.linkLabel10.AutoSize = true;
+            this.linkLabel10.Location = new System.Drawing.Point(61, 139);
+            this.linkLabel10.Name = "linkLabel10";
+            this.linkLabel10.Size = new System.Drawing.Size(155, 12);
+            this.linkLabel10.TabIndex = 16;
+            this.linkLabel10.TabStop = true;
+            this.linkLabel10.Text = "http://www.parcelman.kr/";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(112, 140);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(53, 12);
+            this.label66.TabIndex = 15;
+            this.label66.Text = "파슬맨 : ";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(6, 26);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(265, 12);
+            this.label67.TabIndex = 17;
+            this.label67.Text = "메뉴가 직과적이고 가격이 저렴한 방문택배 어플";
             // 
             // Form1
             // 
@@ -1557,6 +1617,16 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
@@ -1577,18 +1647,11 @@
             this.groupBox5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1724,6 +1787,11 @@
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.LinkLabel linkLabel9;
         private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.LinkLabel linkLabel10;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
