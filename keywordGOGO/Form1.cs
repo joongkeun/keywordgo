@@ -1620,7 +1620,7 @@ namespace keywordGOGO
             }
         }
 
-        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel10_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.parcelman.kr/");
         }
