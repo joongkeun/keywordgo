@@ -433,7 +433,7 @@
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(265, 12);
             this.label67.TabIndex = 17;
-            this.label67.Text = "메뉴가 직과적이고 가격이 저렴한 방문택배 어플";
+            this.label67.Text = "메뉴가 직관적이고 가격이 저렴한 방문택배 어플";
             // 
             // linkLabel10
             // 
