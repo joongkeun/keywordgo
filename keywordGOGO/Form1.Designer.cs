@@ -163,6 +163,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label68 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -467,6 +468,7 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.label68);
             this.groupBox11.Controls.Add(this.label65);
             this.groupBox11.Controls.Add(this.linkLabel9);
             this.groupBox11.Controls.Add(this.label64);
@@ -1036,11 +1038,11 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(57, 117);
+            this.label29.Location = new System.Drawing.Point(33, 117);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(289, 12);
+            this.label29.Size = new System.Drawing.Size(337, 12);
             this.label29.TabIndex = 6;
-            this.label29.Text = "개인시간을 투자하여 개발및 업데이트를 하고 있으며";
+            this.label29.Text = "개인시간을 투자하여 개발 및 업데이트를  진행하고 있습니다.";
             // 
             // label26
             // 
@@ -1582,6 +1584,8 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label20.ForeColor = System.Drawing.Color.Crimson;
             this.label20.Location = new System.Drawing.Point(10, 17);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(11, 12);
@@ -1597,6 +1601,16 @@
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(79, 324);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(257, 12);
+            this.label68.TabIndex = 41;
+            this.label68.Text = "Copyrightⓒ2020 본아이티 All rights reserved.";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -1793,6 +1807,7 @@
         private System.Windows.Forms.LinkLabel linkLabel10;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label68;
     }
 }
 

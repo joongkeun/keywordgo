@@ -555,9 +555,7 @@ namespace keywordGOGO
                         }
 
                     }
-
                 }
-
             }
 
             catch (SecurityException)
