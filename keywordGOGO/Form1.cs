@@ -365,7 +365,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.6.1";
+                string version = "1.6.3";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -1558,6 +1558,71 @@ namespace keywordGOGO
                 dataGridView_ExportToExcel(sfd.FileName, dataGridView3);
             }
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.photopea.com/");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.remove.bg/ko");
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.canva.com/");
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.mangoboard.net/ ");
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://x.photoscape.org/");
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://blog.naver.com/darkwalk77");
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://modu-print.tistory.com/");
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gongu.copyright.or.kr/freeFontEvent.html");
+        }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b"); 
+        }
+
+        private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView7.CurrentCell == null || dataGridView7.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (dataGridView7.CurrentCell.ColumnIndex.Equals(5))
+            {
+                string linkurl = dataGridView7.CurrentCell.Value.ToString();
+                System.Diagnostics.Process.Start(linkurl);
+
+            }
+        }
+
+        private void linkLabel10_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.parcelman.kr/");
         }
     }
 }
