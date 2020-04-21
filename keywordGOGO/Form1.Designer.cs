@@ -56,6 +56,7 @@
             this.label66 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label68 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.label64 = new System.Windows.Forms.Label();
@@ -163,7 +164,9 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -347,10 +350,10 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(265, 25);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(81, 16);
+            this.radioButton4.Size = new System.Drawing.Size(83, 16);
             this.radioButton4.TabIndex = 26;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "상위 300건";
+            this.radioButton4.Text = "조회전체건";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -372,7 +375,7 @@
             this.radioButton3.Size = new System.Drawing.Size(81, 16);
             this.radioButton3.TabIndex = 25;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "상위 200건";
+            this.radioButton3.Text = "상위 300건";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -416,6 +419,9 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.linkLabel11);
+            this.groupBox12.Controls.Add(this.label70);
+            this.groupBox12.Controls.Add(this.label69);
             this.groupBox12.Controls.Add(this.label67);
             this.groupBox12.Controls.Add(this.linkLabel10);
             this.groupBox12.Controls.Add(this.label66);
@@ -425,7 +431,7 @@
             this.groupBox12.Size = new System.Drawing.Size(998, 342);
             this.groupBox12.TabIndex = 13;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "유용한 어플";
+            this.groupBox12.Text = "유용한 정보";
             // 
             // label67
             // 
@@ -486,6 +492,16 @@
             this.groupBox11.TabIndex = 12;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "프로그램 정보";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(79, 324);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(257, 12);
+            this.label68.TabIndex = 41;
+            this.label68.Text = "Copyrightⓒ2020 본아이티 All rights reserved.";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label65
             // 
@@ -1602,15 +1618,34 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // label68
+            // label69
             // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(79, 324);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(257, 12);
-            this.label68.TabIndex = 41;
-            this.label68.Text = "Copyrightⓒ2020 본아이티 All rights reserved.";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label69.Location = new System.Drawing.Point(69, 210);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(135, 24);
+            this.label69.TabIndex = 18;
+            this.label69.Text = "애플트리몰";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(50, 188);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(173, 12);
+            this.label70.TabIndex = 19;
+            this.label70.Text = "커스텀 휴대폰 케이스 전문제작";
+            // 
+            // linkLabel11
+            // 
+            this.linkLabel11.AutoSize = true;
+            this.linkLabel11.Location = new System.Drawing.Point(14, 244);
+            this.linkLabel11.Name = "linkLabel11";
+            this.linkLabel11.Size = new System.Drawing.Size(244, 12);
+            this.linkLabel11.TabIndex = 20;
+            this.linkLabel11.TabStop = true;
+            this.linkLabel11.Text = "https://smartstore.naver.com/appleprinter";
             // 
             // Form1
             // 
@@ -1808,6 +1843,9 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.LinkLabel linkLabel11;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
     }
 }
 

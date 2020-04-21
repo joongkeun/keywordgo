@@ -365,7 +365,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.6.3";
+                string version = "1.6.4";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -830,8 +830,8 @@ namespace keywordGOGO
 
             if (radioButton1.Checked == true) RefMaxCount = 50;
             if (radioButton2.Checked == true) RefMaxCount = 100;
-            if (radioButton3.Checked == true) RefMaxCount = 200;
-            if (radioButton4.Checked == true) RefMaxCount = 300;
+            if (radioButton3.Checked == true) RefMaxCount = 300;
+            if (radioButton4.Checked == true) RefMaxCount = 1000;
             Thread t1 = new Thread(new ThreadStart(DataReturn));
             t1.Start();
         }
