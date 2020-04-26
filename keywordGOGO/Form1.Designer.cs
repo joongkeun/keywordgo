@@ -51,6 +51,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.linkLabel10 = new System.Windows.Forms.LinkLabel();
             this.label66 = new System.Windows.Forms.Label();
@@ -164,9 +167,9 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.instarTagBtn = new System.Windows.Forms.Button();
+            this.instatagBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -196,6 +199,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -395,6 +399,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(10, 24);
@@ -432,6 +437,35 @@
             this.groupBox12.TabIndex = 13;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "유용한 정보";
+            // 
+            // linkLabel11
+            // 
+            this.linkLabel11.AutoSize = true;
+            this.linkLabel11.Location = new System.Drawing.Point(14, 244);
+            this.linkLabel11.Name = "linkLabel11";
+            this.linkLabel11.Size = new System.Drawing.Size(244, 12);
+            this.linkLabel11.TabIndex = 20;
+            this.linkLabel11.TabStop = true;
+            this.linkLabel11.Text = "https://smartstore.naver.com/appleprinter";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(50, 188);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(173, 12);
+            this.label70.TabIndex = 19;
+            this.label70.Text = "커스텀 휴대폰 케이스 전문제작";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label69.Location = new System.Drawing.Point(69, 210);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(135, 24);
+            this.label69.TabIndex = 18;
+            this.label69.Text = "애플트리몰";
             // 
             // label67
             // 
@@ -1618,34 +1652,33 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // label69
+            // tabPage8
             // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label69.Location = new System.Drawing.Point(69, 210);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(135, 24);
-            this.label69.TabIndex = 18;
-            this.label69.Text = "애플트리몰";
+            this.tabPage8.Controls.Add(this.instatagBox);
+            this.tabPage8.Controls.Add(this.instarTagBtn);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage8.TabIndex = 8;
+            this.tabPage8.Text = "인별태그";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // label70
+            // instarTagBtn
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(50, 188);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(173, 12);
-            this.label70.TabIndex = 19;
-            this.label70.Text = "커스텀 휴대폰 케이스 전문제작";
+            this.instarTagBtn.Location = new System.Drawing.Point(291, 24);
+            this.instarTagBtn.Name = "instarTagBtn";
+            this.instarTagBtn.Size = new System.Drawing.Size(75, 23);
+            this.instarTagBtn.TabIndex = 0;
+            this.instarTagBtn.Text = "검색";
+            this.instarTagBtn.UseVisualStyleBackColor = true;
+            this.instarTagBtn.Click += new System.EventHandler(this.instarTagBtn_Click);
             // 
-            // linkLabel11
+            // instatagBox
             // 
-            this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(14, 244);
-            this.linkLabel11.Name = "linkLabel11";
-            this.linkLabel11.Size = new System.Drawing.Size(244, 12);
-            this.linkLabel11.TabIndex = 20;
-            this.linkLabel11.TabStop = true;
-            this.linkLabel11.Text = "https://smartstore.naver.com/appleprinter";
+            this.instatagBox.Location = new System.Drawing.Point(105, 26);
+            this.instatagBox.Name = "instatagBox";
+            this.instatagBox.Size = new System.Drawing.Size(180, 21);
+            this.instatagBox.TabIndex = 1;
             // 
             // Form1
             // 
@@ -1702,6 +1735,8 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1846,6 +1881,9 @@
         private System.Windows.Forms.LinkLabel linkLabel11;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TextBox instatagBox;
+        private System.Windows.Forms.Button instarTagBtn;
     }
 }
 

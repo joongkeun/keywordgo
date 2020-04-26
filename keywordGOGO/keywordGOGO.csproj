@@ -129,6 +129,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="iniUtil.cs" />
+    <Compile Include="InstagramAPI.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="NaverApi.cs" />
     <Compile Include="NaverShoppingCrawler.cs" />

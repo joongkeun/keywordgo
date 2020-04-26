@@ -1622,5 +1622,22 @@ namespace keywordGOGO
         {
             System.Diagnostics.Process.Start("http://www.parcelman.kr/");
         }
+
+        /// <summary>
+        /// 인스타그램 태그 검색
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void instarTagBtn_Click(object sender, EventArgs e)
+        {
+            Thread t1 = new Thread(new ThreadStart(instargramTagDataSet));
+            t1.Start();
+        }
+
+        public void instargramTagDataSet()
+        {
+            InstagramAPI instagram = new InstagramAPI();
+            instagram.InstagramJsonDataSet(instatagBox.Text);
+        }
     }
 }
