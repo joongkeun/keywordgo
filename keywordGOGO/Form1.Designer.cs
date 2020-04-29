@@ -160,6 +160,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.webBrowser4 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.instatagBox = new System.Windows.Forms.TextBox();
+            this.instarTagBtn = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -167,9 +170,13 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.instarTagBtn = new System.Windows.Forms.Button();
-            this.instatagBox = new System.Windows.Forms.TextBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
+            this.instaDataGridView = new System.Windows.Forms.DataGridView();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -196,10 +203,12 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -651,6 +660,8 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.label73);
+            this.groupBox10.Controls.Add(this.label74);
             this.groupBox10.Controls.Add(this.label54);
             this.groupBox10.Controls.Add(this.label55);
             this.groupBox10.Controls.Add(this.label52);
@@ -678,7 +689,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 438);
+            this.label54.Location = new System.Drawing.Point(6, 491);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(251, 12);
             this.label54.TabIndex = 30;
@@ -689,7 +700,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label55.Location = new System.Drawing.Point(6, 416);
+            this.label55.Location = new System.Drawing.Point(6, 469);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(88, 12);
             this.label55.TabIndex = 29;
@@ -698,7 +709,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 372);
+            this.label52.Location = new System.Drawing.Point(6, 425);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(327, 12);
             this.label52.TabIndex = 28;
@@ -709,7 +720,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label53.Location = new System.Drawing.Point(6, 350);
+            this.label53.Location = new System.Drawing.Point(6, 403);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(57, 12);
             this.label53.TabIndex = 27;
@@ -1586,6 +1597,38 @@
             this.webBrowser3.Size = new System.Drawing.Size(533, 792);
             this.webBrowser3.TabIndex = 0;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.label72);
+            this.tabPage8.Controls.Add(this.label71);
+            this.tabPage8.Controls.Add(this.instaDataGridView);
+            this.tabPage8.Controls.Add(this.webBrowser6);
+            this.tabPage8.Controls.Add(this.groupBox13);
+            this.tabPage8.ForeColor = System.Drawing.Color.Black;
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage8.TabIndex = 8;
+            this.tabPage8.Text = "인별고고";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // instatagBox
+            // 
+            this.instatagBox.Location = new System.Drawing.Point(6, 17);
+            this.instatagBox.Name = "instatagBox";
+            this.instatagBox.Size = new System.Drawing.Size(245, 21);
+            this.instatagBox.TabIndex = 1;
+            // 
+            // instarTagBtn
+            // 
+            this.instarTagBtn.Location = new System.Drawing.Point(257, 15);
+            this.instarTagBtn.Name = "instarTagBtn";
+            this.instarTagBtn.Size = new System.Drawing.Size(75, 23);
+            this.instarTagBtn.TabIndex = 0;
+            this.instarTagBtn.Text = "검색";
+            this.instarTagBtn.UseVisualStyleBackColor = true;
+            this.instarTagBtn.Click += new System.EventHandler(this.instarTagBtn_Click);
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.webBrowser5);
@@ -1652,33 +1695,73 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // tabPage8
+            // groupBox13
             // 
-            this.tabPage8.Controls.Add(this.instatagBox);
-            this.tabPage8.Controls.Add(this.instarTagBtn);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1461, 897);
-            this.tabPage8.TabIndex = 8;
-            this.tabPage8.Text = "인별태그";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.groupBox13.Controls.Add(this.instatagBox);
+            this.groupBox13.Controls.Add(this.instarTagBtn);
+            this.groupBox13.Location = new System.Drawing.Point(3, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(338, 49);
+            this.groupBox13.TabIndex = 2;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "인별그램 해시태그";
             // 
-            // instarTagBtn
+            // webBrowser6
             // 
-            this.instarTagBtn.Location = new System.Drawing.Point(291, 24);
-            this.instarTagBtn.Name = "instarTagBtn";
-            this.instarTagBtn.Size = new System.Drawing.Size(75, 23);
-            this.instarTagBtn.TabIndex = 0;
-            this.instarTagBtn.Text = "검색";
-            this.instarTagBtn.UseVisualStyleBackColor = true;
-            this.instarTagBtn.Click += new System.EventHandler(this.instarTagBtn_Click);
+            this.webBrowser6.Location = new System.Drawing.Point(348, 13);
+            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser6.Name = "webBrowser6";
+            this.webBrowser6.Size = new System.Drawing.Size(1110, 881);
+            this.webBrowser6.TabIndex = 3;
             // 
-            // instatagBox
+            // instaDataGridView
             // 
-            this.instatagBox.Location = new System.Drawing.Point(105, 26);
-            this.instatagBox.Name = "instatagBox";
-            this.instatagBox.Size = new System.Drawing.Size(180, 21);
-            this.instatagBox.TabIndex = 1;
+            this.instaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.instaDataGridView.Location = new System.Drawing.Point(9, 99);
+            this.instaDataGridView.Name = "instaDataGridView";
+            this.instaDataGridView.RowTemplate.Height = 23;
+            this.instaDataGridView.Size = new System.Drawing.Size(332, 794);
+            this.instaDataGridView.TabIndex = 4;
+            this.instaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellClick);
+            this.instaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellDoubleClick);
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(9, 60);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(271, 12);
+            this.label71.TabIndex = 5;
+            this.label71.Text = "한번클릭 - 해당 해시태그로 인별그램 페이지이동";
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(9, 80);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(263, 12);
+            this.label72.TabIndex = 6;
+            this.label72.Text = "더블클릭 - 관련 해시태그를 조회후 페이지 이동";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(6, 367);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(335, 12);
+            this.label73.TabIndex = 32;
+            this.label73.Text = "- 같이사용한 해시태그를 검색하고 해당페이지로 이동합니다.";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label74.Location = new System.Drawing.Point(6, 345);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(57, 12);
+            this.label74.TabIndex = 31;
+            this.label74.Text = "인별고고";
             // 
             // Form1
             // 
@@ -1731,12 +1814,15 @@
             this.tabPage4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1884,6 +1970,13 @@
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TextBox instatagBox;
         private System.Windows.Forms.Button instarTagBtn;
+        private System.Windows.Forms.DataGridView instaDataGridView;
+        private System.Windows.Forms.WebBrowser webBrowser6;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
     }
 }
 

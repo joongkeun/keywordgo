@@ -192,4 +192,11 @@ namespace keywordGOGO
         public string value { get; set; }
         public int count { get; set; }
     }
+
+    class InstagramTagWordList
+    {
+        public string value { get; set; }
+        public int count { get; set; }
+    }
+
 }

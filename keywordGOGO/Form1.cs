@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Text.RegularExpressions;
 
 namespace keywordGOGO
 {
@@ -37,6 +38,9 @@ namespace keywordGOGO
         // 순위
         delegate void DataGrid6(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid7(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+
+        // 인스타
+        delegate void DataGrid8(List<InstagramTagWordList> data, DataGridView dataGridView); //데이터그리드 델리게이트
 
 
         delegate void ButtonEnable(bool data);
@@ -250,6 +254,24 @@ namespace keywordGOGO
         }
 
 
+        private void SetInstaButton(bool data)
+        {
+            if (instarTagBtn.InvokeRequired)
+
+            {
+
+                ButtonEnable call = new ButtonEnable(SetInstaButton);
+                this.Invoke(call, data);
+
+            }
+
+            else
+            {
+                instarTagBtn.Enabled = data;
+            }
+        }
+
+
         private void SetGrid(bool data)
         {
             if (dataGridView6.InvokeRequired)
@@ -365,7 +387,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.6.4";
+                string version = "1.7.1";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -467,6 +489,7 @@ namespace keywordGOGO
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
             webBrowser5.Navigate("https://blackkiwi.net");
 
+            webBrowser6.Navigate("https://www.instagram.com/");
 
             checkBox2.Checked = true;
         }
@@ -1027,6 +1050,46 @@ namespace keywordGOGO
 
         }
 
+
+        public void SetInstaDataGrid(object msgData, DataGridView dataGridView)
+        {
+            if (dataGridView.InvokeRequired)
+            {
+                DataGrid8 call = new DataGrid8(SetInstaDataGrid);
+                this.Invoke(call, msgData, dataGridView);
+            }
+            else
+            {
+                dataGridView.Rows.Clear();
+
+                List<InstagramTagWordList> collection = msgData as List<InstagramTagWordList>;
+
+                dataGridView.Rows.Clear();
+
+                dataGridView.ColumnHeadersVisible = true;
+                dataGridView.RowHeadersVisible = false;
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
+                columnHeaderStyle.BackColor = Color.Beige;
+                dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                dataGridView.ColumnCount = 2;
+                dataGridView.Columns[0].HeaderCell.Value = "해시태그";
+                dataGridView.Columns[1].HeaderCell.Value = "사용량";
+
+                foreach (var r in collection)
+                {
+
+                    int count = Convert.ToInt32(r.count);
+                    if (r.value.Length != 0)
+                    {
+                        dataGridView.Rows.Add(r.value, count);
+                    }
+                }
+            }
+        }
+
+
+
         public void SetDataGrid2(object msgData, DataGridView dataGridView)
         {
             if (dataGridView.InvokeRequired)
@@ -1492,7 +1555,7 @@ namespace keywordGOGO
         {
 
             listBox2.Items.Clear();
-
+            SetDataGridClear2();
 
 
             if (textBox2.Text.Length < 1)
@@ -1630,14 +1693,79 @@ namespace keywordGOGO
         /// <param name="e"></param>
         private void instarTagBtn_Click(object sender, EventArgs e)
         {
+
+            if (instatagBox.Text.Length < 1)
+            {
+                MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // 그리드 클리어
+            instaDataGridView.Rows.Clear();
+
             Thread t1 = new Thread(new ThreadStart(instargramTagDataSet));
             t1.Start();
         }
 
         public void instargramTagDataSet()
         {
+            SetInstaButton(false);
+            List<InstagramTagWordList> InstaWordList = new List<InstagramTagWordList>();
             InstagramAPI instagram = new InstagramAPI();
-            instagram.InstagramJsonDataSet(instatagBox.Text);
+            string result = string.Concat(instatagBox.Text.Where(c => !char.IsWhiteSpace(c)));
+            string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
+            InstaWordList = instagram.InstagramJsonDataSet(input);
+
+            //해시태그 
+            SetInstaDataGrid(InstaWordList, instaDataGridView);
+            webBrowser6.Navigate("https://www.instagram.com/explore/tags/"+ input);
+
+            SetInstaButton(true);
+        }
+
+        private void instaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (instaDataGridView.CurrentCell == null || instaDataGridView.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (instaDataGridView.CurrentCell.ColumnIndex.Equals(0))
+            {
+                string instatag = instaDataGridView.CurrentCell.Value.ToString();
+                string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
+                string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
+                webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
+
+            }
+        }
+
+        private void instaDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (instaDataGridView.CurrentCell == null || instaDataGridView.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (instaDataGridView.CurrentCell.ColumnIndex.Equals(0))
+            {
+                string instatag = instaDataGridView.CurrentCell.Value.ToString();
+                string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
+                string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
+                instatagBox.Text = input;
+   
+                if (instatagBox.Text.Length < 1)
+                {
+                    MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                // 그리드 클리어
+                instaDataGridView.Rows.Clear();
+
+                Thread t1 = new Thread(new ThreadStart(instargramTagDataSet));
+                t1.Start();
+
+            }
+
         }
     }
 }
