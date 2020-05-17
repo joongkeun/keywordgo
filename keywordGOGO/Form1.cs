@@ -11,10 +11,10 @@ using System.Linq;
 using System.Net;
 using System.Security;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Text.RegularExpressions;
 
 namespace keywordGOGO
 {
@@ -1663,7 +1663,7 @@ namespace keywordGOGO
 
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b"); 
+            System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b");
         }
 
         private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1717,7 +1717,7 @@ namespace keywordGOGO
 
             //해시태그 
             SetInstaDataGrid(InstaWordList, instaDataGridView);
-            webBrowser6.Navigate("https://www.instagram.com/explore/tags/"+ input);
+            webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
 
             SetInstaButton(true);
         }
@@ -1752,7 +1752,7 @@ namespace keywordGOGO
                 string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
                 string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
                 instatagBox.Text = input;
-   
+
                 if (instatagBox.Text.Length < 1)
                 {
                     MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1766,6 +1766,19 @@ namespace keywordGOGO
 
             }
 
+        }
+
+        private void catebnt_Click(object sender, EventArgs e)
+        {
+            Thread t1 = new Thread(new ThreadStart(categoryDataSet));
+            t1.Start();
+        }
+
+        public void categoryDataSet()
+        {
+            List<CategoryList> categoryLists = new List<CategoryList>();
+            NaverShoppingCrawler naverShoppingCrawler = new NaverShoppingCrawler();
+            categoryLists = naverShoppingCrawler.CategoryRsultText(CateSBox.Text);
         }
     }
 }

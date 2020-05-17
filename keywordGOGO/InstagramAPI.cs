@@ -1,17 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System.Data.SQLite;
-using RestSharp;
 using System.IO;
-using System.Windows.Forms;
-using agi = HtmlAgilityPack;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
 
 namespace keywordGOGO
 {
@@ -191,12 +185,12 @@ namespace keywordGOGO
         }
 
 
-            /// <summary>
-            /// 타겟 URL 부터 HTML 코드를 가져온다.
-            /// </summary>
-            /// <param name="tagetUrl">타겟 URL</param>
-            /// <returns>String으로 된 HTML 소스 </returns>
-            public string HttpWebRequestText(string tagetUrl)
+        /// <summary>
+        /// 타겟 URL 부터 HTML 코드를 가져온다.
+        /// </summary>
+        /// <param name="tagetUrl">타겟 URL</param>
+        /// <returns>String으로 된 HTML 소스 </returns>
+        public string HttpWebRequestText(string tagetUrl)
         {
             string responseText = string.Empty;
             string url = tagetUrl;
@@ -221,7 +215,8 @@ namespace keywordGOGO
                         responseText = sr.ReadToEnd();
                     }
                 }
-            }catch
+            }
+            catch
             {
                 responseText = string.Empty;
             }

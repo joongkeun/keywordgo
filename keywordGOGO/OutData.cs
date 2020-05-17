@@ -1,16 +1,7 @@
-﻿using System.Net;
-using System.Threading;
+﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using System.Text.RegularExpressions;
 using System.Data.SQLite;
-using RestSharp;
-using System.IO;
-using System.Windows.Forms;
 
 namespace keywordGOGO
 {
@@ -68,12 +59,12 @@ namespace keywordGOGO
                 // 네이버 쇼핑 연관 검색어 + 네이버 키워드 도구 연관 검색어
                 openApiDataSetResult = naverApi.OpenApiDataSet(relKeyword); // 오픈API를 상품을 조회한다.
                 sellPrdCnt = openApiDataSetResult.Total; // 키워드의 전체 상품수
-                ADResult.Add(new KeyWordResult() {RelKeyword = relKeyword, MonthlyPcQcCnt = monthlyPcQcCnt, MonthlyMobileQcCnt = monthlyMobileQcCnt, MonthlyAvePcClkCnt = monthlyAvePcClkCnt, MonthlyAveMobileClkCnt = monthlyAveMobileClkCnt, MonthlyAvePcCtr = monthlyAvePcCtr , MonthlyAveMobileCtr = monthlyAveMobileCtr, PlAvgDepth = plAvgDepth, CompIdx = compIdx, SellPrdQcCnt = sellPrdCnt, ShopResult = openApiDataSetResult.ShopAPIResultList });
+                ADResult.Add(new KeyWordResult() { RelKeyword = relKeyword, MonthlyPcQcCnt = monthlyPcQcCnt, MonthlyMobileQcCnt = monthlyMobileQcCnt, MonthlyAvePcClkCnt = monthlyAvePcClkCnt, MonthlyAveMobileClkCnt = monthlyAveMobileClkCnt, MonthlyAvePcCtr = monthlyAvePcCtr, MonthlyAveMobileCtr = monthlyAveMobileCtr, PlAvgDepth = plAvgDepth, CompIdx = compIdx, SellPrdQcCnt = sellPrdCnt, ShopResult = openApiDataSetResult.ShopAPIResultList });
 
                 apiUseCount++; // 오픈 api 사용량 체크
 
                 // 검색량 조절
-                if(RefMaxCount <= apiUseCount)
+                if (RefMaxCount <= apiUseCount)
                 {
                     // 조회를 멈춘다.
                     break;
@@ -147,13 +138,14 @@ namespace keywordGOGO
             // 네이버 쇼핑 연관 검색어 + 태그 정보
             RefShopKeyWord = naverApi.ShopRelKeyword(KeyWord, out int TotalProdutCount);
             ShopWebResult webResult = new ShopWebResult();
-            if (tagYn == true) { 
+            if (tagYn == true)
+            {
                 ReturnToMessage("태그정보를 분석합니다.");
                 webResult = shoppingCrawler.SmartStoreInfoFinder(KeyWord);
             }
             else
             {
-                
+
                 ReturnToMessage("SEO 태그 분석을 제외하였습니다.");
             }
 

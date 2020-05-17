@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace keywordGOGO
 {
@@ -131,6 +128,17 @@ namespace keywordGOGO
         public string adprice { get; set; }
         public string oldadprice { get; set; }
 
+    }
+
+    class CategoryList
+    {
+        public string productName { get; set; }
+        public string CategoryName_1st { get; set; }
+        public string CategoryCode_1st { get; set; }
+        public string CategoryCnt_1st { get; set; }
+        public string CategoryName_2nd { get; set; }
+        public string CategoryCode_2nd { get; set; }
+        public string CategoryCnt_2nd { get; set; }
     }
 
     class GridResultData2

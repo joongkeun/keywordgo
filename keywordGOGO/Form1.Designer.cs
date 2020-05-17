@@ -72,6 +72,8 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
@@ -161,6 +163,11 @@
             this.webBrowser4 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.instaDataGridView = new System.Windows.Forms.DataGridView();
+            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.instatagBox = new System.Windows.Forms.TextBox();
             this.instarTagBtn = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -170,13 +177,11 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
-            this.instaDataGridView = new System.Windows.Forms.DataGridView();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.catebnt = new System.Windows.Forms.Button();
+            this.CateSBox = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -204,11 +209,13 @@
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
+            this.groupBox13.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -408,6 +415,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -685,6 +693,26 @@
             this.groupBox10.TabIndex = 11;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "메뉴설명";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(6, 367);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(335, 12);
+            this.label73.TabIndex = 32;
+            this.label73.Text = "- 같이사용한 해시태그를 검색하고 해당페이지로 이동합니다.";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label74.Location = new System.Drawing.Point(6, 345);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(57, 12);
+            this.label74.TabIndex = 31;
+            this.label74.Text = "인별고고";
             // 
             // label54
             // 
@@ -1612,6 +1640,54 @@
             this.tabPage8.Text = "인별고고";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(9, 80);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(263, 12);
+            this.label72.TabIndex = 6;
+            this.label72.Text = "더블클릭 - 관련 해시태그를 조회후 페이지 이동";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(9, 60);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(271, 12);
+            this.label71.TabIndex = 5;
+            this.label71.Text = "한번클릭 - 해당 해시태그로 인별그램 페이지이동";
+            // 
+            // instaDataGridView
+            // 
+            this.instaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.instaDataGridView.Location = new System.Drawing.Point(9, 99);
+            this.instaDataGridView.Name = "instaDataGridView";
+            this.instaDataGridView.RowTemplate.Height = 23;
+            this.instaDataGridView.Size = new System.Drawing.Size(332, 794);
+            this.instaDataGridView.TabIndex = 4;
+            this.instaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellClick);
+            this.instaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellDoubleClick);
+            // 
+            // webBrowser6
+            // 
+            this.webBrowser6.Location = new System.Drawing.Point(348, 13);
+            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser6.Name = "webBrowser6";
+            this.webBrowser6.Size = new System.Drawing.Size(1110, 881);
+            this.webBrowser6.TabIndex = 3;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.instatagBox);
+            this.groupBox13.Controls.Add(this.instarTagBtn);
+            this.groupBox13.Location = new System.Drawing.Point(3, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(338, 49);
+            this.groupBox13.TabIndex = 2;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "인별그램 해시태그";
+            // 
             // instatagBox
             // 
             this.instatagBox.Location = new System.Drawing.Point(6, 17);
@@ -1688,80 +1764,60 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label20);
-            this.groupBox7.Location = new System.Drawing.Point(630, 4);
+            this.groupBox7.Location = new System.Drawing.Point(811, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(845, 36);
+            this.groupBox7.Size = new System.Drawing.Size(664, 36);
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // groupBox13
+            // tabPage9
             // 
-            this.groupBox13.Controls.Add(this.instatagBox);
-            this.groupBox13.Controls.Add(this.instarTagBtn);
-            this.groupBox13.Location = new System.Drawing.Point(3, 3);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(338, 49);
-            this.groupBox13.TabIndex = 2;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "인별그램 해시태그";
+            this.tabPage9.Controls.Add(this.groupBox14);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(1461, 897);
+            this.tabPage9.TabIndex = 9;
+            this.tabPage9.Text = "유틸리티";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // webBrowser6
+            // groupBox14
             // 
-            this.webBrowser6.Location = new System.Drawing.Point(348, 13);
-            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser6.Name = "webBrowser6";
-            this.webBrowser6.Size = new System.Drawing.Size(1110, 881);
-            this.webBrowser6.TabIndex = 3;
+            this.groupBox14.Controls.Add(this.label75);
+            this.groupBox14.Controls.Add(this.CateSBox);
+            this.groupBox14.Controls.Add(this.catebnt);
+            this.groupBox14.Location = new System.Drawing.Point(3, 3);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(603, 423);
+            this.groupBox14.TabIndex = 0;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "카테고리검색";
             // 
-            // instaDataGridView
+            // catebnt
             // 
-            this.instaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.instaDataGridView.Location = new System.Drawing.Point(9, 99);
-            this.instaDataGridView.Name = "instaDataGridView";
-            this.instaDataGridView.RowTemplate.Height = 23;
-            this.instaDataGridView.Size = new System.Drawing.Size(332, 794);
-            this.instaDataGridView.TabIndex = 4;
-            this.instaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellClick);
-            this.instaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellDoubleClick);
+            this.catebnt.Location = new System.Drawing.Point(502, 20);
+            this.catebnt.Name = "catebnt";
+            this.catebnt.Size = new System.Drawing.Size(84, 23);
+            this.catebnt.TabIndex = 0;
+            this.catebnt.Text = "검색";
+            this.catebnt.UseVisualStyleBackColor = true;
+            this.catebnt.Click += new System.EventHandler(this.catebnt_Click);
             // 
-            // label71
+            // CateSBox
             // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(9, 60);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(271, 12);
-            this.label71.TabIndex = 5;
-            this.label71.Text = "한번클릭 - 해당 해시태그로 인별그램 페이지이동";
+            this.CateSBox.Location = new System.Drawing.Point(65, 21);
+            this.CateSBox.Name = "CateSBox";
+            this.CateSBox.Size = new System.Drawing.Size(431, 21);
+            this.CateSBox.TabIndex = 1;
             // 
-            // label72
+            // label75
             // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(9, 80);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(263, 12);
-            this.label72.TabIndex = 6;
-            this.label72.Text = "더블클릭 - 관련 해시태그를 조회후 페이지 이동";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 367);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(335, 12);
-            this.label73.TabIndex = 32;
-            this.label73.Text = "- 같이사용한 해시태그를 검색하고 해당페이지로 이동합니다.";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label74.Location = new System.Drawing.Point(6, 345);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(57, 12);
-            this.label74.TabIndex = 31;
-            this.label74.Text = "인별고고";
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(10, 26);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(49, 12);
+            this.label75.TabIndex = 2;
+            this.label75.Text = "상품명 :";
             // 
             // Form1
             // 
@@ -1816,13 +1872,16 @@
             this.groupBox5.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1977,6 +2036,11 @@
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.TextBox CateSBox;
+        private System.Windows.Forms.Button catebnt;
     }
 }
 

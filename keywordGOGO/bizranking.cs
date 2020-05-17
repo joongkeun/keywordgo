@@ -1,24 +1,16 @@
 ﻿using System;
-using agi = HtmlAgilityPack;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Net;
-using System.IO;
-using System.Windows.Forms;
-using System.Threading;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.SQLite;
+using System.IO;
+using System.Net;
+using System.Threading;
+using System.Windows.Forms;
+using agi = HtmlAgilityPack;
 
 
 namespace keywordGOGO
 {
-    
+
     class bizranking
     {
         // 메인폼 전달 이벤트 선언
@@ -74,7 +66,7 @@ namespace keywordGOGO
             int rank = 1;
             foreach (var node in nodes)
             {
-               
+
                 Dictionary<string, string> dicData = new Dictionary<string, string>();
 
                 var naverArea = node.Attributes["data-expose-area"].Value; // 조회 데이터 영역정보
@@ -84,7 +76,7 @@ namespace keywordGOGO
                 var productUrl = node.QuerySelector("div.info > div > a").Attributes["href"].Value; //상품url
                 var productPrice = node.QuerySelector("div.info > span.price > em > span"); //상품가격
                 var mallName = node.QuerySelector("div.info_mall > p > a.mall_img"); //쇼핑몰명
-                
+
                 string categoryName = string.Empty;
 
                 IList<agi.HtmlNode> categoryNodes = node.QuerySelectorAll("div.info > span.depth > a");
@@ -154,7 +146,7 @@ namespace keywordGOGO
             return totalNo;
         }
 
-        public GridResultData2 SamartStoreRankingSearch(string keyword,string mallNamedata,string adpricedata)
+        public GridResultData2 SamartStoreRankingSearch(string keyword, string mallNamedata, string adpricedata)
         {
             string strConn = @"Data Source=" + Application.StartupPath + "\\apiQc.db";
             conn = new SQLiteConnection(strConn);
@@ -171,7 +163,7 @@ namespace keywordGOGO
             string countHtml = httpWebRequestText(countUrl);
             int product_totoal = totalProdutCount(countHtml);
 
-            ReturnToMessage("상품을 "+Convert.ToString(product_totoal)+"개 찾았습니다.");
+            ReturnToMessage("상품을 " + Convert.ToString(product_totoal) + "개 찾았습니다.");
             //Console.WriteLine(Convert.ToString(product_totoal));
 
             int lastPageNo = 0;
@@ -222,7 +214,8 @@ namespace keywordGOGO
 
                     if (classInfo == "ad _itemSection")
                     {
-                        if (mallName == mallNamedata) {
+                        if (mallName == mallNamedata)
+                        {
 
                             string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                             String sql1 = "insert into adrank (mallname, keyword,rank,page,price,productNo,date) values('" + mallName + "','" + reKeyword + "','" + rank + "','" + pageNo + "','" + adpricedata + "','" + productNo + "','" + sqlFormattedDate + "')";
@@ -252,7 +245,7 @@ namespace keywordGOGO
                                 idxRank++;
                             }
 
-                            ADResult.Add(new RankingList() {rank = Convert.ToString(rank), pageNo= pageNo, productNo = productNo, oldPageNo = oldPage, count = count, mallName= mallName, productName= productName, keyword= reKeyword, productUrl= productUrl, productPrice= productPrice, categoryName= categoryName, oldrank= oldRank, adprice = adpricedata, oldadprice= oldprice });
+                            ADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, oldPageNo = oldPage, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = adpricedata, oldadprice = oldprice });
                         }
                     }
                     else
@@ -281,13 +274,13 @@ namespace keywordGOGO
                                 {
                                     oldRank = Convert.ToString(rdr["rank"]);
                                     oldPage = Convert.ToString(rdr["page"]);
-                                    
+
                                 }
 
                                 idxRank++;
                             }
 
-                            NonADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, oldPageNo = oldPage, productNo= productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank , adprice  = "-" });
+                            NonADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, oldPageNo = oldPage, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = "-" });
                         }
                     }
                 }

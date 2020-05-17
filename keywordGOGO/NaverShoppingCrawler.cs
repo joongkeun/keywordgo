@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Net;
 using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using System.Text.RegularExpressions;
-using System.Data.SQLite;
-using RestSharp;
-using System.IO;
-using System.Windows.Forms;
 using agi = HtmlAgilityPack;
 
 namespace keywordGOGO
@@ -179,7 +172,8 @@ namespace keywordGOGO
 
                                 IList<agi.HtmlNode> nodes = redoc.DocumentNode.SelectNodes("//*[@class='tb_view2']");
 
-                                if(nodes != null) {
+                                if (nodes != null)
+                                {
 
                                     if (nodes.Count > 0)
                                     {
@@ -215,7 +209,7 @@ namespace keywordGOGO
                                     foreach (var data in tagDataList)
                                     {
                                         ReturnToLabel(data);
-                                        if(data.Length > 0)
+                                        if (data.Length > 0)
                                             tagList.Add(new KeywordList() { Keyword = data, Kind = "T" });
                                     }
 
@@ -296,6 +290,23 @@ namespace keywordGOGO
             return Datalist;
         }
 
+        public List<CategoryList> CategoryRsultText(string relKeyword)
+        {
+            List<CategoryList> categoryLists = new List<CategoryList>();
+            List<Dictionary<string, string>> resultDataList = new List<Dictionary<string, string>>();
+            string url = "https://search.shopping.naver.com/search/all.nhn?origQuery=" + relKeyword + "&pagingIndex=" + Convert.ToString(1) + "&pagingSize=80&viewType=list&sort=rel&frm=NVSHPAG&query=" + relKeyword;
+
+            string textHtml = HttpWebRequestText(url);
+            int totalCount = totalProdutCount(textHtml);
+            List<string> shoppingRefKeyWord = ShoppingKeywordHtml(textHtml);
+            resultDataList = HTMLParser(textHtml, 1, relKeyword, out int adCount);
+
+            categoryLists.Add(new CategoryList() {productName ="", CategoryName_1st =""}); 
+
+            return categoryLists;
+        }
+
+
         /// <summary>
         /// 타겟 URL 부터 HTML 코드를 가져온다.
         /// </summary>
@@ -304,7 +315,7 @@ namespace keywordGOGO
         public string HttpWebRequestText(string tagetUrl)
         {
             string responseText = string.Empty;
-            
+
             try
             {
                 string url = tagetUrl;

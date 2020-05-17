@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using System.Data.SQLite;
+﻿using Newtonsoft.Json.Linq;
 using RestSharp;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using agi = HtmlAgilityPack;
 
@@ -20,7 +18,7 @@ namespace keywordGOGO
         public static event listBoxText ReturnToMessage;
         public static event labelText ReturnToLabel;
         iniUtil ini = new iniUtil(Application.StartupPath + "\\config.ini");
-    
+
 
         /// <summary>
         /// 네이버 광고 api 접속하여 JSON 형식으로 자료를 받아온다.
