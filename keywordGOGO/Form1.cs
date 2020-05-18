@@ -1778,7 +1778,111 @@ namespace keywordGOGO
         {
             List<CategoryList> categoryLists = new List<CategoryList>();
             NaverShoppingCrawler naverShoppingCrawler = new NaverShoppingCrawler();
-            categoryLists = naverShoppingCrawler.CategoryRsultText(CateSBox.Text);
+            //categoryLists = naverShoppingCrawler.CategoryRsultText(CateSBox.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (DataResult.AdRefGrid.Count != 0)
+            {
+                int MonthlyPcQcCntdata = 0;
+                int MonthlyMobileQcCntdata = 0;
+                int SellPrdQcCntdata = 0;
+
+                if (string.IsNullOrEmpty(textBox5.Text))
+                {
+                    MonthlyPcQcCntdata = 0;
+                }
+                else
+                {
+                    MonthlyPcQcCntdata = Convert.ToInt32(textBox5.Text);
+                }
+
+                if (string.IsNullOrEmpty(textBox6.Text))
+                {
+                    MonthlyMobileQcCntdata = 0;
+                }
+                else
+                {
+                    MonthlyMobileQcCntdata = Convert.ToInt32(textBox6.Text);
+                }
+
+                if (string.IsNullOrEmpty(textBox7.Text))
+                {
+                    SellPrdQcCntdata = 1000000000;
+                }
+                else
+                {
+                    SellPrdQcCntdata = Convert.ToInt32(textBox7.Text);
+                }
+
+                List<KeyWordResult> items = new List<KeyWordResult>();
+
+                var shopResult = from a in DataResult.AdRefGrid where
+
+                                // 조건문
+                                Convert.ToInt32(a.MonthlyPcQcCnt) >= MonthlyPcQcCntdata
+
+                                && Convert.ToInt32(a.MonthlyMobileQcCnt) >= MonthlyMobileQcCntdata
+
+                                && Convert.ToInt32(a.SellPrdQcCnt) <= SellPrdQcCntdata
+
+
+
+                                 select new KeyWordResult
+                                 {
+
+                                     RelKeyword = a.RelKeyword,
+                                     SellPrdQcCnt = a.SellPrdQcCnt,
+                                     MonthlyPcQcCnt = a.MonthlyPcQcCnt,
+                                     MonthlyMobileQcCnt = a.MonthlyMobileQcCnt,
+                                     MonthlyAvePcClkCnt = a.MonthlyAvePcClkCnt,
+                                     MonthlyAveMobileClkCnt = a.MonthlyAveMobileClkCnt,
+                                     MonthlyAvePcCtr = a.MonthlyAvePcCtr,
+                                     MonthlyAveMobileCtr = a.MonthlyAveMobileCtr,
+                                     PlAvgDepth = a.PlAvgDepth,
+                                     CompIdx = a.CompIdx,
+                                     ShopResult = a.ShopResult
+                                 };
+
+                items.AddRange(shopResult);
+
+
+                SetDataGrid(items, dataGridView6); //전체 연관 검색어 리스트  
+            }
+            else
+            {
+                MessageBox.Show("키워드 검색후 조건검색을 하십시오.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //숫자만 입력되도록 필터링
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
         }
     }
 }
