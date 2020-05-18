@@ -187,6 +187,7 @@
             this.label75 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -670,6 +671,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.label81);
             this.groupBox10.Controls.Add(this.label73);
             this.groupBox10.Controls.Add(this.label74);
             this.groupBox10.Controls.Add(this.label54);
@@ -838,7 +840,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(6, 86);
+            this.label42.Location = new System.Drawing.Point(6, 97);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(159, 12);
             this.label42.TabIndex = 18;
@@ -868,7 +870,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 64);
+            this.label39.Location = new System.Drawing.Point(6, 60);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(512, 12);
             this.label39.TabIndex = 15;
@@ -1122,9 +1124,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(94, 260);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(215, 12);
+            this.label25.Size = new System.Drawing.Size(209, 12);
             this.label25.TabIndex = 2;
-            this.label25.Text = "카카오뱅크 3333-09-90007217(이중근) ";
+            this.label25.Text = "카카오뱅크 3333-09-9007217(이중근) ";
             // 
             // label29
             // 
@@ -1871,6 +1873,16 @@
             this.label80.TabIndex = 55;
             this.label80.Text = "이하";
             // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(6, 79);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(127, 12);
+            this.label81.TabIndex = 33;
+            this.label81.Text = "- 결과내 조건검색기능";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -2095,6 +2107,7 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label81;
     }
 }
 

@@ -387,7 +387,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.7.1";
+                string version = "1.8.0";
 
                 this.Text = "키워드고고(v" + version + ")";
 
