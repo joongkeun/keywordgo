@@ -25,38 +25,51 @@ namespace keywordGOGO
             string outtext = string.Empty;
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            IList<agi.HtmlNode> nodes = doc.QuerySelectorAll("#_search_list > div.search_list.basis > ul >li");
+            IList<agi.HtmlNode> nodes = doc.DocumentNode.SelectNodes("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/ul/li");
             List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
 
             int count = 1;
+            var naverArea = "";
             foreach (var node in nodes)
             {
                 Dictionary<string, string> dicData = new Dictionary<string, string>();
                 string smartFarmYn = string.Empty;
-                var naverArea = node.Attributes["data-expose-area"].Value; // 조회 데이터 영역정보
+  
+                //var productNo = "";//node.Attributes["data-nv-mid"].Value; // 상품번호
                 var classInfo = node.Attributes["class"].Value; // 조회데이터 클래스 정보 
-                var productName = node.QuerySelector("div.info > div > a"); //상품명
-                var productUrl = node.QuerySelector("div.info > div > a").Attributes["href"].Value; //상품url
-                var productPrice = node.QuerySelector("div.info > span.price > em > span"); //상품가격
-                var mallName = node.QuerySelector("div.info_mall > p > a.mall_img"); //쇼핑몰명
+                var productName = node.SelectSingleNode("div/div[2]/div[1]/a");//상품명 
+                var productUrl = node.SelectSingleNode("div/div[2]/div[1]/a").Attributes["href"].Value; //상품url
+                var productPrice = node.SelectSingleNode("div/div[2]/div[2]/strong/span"); //상품가격 
+                var mallName = node.SelectSingleNode("div/div[3]/div[1]/a[1]"); //쇼핑몰명
 
 
-                if (classInfo == "ad _itemSection")
+                if (classInfo.IndexOf("ad") > -1)
                 {
+                    naverArea = "";
                     addT++;
                 }
-
-                if (naverArea == "lst*N" || naverArea == "lst*A")
+                else
                 {
-                    smartFarmYn = node.Attributes["data-is-shop-n"].Value; // 스마트팜유무
+                    naverArea = node.SelectSingleNode("div/div[3]/div[1]/a[1]").Attributes["href"].Value; // 상점주소영역 //
+
                 }
+
+                if (naverArea.IndexOf("smartstore") > -1 )
+                {
+                    smartFarmYn = "true"; // 스마트팜유무
+                }
+                else
+                {
+                    smartFarmYn = "false";
+                }
+
 
                 string categoryName = string.Empty;
                 string categoryText = string.Empty;
-                IList<agi.HtmlNode> categoryNodes = node.QuerySelectorAll("div.info > span.depth > a");
+                IList<agi.HtmlNode> categoryNodes = node.SelectNodes("div/div[2]/div[3]/a");
                 foreach (var categoryNode in categoryNodes)
                 {
-                    categoryName = categoryNode.Attributes["class"].Value; // 카테고리 데이터
+                    categoryName = categoryNode.Attributes["href"].Value; // 카테고리 데이터
                     categoryText = categoryNode.InnerText;
                 }
 
@@ -82,7 +95,7 @@ namespace keywordGOGO
                     dicData.Add("mallName", "가격비교");
                 }
 
-                dicData.Add("categoryName", categoryName.Replace("cat_id_", ""));
+                dicData.Add("categoryName", categoryName.Replace("/search/category?catId=", ""));
 
 
                 Console.WriteLine(Convert.ToString(count));
@@ -92,7 +105,7 @@ namespace keywordGOGO
                 Console.WriteLine(classInfo);
                 Console.WriteLine(productPrice.InnerText.Replace("\n", "").Trim());
                 Console.WriteLine(mallName.InnerText.Replace("\n", "").Trim());
-                Console.WriteLine(categoryName.Replace("cat_id_", ""));
+                Console.WriteLine(categoryName.Replace("/search/category?catId=", ""));
 
 
                 count++;
@@ -155,7 +168,7 @@ namespace keywordGOGO
                     ReturnToLabel(productName);
                     if (smartFarmYn == "true")
                     {
-                        if (classInfo != "ad _itemSection")
+                        if (classInfo.IndexOf("ad") < 0)
                         {
                             if (rowidx < 20)
                             {
@@ -258,7 +271,7 @@ namespace keywordGOGO
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
 
-            var _productSet_total = doc.QuerySelector("#snb > ul > li.snb_all.on > a");
+            var _productSet_total = doc.DocumentNode.SelectSingleNode("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/div[1]/ul/li[1]/button/span[1]");
 
             if (_productSet_total != null)
             {
@@ -276,13 +289,13 @@ namespace keywordGOGO
             List<string> Datalist = new List<string>();
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            IList<agi.HtmlNode> nodes = doc.QuerySelectorAll("#_relatedTagArea > div > ul > li");
+            IList<agi.HtmlNode> nodes = doc.DocumentNode.SelectNodes("//*[@id=\"__next\"]/div/div[2]/div[1]/div/ul/li");
             int count = 1;
             foreach (var node in nodes)
             {
                 var refKeyword = node.QuerySelector("a").InnerText; //상품명
                 //Console.WriteLine(refKeyword.Trim().Replace("\n", ""));
-                refKeyword = refKeyword.Trim().Replace("\n", "");
+                refKeyword = refKeyword.Trim().Replace("\n", "").Replace("<!-- -->","");
                 ReturnToLabel(refKeyword);
                 Datalist.Add(refKeyword);
             }

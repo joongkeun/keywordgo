@@ -222,7 +222,7 @@ namespace keywordGOGO
             string outtext = string.Empty;
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            IList<agi.HtmlNode> nodes = doc.QuerySelectorAll("#_relatedTagArea > div > ul > li");
+            IList<agi.HtmlNode> nodes = doc.DocumentNode.SelectNodes("//*[@id=\"__next\"]/div/div[2]/div[1]/div/ul/li");
             int count = 1;
 
             foreach (var node in nodes)
@@ -234,7 +234,7 @@ namespace keywordGOGO
                 Datalist.Add(new KeywordList() { Keyword = refKeyword, Kind = "S" });
             }
 
-            var _productSet_total = doc.QuerySelector("#snb > ul > li.snb_all.on > a");
+            var _productSet_total = doc.DocumentNode.SelectSingleNode("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/div[1]/ul/li[1]/button/span[1]");
             if (_productSet_total != null)
             {
                 tempProductSet_total = Convert.ToString(_productSet_total.InnerText).Replace(",", "").Replace("전체", "").Trim(); ;
