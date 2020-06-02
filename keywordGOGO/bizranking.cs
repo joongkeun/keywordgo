@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using agi = HtmlAgilityPack;
-
+using Newtonsoft.Json.Linq;
 
 namespace keywordGOGO
 {
@@ -48,6 +48,18 @@ namespace keywordGOGO
             }
             return responseText;
         }
+
+
+        public void JSONParser(string textHtml)
+        {
+            agi.HtmlDocument doc = new agi.HtmlDocument();
+            doc.LoadHtml(textHtml);
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+        }
+
+
 
         /// <summary>
         /// 조회된 페이지의 HTML을 분석한다.
@@ -190,6 +202,7 @@ namespace keywordGOGO
                     string textHtml = httpWebRequestText(url);
 
                     tempDataList = HTMLParser(textHtml, pageNo, keyword);
+                    JSONParser(textHtml);
                     resultDataList.AddRange(tempDataList);
 
                 }
