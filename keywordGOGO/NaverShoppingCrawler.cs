@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using agi = HtmlAgilityPack;
+using Newtonsoft.Json.Linq;
 
 namespace keywordGOGO
 {
@@ -13,6 +14,142 @@ namespace keywordGOGO
         // 메인폼 전달 이벤트 선언
         public static event listBoxText ReturnToMessage;
         public static event labelText ReturnToLabel;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="textHtml"></param>
+        public List<Dictionary<string, string>> JSONParser(string textHtml, int pageNo, string keyword, out int adCnt)
+        {
+            List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
+            int addT = 0;
+            string outtext = string.Empty;
+            int count = 1;
+            var naverArea = "";
+            agi.HtmlDocument doc = new agi.HtmlDocument();
+            doc.LoadHtml(textHtml);
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+            JObject products = JObject.Parse(initialState["products"].ToString());
+            JArray array = JArray.Parse(products["list"].ToString());
+            foreach (JObject item in array)
+            {
+                Dictionary<string, string> dicData = new Dictionary<string, string>();
+                string smartFarmYn = string.Empty;
+
+                JObject productitem = JObject.Parse(item["item"].ToString());
+                string classInfo = "";
+                string productNo = "";
+                string mallName = "";
+
+                if (productitem["mallProductId"] != null)
+                {
+                    productNo = productitem["mallProductId"].ToString(); // 상품번호
+                    mallName = productitem["mallName"].ToString();// 몰네임
+                }
+                else
+                {
+                    productNo = "";
+                    mallName = "";
+                }
+
+                if (productitem["adId"] != null)
+                {
+                    classInfo = productitem["adId"].ToString();
+                }
+                else
+                {
+                    classInfo = "";
+                }
+
+                string productUrl = "";//상품주소
+
+                string productPrice = productitem["price"].ToString(); // 상품가격
+                string productName = productitem["productName"].ToString();// 상품명
+                string categoryText = "";
+                if (productitem["category3Name"] != null)
+                {
+                    categoryText = productitem["category3Name"].ToString();
+                }
+                
+                Console.WriteLine("++++++++++++++++++++++++++");
+
+                if (classInfo.IndexOf("ad") > -1)
+                {
+                    naverArea = "";
+                    addT++;
+                }
+                else
+                {
+                    if (productitem["mallProductUrl"] != null)
+                    {
+                        string url = productitem["mallProductUrl"].ToString(); //주소
+                        naverArea = url;
+                    }
+
+                }
+
+                if (naverArea.IndexOf("smartstore") > -1)
+                {
+                    smartFarmYn = "true"; // 스마트팜유무
+                    productUrl = naverArea;
+                }
+                else
+                {
+                    smartFarmYn = "false";
+                }
+
+
+
+                ReturnToLabel(keyword);
+
+                dicData.Add("count", Convert.ToString(count)); // 1page의 상품수
+                dicData.Add("Keyword", keyword); //조회키워드
+                dicData.Add("pageNo", Convert.ToString(pageNo));
+                dicData.Add("naverArea", naverArea);
+                dicData.Add("productUrl", productUrl);
+                dicData.Add("classInfo", classInfo);
+                dicData.Add("productName", productName.Replace("\n", "").Trim());
+                dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
+                dicData.Add("smartFarmYn", smartFarmYn);
+                dicData.Add("categoryText", categoryText);
+
+                if (mallName != null)
+                {
+                    dicData.Add("mallName", mallName.Replace("\n", "").Trim());
+                }
+                else
+                {
+                    dicData.Add("mallName", "가격비교");
+                }
+
+                dicData.Add("categoryName", categoryText);
+
+
+                Console.WriteLine(Convert.ToString(count));
+                Console.WriteLine(productUrl);
+                Console.WriteLine(productName.Replace("\n", "").Trim());
+                Console.WriteLine(naverArea);
+                Console.WriteLine(classInfo);
+                Console.WriteLine(productPrice.Replace("\n", "").Trim());
+                Console.WriteLine(mallName.Replace("\n", "").Trim());
+
+                count++;
+                dataList.Add(dicData);
+
+            }
+
+            adCnt = addT;
+            return dataList;
+
+
+        }
+
 
         /// <summary>
         /// 조회된 페이지의 HTML을 분석한다.
@@ -144,7 +281,9 @@ namespace keywordGOGO
             string textHtml = HttpWebRequestText(url);
             int totalCount = totalProdutCount(textHtml);
             List<string> shoppingRefKeyWord = ShoppingKeywordHtml(textHtml);
-            resultDataList = HTMLParser(textHtml, 1, relKeyword, out int adCount);
+
+
+            resultDataList = JSONParser(textHtml, 1, relKeyword, out int adCount);
 
             int rowidx = 1;
             if (totalCount > 0)
@@ -252,7 +391,7 @@ namespace keywordGOGO
                 MallList = mallList, // 상위 스마트 스토어명 리스트
                 ProductNmList = productNmList // 상위 상품명 리스트
             };
-
+           
             return result;
         }
 
@@ -271,11 +410,18 @@ namespace keywordGOGO
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
 
-            var _productSet_total = doc.DocumentNode.SelectSingleNode("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/div[1]/ul/li[1]/button/span[1]");
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+            JObject products = JObject.Parse(initialState["products"].ToString());
 
-            if (_productSet_total != null)
+
+            if (products["total"] != null)
             {
-                tempProductSet_total = Convert.ToString(_productSet_total.InnerText).Replace(",", "").Replace("전체", "").Trim(); ;
+                tempProductSet_total = products["total"].ToString();
             }
 
             totalNo = Convert.ToInt32(tempProductSet_total);
@@ -289,17 +435,24 @@ namespace keywordGOGO
             List<string> Datalist = new List<string>();
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            IList<agi.HtmlNode> nodes = doc.DocumentNode.SelectNodes("//*[@id=\"__next\"]/div/div[2]/div[1]/div/ul/li");
-            int count = 1;
-            foreach (var node in nodes)
-            {
-                var refKeyword = node.QuerySelector("a").InnerText; //상품명
-                //Console.WriteLine(refKeyword.Trim().Replace("\n", ""));
-                refKeyword = refKeyword.Trim().Replace("\n", "").Replace("<!-- -->","");
-                ReturnToLabel(refKeyword);
-                Datalist.Add(refKeyword);
-            }
 
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+           
+
+            if(pageProps["tags"] !=null)
+            {
+                JArray array = JArray.Parse(pageProps["tags"].ToString());
+                foreach (JObject item in array)
+                {
+                    string refKeyword  = item["tagName"].ToString();
+                    ReturnToLabel(refKeyword);
+                    Datalist.Add(refKeyword);
+                }
+            }
             return Datalist;
         }
 

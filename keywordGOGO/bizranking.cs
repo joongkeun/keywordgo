@@ -50,13 +50,112 @@ namespace keywordGOGO
         }
 
 
-        public void JSONParser(string textHtml)
+        public List<Dictionary<string, string>> JSONParser(string textHtml, int pageNo, string keyword)
         {
+            List<Dictionary<string, string>> dataList = new List<Dictionary<string, string>>();
+            int count = 1;
+            int rank = 1;
+
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
             var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
             string jsonDataset = htmlNode.InnerHtml;
             JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+            JObject products = JObject.Parse(initialState["products"].ToString());
+            JArray array = JArray.Parse(products["list"].ToString());
+            foreach (JObject item in array)
+            {
+                Dictionary<string, string> dicData = new Dictionary<string, string>();
+
+                JObject productitem = JObject.Parse(item["item"].ToString());
+                string naverArea = productitem["rank"].ToString();// 클래스 정보
+                string classInfo = "";
+                string productNo = "";
+                string mallName = "";
+                
+                if (productitem["mallProductId"] != null)
+                {
+                    productNo = productitem["mallProductId"].ToString(); // 상품번호
+                    mallName = productitem["mallName"].ToString();// 몰네임
+                }
+                else
+                {
+                    productNo = "";
+                    mallName = "";
+                }
+
+                if(productitem["adId"] != null)
+                {
+                    classInfo = productitem["adId"].ToString();
+                }
+                else
+                {
+                    classInfo = "";
+                }
+               
+                string productUrl = productitem["rank"].ToString();//상품주소
+                
+                string productPrice = productitem["price"].ToString(); // 상품가격
+                string productName = productitem["productName"].ToString();// 상품명
+
+                string categoryName = "";
+                if (productitem["category3Name"] != null)
+                {
+                    categoryName = productitem["category3Name"].ToString();// 카테고리
+
+                }
+
+                Console.WriteLine("++++++++++++++++++++++++++");
+                Console.WriteLine(rank);
+                Console.WriteLine(keyword);
+                Console.WriteLine(productPrice);
+                Console.WriteLine(productPrice);
+
+                dicData.Add("count", Convert.ToString(count));
+                dicData.Add("Keyword", keyword);
+                dicData.Add("productNo", productNo); // 상품번호
+                dicData.Add("pageNo", Convert.ToString(pageNo)); //페이지번호
+                dicData.Add("naverArea", naverArea);
+                dicData.Add("productUrl", productUrl);
+                dicData.Add("classInfo", classInfo);
+                dicData.Add("productName", productName.Replace("\n", "").Trim());
+                dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
+                dicData.Add("rank", Convert.ToString(rank));
+
+
+                ReturnToLabel(productName.Replace("\n", "").Trim());
+
+                if (mallName != null)
+                {
+                    dicData.Add("mallName", mallName.Replace("\n", "").Trim());
+                }
+                else
+                {
+                    dicData.Add("mallName", "가격비교");
+                }
+
+                dicData.Add("categoryName", categoryName.Replace("/search/category?catId=", ""));
+
+                /*
+                Console.WriteLine(Convert.ToString(count));
+                Console.WriteLine(productUrl);
+                Console.WriteLine(productName.InnerText.Replace("\n","").Trim());
+                Console.WriteLine(naverArea);
+                Console.WriteLine(classInfo);
+                Console.WriteLine(productPrice.InnerText.Replace("\n", "").Trim());
+                Console.WriteLine(mallName.InnerText.Replace("\n", "").Trim());
+                Console.WriteLine(categoryName.Replace("cat_id_", ""));
+                */
+                rank++;
+                count++;
+                dataList.Add(dicData);
+
+            }
+
+            return dataList;
         }
 
 
@@ -201,8 +300,8 @@ namespace keywordGOGO
                     //Thread.Sleep(1000);
                     string textHtml = httpWebRequestText(url);
 
-                    tempDataList = HTMLParser(textHtml, pageNo, keyword);
-                    JSONParser(textHtml);
+                    //tempDataList = HTMLParser(textHtml, pageNo, keyword);
+                    tempDataList = JSONParser(textHtml,pageNo, keyword);
                     resultDataList.AddRange(tempDataList);
 
                 }

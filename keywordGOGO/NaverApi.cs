@@ -27,6 +27,7 @@ namespace keywordGOGO
         /// <returns></returns>
         public string NaverAdApi(string query)
         {
+
             var baseUrl = "https://api.naver.com";
             var apiKey = ini.GetIniValue("ADAPI", "apiKey");
             var secretKey = ini.GetIniValue("ADAPI", "secretKey");
@@ -47,7 +48,8 @@ namespace keywordGOGO
         /// </summary>
         public string NaverOpenApi(string query)
         {
-            Thread.Sleep(200);
+            
+            Thread.Sleep(300);
             string url = "https://openapi.naver.com/v1/search/shop.json?query=" + query + "&display=80&sort=sim"; // 결과가 JSON 포맷
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Headers.Add("X-Naver-Client-Id", ini.GetIniValue("OPENAPI", "ClientId")); // 클라이언트 아이디
@@ -79,6 +81,7 @@ namespace keywordGOGO
             List<string> titleKeywordListResult = new List<string>();
             OpenApiDataSetResult Result = new OpenApiDataSetResult();
             List<ShopAPIResult> ShopResult = new List<ShopAPIResult>();
+            Thread.Sleep(200);
             string naver = NaverOpenApi(keyWord);
             JObject obj = JObject.Parse(naver);
             total = Convert.ToInt32(obj["total"]);
@@ -222,22 +225,31 @@ namespace keywordGOGO
             string outtext = string.Empty;
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            IList<agi.HtmlNode> nodes = doc.DocumentNode.SelectNodes("//*[@id=\"__next\"]/div/div[2]/div[1]/div/ul/li");
-            int count = 1;
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
 
-            foreach (var node in nodes)
+            if (pageProps["tags"] != null)
             {
-                var refKeyword = node.QuerySelector("a").InnerText; //상품명
-                //Console.WriteLine(refKeyword.Trim().Replace("\n", ""));
-                refKeyword = refKeyword.Trim().Replace("\n", "");
-                ReturnToLabel(refKeyword);
-                Datalist.Add(new KeywordList() { Keyword = refKeyword, Kind = "S" });
+                JArray array = JArray.Parse(pageProps["tags"].ToString());
+                foreach (JObject item in array)
+                {
+                    string refKeyword = item["tagName"].ToString();
+                    ReturnToLabel(refKeyword);
+                    Datalist.Add(new KeywordList() { Keyword = refKeyword, Kind = "S" });
+                }
             }
 
-            var _productSet_total = doc.DocumentNode.SelectSingleNode("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/div[1]/ul/li[1]/button/span[1]");
-            if (_productSet_total != null)
+
+            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+            JObject products = JObject.Parse(initialState["products"].ToString());
+
+
+            if (products["total"] != null)
             {
-                tempProductSet_total = Convert.ToString(_productSet_total.InnerText).Replace(",", "").Replace("전체", "").Trim(); ;
+                tempProductSet_total = products["total"].ToString();
             }
 
             totalNo = Convert.ToInt32(tempProductSet_total);

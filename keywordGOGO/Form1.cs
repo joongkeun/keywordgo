@@ -387,7 +387,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.8.1";
+                string version = "1.8.3";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -842,7 +842,7 @@ namespace keywordGOGO
         private void saveBtn_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-
+            SetDataGridClear();
 
 
             if (keywordTbox.Text.Length < 1)
@@ -948,10 +948,19 @@ namespace keywordGOGO
 
             if (dataGridView6.CurrentRow.Index != curRow)
             {
-                if (dataGridView6.CurrentRow.Index != DataResult.AdRefGrid.Count)
+                if (dataGridView6.CurrentRow.Index >=0)
                 {
                     curRow = dataGridView6.CurrentRow.Index;
-                    string data = dataGridView6.CurrentRow.Cells[0].Value.ToString();
+                    string data = "";
+                    if(dataGridView6.CurrentRow.Cells[0].Value !=null)
+                    {
+                        data = dataGridView6.CurrentRow.Cells[0].Value.ToString();
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    
 
                     Console.WriteLine(curRow);
                     Console.WriteLine(data);
@@ -965,6 +974,7 @@ namespace keywordGOGO
                 }
             }
         }
+
 
         public void SubDataReturn(string data, bool tagYn)
         {
@@ -1027,7 +1037,7 @@ namespace keywordGOGO
                 ProductWordList.Add(new ProductKeyWordList() { value = temp.Value, count = temp.Count });
             }
 
-
+            
             SubDataResult = outData.SubGridDataSet(data, tagYn);
 
             // 상품정보
@@ -1884,5 +1894,6 @@ namespace keywordGOGO
                 e.Handled = true;
             }
         }
+
     }
 }

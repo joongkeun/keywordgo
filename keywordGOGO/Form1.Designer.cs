@@ -72,6 +72,7 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label81 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
@@ -118,6 +119,16 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
             this.g5_btn = new System.Windows.Forms.Button();
             this.g4_btn = new System.Windows.Forms.Button();
             this.g3_btn = new System.Windows.Forms.Button();
@@ -177,17 +188,6 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -698,6 +698,16 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "메뉴설명";
             // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(6, 79);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(127, 12);
+            this.label81.TabIndex = 33;
+            this.label81.Text = "- 결과내 조건검색기능";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label73
             // 
             this.label73.AutoSize = true;
@@ -1205,6 +1215,94 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "키워드검색";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(873, 180);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(29, 12);
+            this.label80.TabIndex = 55;
+            this.label80.Text = "이하";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(670, 180);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(29, 12);
+            this.label79.TabIndex = 54;
+            this.label79.Text = "이상";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(400, 180);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(29, 12);
+            this.label75.TabIndex = 53;
+            this.label75.Text = "이상";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(914, 174);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(163, 23);
+            this.button3.TabIndex = 52;
+            this.button3.Text = "결과내 조건검색";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(767, 175);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 21);
+            this.textBox7.TabIndex = 51;
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(713, 180);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(49, 12);
+            this.label78.TabIndex = 50;
+            this.label78.Text = "상품수 :";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(563, 175);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 21);
+            this.textBox6.TabIndex = 49;
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(444, 180);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(121, 12);
+            this.label77.TabIndex = 48;
+            this.label77.Text = "월간 모바일 검색수 : ";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(292, 175);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 21);
+            this.textBox5.TabIndex = 47;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(194, 181);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(102, 12);
+            this.label76.TabIndex = 46;
+            this.label76.Text = "월간 PC 검색수 : ";
             // 
             // g5_btn
             // 
@@ -1784,104 +1882,6 @@
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(194, 181);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(102, 12);
-            this.label76.TabIndex = 46;
-            this.label76.Text = "월간 PC 검색수 : ";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(292, 175);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 47;
-            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(563, 175);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 49;
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(444, 180);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(121, 12);
-            this.label77.TabIndex = 48;
-            this.label77.Text = "월간 모바일 검색수 : ";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(767, 175);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 51;
-            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(713, 180);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(49, 12);
-            this.label78.TabIndex = 50;
-            this.label78.Text = "상품수 :";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(914, 174);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(163, 23);
-            this.button3.TabIndex = 52;
-            this.button3.Text = "결과내 조건검색";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(400, 180);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(29, 12);
-            this.label75.TabIndex = 53;
-            this.label75.Text = "이상";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(670, 180);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(29, 12);
-            this.label79.TabIndex = 54;
-            this.label79.Text = "이상";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(873, 180);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(29, 12);
-            this.label80.TabIndex = 55;
-            this.label80.Text = "이하";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(6, 79);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(127, 12);
-            this.label81.TabIndex = 33;
-            this.label81.Text = "- 결과내 조건검색기능";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 

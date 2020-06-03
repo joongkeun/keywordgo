@@ -57,7 +57,15 @@ namespace keywordGOGO
                 ReturnToLabel(relKeyword);
 
                 // 네이버 쇼핑 연관 검색어 + 네이버 키워드 도구 연관 검색어
-                openApiDataSetResult = naverApi.OpenApiDataSet(relKeyword); // 오픈API를 상품을 조회한다.
+                try
+                {
+                    openApiDataSetResult = naverApi.OpenApiDataSet(relKeyword); // 오픈API를 상품을 조회한다.
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("통신오류: " + ex.ToString());
+                }
+                
                 sellPrdCnt = openApiDataSetResult.Total; // 키워드의 전체 상품수
                 ADResult.Add(new KeyWordResult() { RelKeyword = relKeyword, MonthlyPcQcCnt = monthlyPcQcCnt, MonthlyMobileQcCnt = monthlyMobileQcCnt, MonthlyAvePcClkCnt = monthlyAvePcClkCnt, MonthlyAveMobileClkCnt = monthlyAveMobileClkCnt, MonthlyAvePcCtr = monthlyAvePcCtr, MonthlyAveMobileCtr = monthlyAveMobileCtr, PlAvgDepth = plAvgDepth, CompIdx = compIdx, SellPrdQcCnt = sellPrdCnt, ShopResult = openApiDataSetResult.ShopAPIResultList });
 
@@ -134,7 +142,7 @@ namespace keywordGOGO
 
             // 쇼핑 연관검색어와 SEO 태그를 조회한다.
             ReturnToMessage("쇼핑연관 검색어를 조회중입니다.");
-
+            
             // 네이버 쇼핑 연관 검색어 + 태그 정보
             RefShopKeyWord = naverApi.ShopRelKeyword(KeyWord, out int TotalProdutCount);
             ShopWebResult webResult = new ShopWebResult();
