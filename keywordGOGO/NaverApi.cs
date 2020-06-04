@@ -81,7 +81,7 @@ namespace keywordGOGO
             List<string> titleKeywordListResult = new List<string>();
             OpenApiDataSetResult Result = new OpenApiDataSetResult();
             List<ShopAPIResult> ShopResult = new List<ShopAPIResult>();
-            Thread.Sleep(200);
+        
             string naver = NaverOpenApi(keyWord);
             JObject obj = JObject.Parse(naver);
             total = Convert.ToInt32(obj["total"]);

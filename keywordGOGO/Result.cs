@@ -127,6 +127,11 @@ namespace keywordGOGO
         public string categoryName { get; set; }
         public string adprice { get; set; }
         public string oldadprice { get; set; }
+        public string similarity { get; set; } //유사성
+        public string relevance { get; set; } // 관련성
+        public string hitRank { get; set; }
+        public string adYn { get; set; }
+
 
     }
 
@@ -155,6 +160,13 @@ namespace keywordGOGO
         {
             set { adRankingRefGrid = value; }
             get { return adRankingRefGrid; }
+        }
+
+        private List<RankingList> allRankingRefGrid = new List<RankingList>();
+        public List<RankingList> AllRankingRefGrid
+        {
+            set { allRankingRefGrid = value; }
+            get { return allRankingRefGrid; }
         }
     }
 

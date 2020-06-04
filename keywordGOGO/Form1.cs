@@ -38,6 +38,7 @@ namespace keywordGOGO
         // 순위
         delegate void DataGrid6(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid7(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+        delegate void DataGrid9(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
 
         // 인스타
         delegate void DataGrid8(List<InstagramTagWordList> data, DataGridView dataGridView); //데이터그리드 델리게이트
@@ -387,7 +388,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.8.3";
+                string version = "1.9.0";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -1263,7 +1264,7 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 8;
+                dataGridView.ColumnCount = 11;
                 dataGridView.Columns[0].HeaderCell.Value = "현재순위";
                 dataGridView.Columns[1].HeaderCell.Value = "과거순위";
                 dataGridView.Columns[2].HeaderCell.Value = "현재광고비";
@@ -1271,7 +1272,10 @@ namespace keywordGOGO
                 dataGridView.Columns[4].HeaderCell.Value = "상품명";
                 dataGridView.Columns[5].HeaderCell.Value = "상품번호";
                 dataGridView.Columns[6].HeaderCell.Value = "카테고리";
-                dataGridView.Columns[7].HeaderCell.Value = "상품주소";
+                dataGridView.Columns[7].HeaderCell.Value = "키워드유사성";
+                dataGridView.Columns[8].HeaderCell.Value = "키워드관련성";
+                dataGridView.Columns[9].HeaderCell.Value = "관련성랭킹";
+                dataGridView.Columns[10].HeaderCell.Value = "상품주소";
 
                 int count = 1;
                 foreach (var r in collection)
@@ -1284,6 +1288,9 @@ namespace keywordGOGO
                     r.productName,
                     r.productNo,
                     r.categoryName,
+                    r.similarity + "% ",
+                    r.relevance + "% ",
+                    r.hitRank,
                     r.productUrl);
 
                 }
@@ -1311,7 +1318,7 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 6;
+                dataGridView.ColumnCount = 9;
                 dataGridView.Columns[0].HeaderCell.Value = "현재순위";
                 dataGridView.Columns[1].HeaderCell.Value = "과거순위";
                 //dataGridView.Columns[2].HeaderCell.Value = "현재광고비";
@@ -1319,7 +1326,10 @@ namespace keywordGOGO
                 dataGridView.Columns[2].HeaderCell.Value = "상품명";
                 dataGridView.Columns[3].HeaderCell.Value = "상품번호";
                 dataGridView.Columns[4].HeaderCell.Value = "카테고리";
-                dataGridView.Columns[5].HeaderCell.Value = "상품주소";
+                dataGridView.Columns[5].HeaderCell.Value = "키워드유사성";
+                dataGridView.Columns[6].HeaderCell.Value = "키워드관련성";
+                dataGridView.Columns[7].HeaderCell.Value = "관련성랭킹";
+                dataGridView.Columns[8].HeaderCell.Value = "상품주소";
 
                 int count = 1;
 
@@ -1331,6 +1341,61 @@ namespace keywordGOGO
                     r.productName,
                     r.productNo,
                     r.categoryName,
+                    r.similarity + "% ",
+                    r.relevance + "% ",
+                    r.hitRank,
+                    r.productUrl);
+
+                }
+            }
+        }
+
+
+        public void SetAllDataRankGrid(object msgData, DataGridView dataGridView)
+        {
+            if (dataGridView.InvokeRequired)
+            {
+                DataGrid9 call = new DataGrid9(SetAllDataRankGrid);
+                this.Invoke(call, msgData, dataGridView);
+            }
+            else
+            {
+                dataGridView.Rows.Clear();
+
+                List<RankingList> collection = msgData as List<RankingList>;
+
+                dataGridView.Rows.Clear();
+
+                dataGridView.ColumnHeadersVisible = true;
+                dataGridView.RowHeadersVisible = false;
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
+                columnHeaderStyle.BackColor = Color.Beige;
+                dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                dataGridView.ColumnCount = 9;
+                dataGridView.Columns[0].HeaderCell.Value = "페이지별순위";
+                dataGridView.Columns[1].HeaderCell.Value = "분류";
+                dataGridView.Columns[2].HeaderCell.Value = "상품명";
+                dataGridView.Columns[3].HeaderCell.Value = "상품번호";
+                dataGridView.Columns[4].HeaderCell.Value = "카테고리";
+                dataGridView.Columns[5].HeaderCell.Value = "키워드유사성";
+                dataGridView.Columns[6].HeaderCell.Value = "키워드관련성";
+                dataGridView.Columns[7].HeaderCell.Value = "랭킹";
+                dataGridView.Columns[8].HeaderCell.Value = "상품주소";
+
+                int count = 1;
+
+                foreach (var r in collection)
+                {
+
+                    dataGridView.Rows.Add(r.pageNo + "페이지 " + r.rank + "위",
+                    r.adYn,
+                    r.productName,
+                    r.productNo,
+                    r.categoryName,
+                    r.similarity + "% ",
+                    r.relevance + "% ",
+                    r.hitRank,
                     r.productUrl);
 
                 }
@@ -1342,7 +1407,7 @@ namespace keywordGOGO
         {
             dataGridView2.Rows.Clear();
             dataGridView3.Rows.Clear();
-
+            dataGridView8.Rows.Clear();
         }
 
 
@@ -1601,6 +1666,7 @@ namespace keywordGOGO
 
             SetDataAdRankGrid(gridResultData2.AdRankingRefGrid, dataGridView2); //전체 연관 검색어 리스트
             SetDataRankGrid(gridResultData2.NonAdRankingRefGrid, dataGridView3);
+            SetAllDataRankGrid(gridResultData2.AllRankingRefGrid, dataGridView8);
 
             SetButton2(true);
         }

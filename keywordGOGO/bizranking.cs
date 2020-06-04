@@ -71,7 +71,7 @@ namespace keywordGOGO
                 Dictionary<string, string> dicData = new Dictionary<string, string>();
 
                 JObject productitem = JObject.Parse(item["item"].ToString());
-                string naverArea = productitem["rank"].ToString();// 클래스 정보
+                string naverArea = "";// 클래스 정보
                 string classInfo = "";
                 string productNo = "";
                 string mallName = "";
@@ -95,9 +95,16 @@ namespace keywordGOGO
                 {
                     classInfo = "";
                 }
-               
-                string productUrl = productitem["rank"].ToString();//상품주소
-                
+
+                if (productitem["mallProductUrl"] != null)
+                {
+                    string url = productitem["mallProductUrl"].ToString(); //주소
+                    naverArea = url;
+                }
+
+                string productUrl = naverArea; //상품주소
+
+
                 string productPrice = productitem["price"].ToString(); // 상품가격
                 string productName = productitem["productName"].ToString();// 상품명
 
@@ -106,6 +113,42 @@ namespace keywordGOGO
                 {
                     categoryName = productitem["category3Name"].ToString();// 카테고리
 
+                }
+
+                string relevance = "";
+                if (productitem["relevance"] != null)
+                {
+                    relevance = productitem["relevance"].ToString();
+                    double relevanceRatio = Convert.ToDouble(relevance) * 100;
+                    relevance = Convert.ToString(relevanceRatio);
+                    Console.WriteLine(relevanceRatio);
+                }
+                else
+                {
+                    relevance = "";
+                }
+
+                string similarity = "";
+                if (productitem["similarity"] != null)
+                {
+                    similarity = productitem["similarity"].ToString();
+                    double similarityRatio = Convert.ToDouble(similarity)*100;
+                    similarity = Convert.ToString(similarityRatio);
+                    Console.WriteLine(similarityRatio);
+                }
+                else
+                {
+                    similarity = "";
+                }
+
+                string hitRank = "";
+                if (productitem["rank"] != null)
+                {
+                    hitRank = productitem["rank"].ToString();
+                }
+                else
+                {
+                    hitRank = "";
                 }
 
                 Console.WriteLine("++++++++++++++++++++++++++");
@@ -124,6 +167,9 @@ namespace keywordGOGO
                 dicData.Add("productName", productName.Replace("\n", "").Trim());
                 dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
                 dicData.Add("rank", Convert.ToString(rank));
+                dicData.Add("relevance", Convert.ToString(relevance));
+                dicData.Add("similarity", Convert.ToString(similarity));
+                dicData.Add("hitRank", Convert.ToString(hitRank));
 
 
                 ReturnToLabel(productName.Replace("\n", "").Trim());
@@ -247,10 +293,19 @@ namespace keywordGOGO
             string outtext = string.Empty;
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
-            var _productSet_total = doc.DocumentNode.SelectSingleNode("//*[@id=\"__next\"]/div/div[2]/div/div[3]/div[1]/div[1]/ul/li[1]/button/span[1]");
-            if (_productSet_total != null)
+
+            var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
+            string jsonDataset = htmlNode.InnerHtml;
+            JObject obj = JObject.Parse(jsonDataset);
+            JObject props = JObject.Parse(obj["props"].ToString());
+            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+            JObject products = JObject.Parse(initialState["products"].ToString());
+
+
+            if (products["total"] != null)
             {
-                tempProductSet_total = Convert.ToString(_productSet_total.InnerText).Replace(",", "").Replace("전체", "").Trim(); ;
+                tempProductSet_total = products["total"].ToString();
             }
 
             totalNo = Convert.ToInt32(tempProductSet_total);
@@ -269,6 +324,7 @@ namespace keywordGOGO
 
             List<RankingList> ADResult = new List<RankingList>();
             List<RankingList> NonADResult = new List<RankingList>();
+            List<RankingList> AllResult = new List<RankingList>();
 
             string countUrl = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&frm=NVSCVUI";
             string countHtml = httpWebRequestText(countUrl);
@@ -317,15 +373,27 @@ namespace keywordGOGO
                     string productPrice = resultDic["productPrice"];
                     string productName = resultDic["productName"];
                     string mallName = resultDic["mallName"];
+                    if(string.IsNullOrEmpty(productNo))
+                    {
+                        productNo = "가격비교상품";
+                    }
                     string categoryName = resultDic["categoryName"];
                     string pageNo = resultDic["pageNo"];
                     string reKeyword = resultDic["Keyword"];
                     string rank = resultDic["rank"];
 
+                    string relevance = resultDic["relevance"];
+                    string similarity = resultDic["similarity"];
+                    string hitRank = resultDic["hitRank"];
+                    string adyn = "";
+
                     ReturnToLabel(productName);
+
+                   
 
                     if (classInfo.IndexOf("ad") > 0)
                     {
+                        adyn = "광고상품";
                         if (mallName == mallNamedata)
                         {
 
@@ -357,11 +425,12 @@ namespace keywordGOGO
                                 idxRank++;
                             }
 
-                            ADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, oldPageNo = oldPage, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = adpricedata, oldadprice = oldprice });
+                            ADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, oldPageNo = oldPage, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = adpricedata, oldadprice = oldprice, similarity = similarity, relevance= relevance, hitRank= hitRank });
                         }
                     }
                     else
                     {
+                        adyn = "일반상품";
                         if (mallName == mallNamedata)
                         {
                             string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -392,13 +461,15 @@ namespace keywordGOGO
                                 idxRank++;
                             }
 
-                            NonADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, oldPageNo = oldPage, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = "-" });
+                            NonADResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, oldPageNo = oldPage, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, oldrank = oldRank, adprice = "-", similarity = similarity, relevance = relevance, hitRank = hitRank});
                         }
                     }
+
+                    AllResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, adprice = "-", similarity = similarity, relevance = relevance, hitRank = hitRank, adYn = adyn });
                 }
             }
             ReturnToMessage("데이터를 출력합니다.");
-            Result = new GridResultData2() { AdRankingRefGrid = ADResult, NonAdRankingRefGrid = NonADResult };
+            Result = new GridResultData2() { AdRankingRefGrid = ADResult, NonAdRankingRefGrid = NonADResult, AllRankingRefGrid = AllResult };
             conn.Close();
             return Result;
 

@@ -188,6 +188,8 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.label82 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -220,6 +222,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1443,6 +1446,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label82);
+            this.tabPage5.Controls.Add(this.dataGridView8);
             this.tabPage5.Controls.Add(this.g7_btn);
             this.tabPage5.Controls.Add(this.g6_btn);
             this.tabPage5.Controls.Add(this.label18);
@@ -1504,7 +1509,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(716, 156);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(742, 734);
+            this.dataGridView3.Size = new System.Drawing.Size(742, 317);
             this.dataGridView3.TabIndex = 12;
             // 
             // label15
@@ -1531,7 +1536,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(12, 156);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(698, 734);
+            this.dataGridView2.Size = new System.Drawing.Size(698, 317);
             this.dataGridView2.TabIndex = 9;
             // 
             // listBox2
@@ -1883,6 +1888,24 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(12, 502);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowTemplate.Height = 23;
+            this.dataGridView8.Size = new System.Drawing.Size(1446, 379);
+            this.dataGridView8.TabIndex = 48;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(10, 487);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(173, 12);
+            this.label82.TabIndex = 49;
+            this.label82.Text = "전체 순위목록(최대 400위까지)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1943,6 +1966,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2108,6 +2132,8 @@
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.DataGridView dataGridView8;
     }
 }
 
