@@ -151,6 +151,40 @@ namespace keywordGOGO
                     hitRank = "";
                 }
 
+                string reviewCountSum = "";
+                if (productitem["reviewCountSum"] != null)
+                {
+                    reviewCountSum = productitem["reviewCountSum"].ToString();
+                }
+                else
+                {
+                    reviewCountSum = "";
+                }
+
+
+                string purchaseCnt = "";
+                if (productitem["purchaseCnt"] != null)
+                {
+                    purchaseCnt = productitem["purchaseCnt"].ToString();
+                }
+                else
+                {
+                    purchaseCnt = "";
+                }
+
+
+                string daysSaleSum7 = "";
+                if (productitem["daysSaleSum7"] != null)
+                {
+                    daysSaleSum7 = productitem["daysSaleSum7"].ToString();
+                }
+                else
+                {
+                    daysSaleSum7 = "";
+                }
+
+
+
                 Console.WriteLine("++++++++++++++++++++++++++");
                 Console.WriteLine(rank);
                 Console.WriteLine(keyword);
@@ -170,8 +204,9 @@ namespace keywordGOGO
                 dicData.Add("relevance", Convert.ToString(relevance));
                 dicData.Add("similarity", Convert.ToString(similarity));
                 dicData.Add("hitRank", Convert.ToString(hitRank));
-
-
+                dicData.Add("reviewCountSum", Convert.ToString(reviewCountSum));
+                dicData.Add("purchaseCnt", Convert.ToString(purchaseCnt));
+                dicData.Add("daysSaleSum7", Convert.ToString(daysSaleSum7));
                 ReturnToLabel(productName.Replace("\n", "").Trim());
 
                 if (mallName != null)
@@ -386,6 +421,9 @@ namespace keywordGOGO
                     string similarity = resultDic["similarity"];
                     string hitRank = resultDic["hitRank"];
                     string adyn = "";
+                    string reviewCountSum = resultDic["reviewCountSum"];
+                    string purchaseCnt = resultDic["purchaseCnt"];
+                    string daysSaleSum7 = resultDic["daysSaleSum7"];
 
                     ReturnToLabel(productName);
 
@@ -465,7 +503,7 @@ namespace keywordGOGO
                         }
                     }
 
-                    AllResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, adprice = "-", similarity = similarity, relevance = relevance, hitRank = hitRank, adYn = adyn });
+                    AllResult.Add(new RankingList() { rank = Convert.ToString(rank), pageNo = pageNo, productNo = productNo, count = count, mallName = mallName, productName = productName, keyword = reKeyword, productUrl = productUrl, productPrice = productPrice, categoryName = categoryName, adprice = "-", similarity = similarity, relevance = relevance, hitRank = hitRank, adYn = adyn, reviewCountSum = reviewCountSum, daysSaleSum7 = daysSaleSum7, purchaseCnt = purchaseCnt });
                 }
             }
             ReturnToMessage("데이터를 출력합니다.");

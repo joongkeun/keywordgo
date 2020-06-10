@@ -1372,16 +1372,19 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 9;
+                dataGridView.ColumnCount = 12;
                 dataGridView.Columns[0].HeaderCell.Value = "페이지별순위";
                 dataGridView.Columns[1].HeaderCell.Value = "분류";
                 dataGridView.Columns[2].HeaderCell.Value = "상품명";
                 dataGridView.Columns[3].HeaderCell.Value = "상품번호";
                 dataGridView.Columns[4].HeaderCell.Value = "카테고리";
-                dataGridView.Columns[5].HeaderCell.Value = "키워드유사성";
-                dataGridView.Columns[6].HeaderCell.Value = "키워드관련성";
-                dataGridView.Columns[7].HeaderCell.Value = "랭킹";
-                dataGridView.Columns[8].HeaderCell.Value = "상품주소";
+                dataGridView.Columns[5].HeaderCell.Value = "리뷰수";
+                dataGridView.Columns[6].HeaderCell.Value = "구매건수";
+                dataGridView.Columns[7].HeaderCell.Value = "최근 7일 구매건수";
+                dataGridView.Columns[8].HeaderCell.Value = "키워드유사성";
+                dataGridView.Columns[9].HeaderCell.Value = "키워드관련성";
+                dataGridView.Columns[10].HeaderCell.Value = "랭킹";
+                dataGridView.Columns[11].HeaderCell.Value = "상품주소";
 
                 int count = 1;
 
@@ -1393,10 +1396,14 @@ namespace keywordGOGO
                     r.productName,
                     r.productNo,
                     r.categoryName,
+                    r.reviewCountSum,
+                    r.purchaseCnt,
+                    r.daysSaleSum7,
                     r.similarity + "% ",
                     r.relevance + "% ",
                     r.hitRank,
-                    r.productUrl);
+                    r.productUrl
+                    );
 
                 }
             }

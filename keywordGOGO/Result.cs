@@ -130,6 +130,10 @@ namespace keywordGOGO
         public string similarity { get; set; } //유사성
         public string relevance { get; set; } // 관련성
         public string hitRank { get; set; }
+        public string reviewCountSum { get; set; }//리뷰총합
+        public string purchaseCnt { get; set; }//구매건수
+
+        public string daysSaleSum7 { get; set; }//daysSaleSum7
         public string adYn { get; set; }
 
 
