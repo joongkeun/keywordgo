@@ -1380,7 +1380,7 @@ namespace keywordGOGO
                 dataGridView.Columns[4].HeaderCell.Value = "카테고리";
                 dataGridView.Columns[5].HeaderCell.Value = "리뷰수";
                 dataGridView.Columns[6].HeaderCell.Value = "구매건수";
-                dataGridView.Columns[7].HeaderCell.Value = "최근 7일 구매건수";
+                dataGridView.Columns[7].HeaderCell.Value = "7일내구매근사치";
                 dataGridView.Columns[8].HeaderCell.Value = "키워드유사성";
                 dataGridView.Columns[9].HeaderCell.Value = "키워드관련성";
                 dataGridView.Columns[10].HeaderCell.Value = "랭킹";
