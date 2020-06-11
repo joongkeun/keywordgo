@@ -34,7 +34,21 @@ namespace keywordGOGO
             // 네이버 광고 API 실행
             string naver = naverApi.NaverAdApi(KeyWord.Replace(" ", ""));
             JObject obj = JObject.Parse(naver);
-            JArray array = JArray.Parse(obj["keywordList"].ToString());
+            JArray array = null;
+            if (obj["keywordList"] != null)
+            {
+                array = JArray.Parse(obj["keywordList"].ToString());
+            }
+            else
+            {
+
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("네이버광고에서 데이터를 불러오지 못했습니다.");
+                ReturnToMessage("현재시간과 컴퓨터시간이 오차가 있는지 확인해주세요.");
+                ReturnToMessage("오차가 있다면 인터넷 시간서버와 동기화 후 다시 시도해주세요.");
+                ReturnToMessage("-------------------------------------------");
+                return Result;
+            }
 
             // 네이버 키워드 도구 연관 검색어(조회키워드만)
             foreach (JObject itemObj in array)
@@ -63,6 +77,9 @@ namespace keywordGOGO
                 }
                 catch(Exception ex)
                 {
+                    ReturnToMessage("-------------------------------------------");
+                    ReturnToMessage("네이버쇼핑검색과 통신도중 오류가 발생하였습니다.");
+                    ReturnToMessage("-------------------------------------------");
                     Console.WriteLine("통신오류: " + ex.ToString());
                 }
                 

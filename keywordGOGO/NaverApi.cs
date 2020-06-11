@@ -27,19 +27,30 @@ namespace keywordGOGO
         /// <returns></returns>
         public string NaverAdApi(string query)
         {
+            try
+            {
+                var baseUrl = "https://api.naver.com";
+                var apiKey = ini.GetIniValue("ADAPI", "apiKey");
+                var secretKey = ini.GetIniValue("ADAPI", "secretKey");
+                var managerCustomerId = long.Parse(ini.GetIniValue("ADAPI", "managerCustomerId"));
 
-            var baseUrl = "https://api.naver.com";
-            var apiKey = ini.GetIniValue("ADAPI", "apiKey");
-            var secretKey = ini.GetIniValue("ADAPI", "secretKey");
-            var managerCustomerId = long.Parse(ini.GetIniValue("ADAPI", "managerCustomerId"));
+                var rest = new SearchAdApi(baseUrl, apiKey, secretKey);
 
-            var rest = new SearchAdApi(baseUrl, apiKey, secretKey);
-
-            var request = new RestRequest("/keywordstool", Method.GET);
-            request.AddQueryParameter("hintKeywords", query);
-            request.AddQueryParameter("showDetail", "1");
-            string jSonData = rest.Execute<List<RelKwdStat>>(request, managerCustomerId);
-            return jSonData;
+                var request = new RestRequest("/keywordstool", Method.GET);
+                request.AddQueryParameter("hintKeywords", query);
+                request.AddQueryParameter("showDetail", "1");
+                string jSonData = rest.Execute<List<RelKwdStat>>(request, managerCustomerId);
+                return jSonData;
+            }
+            catch
+            {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("네이버광고에서 데이터를 불러오지 못했습니다.");
+                ReturnToMessage("광고 API 정보를 다시확인해주세요.");
+                ReturnToMessage("-------------------------------------------");
+                string jSonData = "";
+                return jSonData;
+            }
         }
 
 
