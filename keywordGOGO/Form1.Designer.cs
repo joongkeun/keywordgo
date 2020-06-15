@@ -144,6 +144,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label83 = new System.Windows.Forms.Label();
+            this.webBrowser8 = new System.Windows.Forms.WebBrowser();
+            this.label82 = new System.Windows.Forms.Label();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.g7_btn = new System.Windows.Forms.Button();
             this.g6_btn = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
@@ -188,8 +192,9 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.label82 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label84 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -210,6 +215,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -222,7 +228,6 @@
             this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -282,6 +287,8 @@
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(734, 32);
@@ -417,6 +424,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage5);
@@ -427,8 +437,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(10, 24);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1469, 923);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage7
@@ -531,6 +543,9 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.Controls.Add(this.label68);
             this.groupBox11.Controls.Add(this.label65);
             this.groupBox11.Controls.Add(this.linkLabel9);
@@ -1078,6 +1093,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.label24);
             this.groupBox8.Controls.Add(this.label30);
             this.groupBox8.Controls.Add(this.label21);
@@ -1309,6 +1326,7 @@
             // 
             // g5_btn
             // 
+            this.g5_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.g5_btn.Location = new System.Drawing.Point(1380, 508);
             this.g5_btn.Name = "g5_btn";
             this.g5_btn.Size = new System.Drawing.Size(75, 23);
@@ -1349,6 +1367,7 @@
             // 
             // g1_btn
             // 
+            this.g1_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.g1_btn.Location = new System.Drawing.Point(1380, 175);
             this.g1_btn.Name = "g1_btn";
             this.g1_btn.Size = new System.Drawing.Size(75, 23);
@@ -1368,6 +1387,9 @@
             // 
             // dataGridView7
             // 
+            this.dataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView7.Location = new System.Drawing.Point(653, 536);
             this.dataGridView7.Name = "dataGridView7";
@@ -1380,6 +1402,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(431, 536);
             this.dataGridView1.Name = "dataGridView1";
@@ -1398,6 +1422,8 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(190, 536);
             this.dataGridView4.Name = "dataGridView4";
@@ -1408,6 +1434,8 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(13, 536);
             this.dataGridView5.Name = "dataGridView5";
@@ -1435,6 +1463,8 @@
             // 
             // dataGridView6
             // 
+            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(12, 206);
             this.dataGridView6.Name = "dataGridView6";
@@ -1446,6 +1476,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label83);
+            this.tabPage5.Controls.Add(this.webBrowser8);
             this.tabPage5.Controls.Add(this.label82);
             this.tabPage5.Controls.Add(this.dataGridView8);
             this.tabPage5.Controls.Add(this.g7_btn);
@@ -1465,8 +1497,49 @@
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(726, 485);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(93, 12);
+            this.label83.TabIndex = 51;
+            this.label83.Text = "Naver analytics";
+            // 
+            // webBrowser8
+            // 
+            this.webBrowser8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webBrowser8.Location = new System.Drawing.Point(716, 502);
+            this.webBrowser8.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser8.Name = "webBrowser8";
+            this.webBrowser8.Size = new System.Drawing.Size(742, 379);
+            this.webBrowser8.TabIndex = 50;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(10, 487);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(173, 12);
+            this.label82.TabIndex = 49;
+            this.label82.Text = "전체 순위목록(최대 400위까지)";
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(12, 502);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowTemplate.Height = 23;
+            this.dataGridView8.Size = new System.Drawing.Size(698, 379);
+            this.dataGridView8.TabIndex = 48;
+            // 
             // g7_btn
             // 
+            this.g7_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.g7_btn.Location = new System.Drawing.Point(1383, 130);
             this.g7_btn.Name = "g7_btn";
             this.g7_btn.Size = new System.Drawing.Size(75, 23);
@@ -1505,6 +1578,8 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(716, 156);
             this.dataGridView3.Name = "dataGridView3";
@@ -1541,6 +1616,8 @@
             // 
             // listBox2
             // 
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 12;
             this.listBox2.Location = new System.Drawing.Point(797, 26);
@@ -1550,6 +1627,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.label84);
             this.groupBox6.Controls.Add(this.label46);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.label16);
@@ -1618,9 +1697,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(662, 19);
+            this.button2.Location = new System.Drawing.Point(670, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.Size = new System.Drawing.Size(103, 94);
             this.button2.TabIndex = 4;
             this.button2.Text = "조회";
             this.button2.UseVisualStyleBackColor = true;
@@ -1639,7 +1718,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(397, 20);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 21);
+            this.textBox3.Size = new System.Drawing.Size(252, 21);
             this.textBox3.TabIndex = 3;
             // 
             // tabPage3
@@ -1726,6 +1805,9 @@
             // 
             // webBrowser4
             // 
+            this.webBrowser4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser4.Location = new System.Drawing.Point(558, 92);
             this.webBrowser4.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser4.Name = "webBrowser4";
@@ -1735,6 +1817,8 @@
             // 
             // webBrowser3
             // 
+            this.webBrowser3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.webBrowser3.Location = new System.Drawing.Point(3, 92);
             this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser3.Name = "webBrowser3";
@@ -1788,6 +1872,9 @@
             // 
             // webBrowser6
             // 
+            this.webBrowser6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser6.Location = new System.Drawing.Point(348, 13);
             this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser6.Name = "webBrowser6";
@@ -1880,6 +1967,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Location = new System.Drawing.Point(811, 4);
             this.groupBox7.Name = "groupBox7";
@@ -1888,32 +1977,53 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Notice";
             // 
-            // dataGridView8
+            // flowLayoutPanel1
             // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(12, 502);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.RowTemplate.Height = 23;
-            this.dataGridView8.Size = new System.Drawing.Size(1446, 379);
-            this.dataGridView8.TabIndex = 48;
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 943);
+            this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // label82
+            // label84
             // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(10, 487);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(173, 12);
-            this.label82.TabIndex = 49;
-            this.label82.Text = "전체 순위목록(최대 400위까지)";
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(343, 62);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(89, 12);
+            this.label84.TabIndex = 9;
+            this.label84.Text = "반복주기 설정 :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "설정안함",
+            "30분",
+            "1시간",
+            "1시간 30분",
+            "2시간",
+            "2시간 30분",
+            "3시간",
+            "3시간 30분"});
+            this.comboBox1.Location = new System.Drawing.Point(439, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 20);
+            this.comboBox1.TabIndex = 10;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1491, 959);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "키워드고고(v1.1.0)";
@@ -1948,6 +2058,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox6.ResumeLayout(false);
@@ -1966,8 +2077,8 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2134,6 +2245,11 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.WebBrowser webBrowser8;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label84;
     }
 }
 

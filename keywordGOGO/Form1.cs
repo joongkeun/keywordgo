@@ -21,7 +21,7 @@ namespace keywordGOGO
     //메인폼 전달 델리게이트 선언
     public delegate void listBoxText(string msgText);
     public delegate void labelText(string msgText);
-
+   
     public partial class Form1 : Form
     {
 
@@ -55,6 +55,7 @@ namespace keywordGOGO
 
         List<KeyWordResult> AllData = new List<KeyWordResult>();
 
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         // 웹브라우져 레지스트리 변경
         private const string InternetExplorerRootKey = @"Software\Microsoft\Internet Explorer";
@@ -68,7 +69,7 @@ namespace keywordGOGO
         public Form1()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            //this.MaximizeBox = false;
             // 기본 50건을 조회하도록 미리체크
             radioButton1.Checked = true;
 
@@ -79,7 +80,7 @@ namespace keywordGOGO
             NaverShoppingCrawler.ReturnToLabel += NaverShoppingCrawler_ReturnToLabel;
             bizranking.ReturnToLabel += Bizranking_ReturnToLabel;
             bizranking.ReturnToMessage += Bizranking_ReturnToMessage;
-
+            timer.Tick += Timer_Tick;
         }
 
         private void Bizranking_ReturnToMessage(string msgText)
@@ -388,7 +389,7 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.9.1";
+                string version = "1.9.2";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -491,7 +492,7 @@ namespace keywordGOGO
             webBrowser5.Navigate("https://blackkiwi.net");
 
             webBrowser6.Navigate("https://www.instagram.com/");
-
+            webBrowser8.Navigate("https://analytics.naver.com/");
             checkBox2.Checked = true;
         }
 
@@ -1635,9 +1636,10 @@ namespace keywordGOGO
 
         }
 
+        private bool timerYn = false;
+
         private void button2_Click(object sender, EventArgs e)
         {
-
             listBox2.Items.Clear();
             SetDataGridClear2();
 
@@ -1660,9 +1662,73 @@ namespace keywordGOGO
                 return;
             }
 
+            int intervalTime = 0;
+            // 타이머 반복작업
+
+            if (comboBox1.SelectedIndex == 0)
+            {
+                intervalTime = 0;
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                intervalTime = 60 * 1000; // 30분
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                intervalTime = 60 * 60 * 1000; // 1시간
+            }
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                intervalTime = 90 * 60 * 1000; // 1시간 30분
+            }
+            else if (comboBox1.SelectedIndex == 4)
+            {
+                intervalTime = 120 * 60 * 1000; // 2시간
+            }
+            else if (comboBox1.SelectedIndex == 5)
+            {
+                intervalTime = 180 * 60 * 1000; // 2시간
+            }
+            else
+            {
+                intervalTime = 0;
+            }
+
+            if (intervalTime > 0)
+            {
+                if (timerYn == false)
+                {
+                    timerYn = true;
+                    timer.Interval = intervalTime;
+                    timer.Start();
+                    button2.Text = "중지";
+                    Thread t1 = new Thread(new ThreadStart(AdDataReturn));
+                    t1.Start();
+
+                }
+                else
+                {
+                    SetListBox2("반복작업을 중지합니다.");
+                    timerYn = false;
+                    timer.Stop();
+                    button2.Text = "시작";
+                }
+            }
+            else
+            {
+
+                Thread t1 = new Thread(new ThreadStart(AdDataReturn));
+                t1.Start();
+            }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
             Thread t1 = new Thread(new ThreadStart(AdDataReturn));
             t1.Start();
 
+            SetListBox2("데이터 조회시간:"+DateTime.Now.ToString());
+            
         }
 
         public void AdDataReturn()
