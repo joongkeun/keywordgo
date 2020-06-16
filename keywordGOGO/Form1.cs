@@ -1671,7 +1671,7 @@ namespace keywordGOGO
             }
             else if (comboBox1.SelectedIndex == 1)
             {
-                intervalTime = 60 * 1000; // 30분
+                intervalTime = 30 * 60 * 1000; // 30분
             }
             else if (comboBox1.SelectedIndex == 2)
             {
@@ -1687,7 +1687,15 @@ namespace keywordGOGO
             }
             else if (comboBox1.SelectedIndex == 5)
             {
-                intervalTime = 180 * 60 * 1000; // 2시간
+                intervalTime = 150 * 60 * 1000; // 2시간 30분
+            }
+            else if (comboBox1.SelectedIndex == 6)
+            {
+                intervalTime = 180 * 60 * 1000; // 3시간
+            }
+            else if (comboBox1.SelectedIndex == 7)
+            {
+                intervalTime = 210 * 60 * 1000; // 3시간
             }
             else
             {
