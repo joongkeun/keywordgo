@@ -456,21 +456,6 @@ namespace keywordGOGO
             return Datalist;
         }
 
-        public List<CategoryList> CategoryRsultText(string relKeyword)
-        {
-            List<CategoryList> categoryLists = new List<CategoryList>();
-            List<Dictionary<string, string>> resultDataList = new List<Dictionary<string, string>>();
-            string url = "https://search.shopping.naver.com/search/all.nhn?origQuery=" + relKeyword + "&pagingIndex=" + Convert.ToString(1) + "&pagingSize=80&viewType=list&sort=rel&frm=NVSHPAG&query=" + relKeyword;
-
-            string textHtml = HttpWebRequestText(url);
-            int totalCount = totalProdutCount(textHtml);
-            List<string> shoppingRefKeyWord = ShoppingKeywordHtml(textHtml);
-            resultDataList = HTMLParser(textHtml, 1, relKeyword, out int adCount);
-
-            categoryLists.Add(new CategoryList() {productName ="", CategoryName_1st =""}); 
-
-            return categoryLists;
-        }
 
 
         /// <summary>

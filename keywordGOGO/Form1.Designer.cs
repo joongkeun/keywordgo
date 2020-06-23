@@ -158,6 +158,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label84 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -193,8 +195,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label84 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1645,6 +1645,33 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "순위조회";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "설정안함",
+            "30분",
+            "1시간",
+            "1시간 30분",
+            "2시간",
+            "2시간 30분",
+            "3시간",
+            "3시간 30분"});
+            this.comboBox1.Location = new System.Drawing.Point(439, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 20);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(343, 62);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(89, 12);
+            this.label84.TabIndex = 9;
+            this.label84.Text = "반복주기 설정 :";
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -1988,33 +2015,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 943);
             this.flowLayoutPanel1.TabIndex = 21;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(343, 62);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(89, 12);
-            this.label84.TabIndex = 9;
-            this.label84.Text = "반복주기 설정 :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "설정안함",
-            "30분",
-            "1시간",
-            "1시간 30분",
-            "2시간",
-            "2시간 30분",
-            "3시간",
-            "3시간 30분"});
-            this.comboBox1.Location = new System.Drawing.Point(439, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 20);
-            this.comboBox1.TabIndex = 10;
             // 
             // Form1
             // 

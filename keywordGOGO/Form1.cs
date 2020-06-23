@@ -24,6 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
+        string version = "1.9.3";
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
         delegate void DsetLabel(string data); //라벨 델리게이트
@@ -389,7 +390,6 @@ namespace keywordGOGO
 
             try
             {
-                string version = "1.9.2";
 
                 this.Text = "키워드고고(v" + version + ")";
 
@@ -879,7 +879,7 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 10;
+                dataGridView.ColumnCount = 11;
                 dataGridView.Columns[0].HeaderCell.Value = "키워드";
                 dataGridView.Columns[1].HeaderCell.Value = "월간 PC 검색수";
                 dataGridView.Columns[2].HeaderCell.Value = "월간 모바일 검색수";
@@ -890,6 +890,7 @@ namespace keywordGOGO
                 dataGridView.Columns[7].HeaderCell.Value = "경쟁정도";
                 dataGridView.Columns[8].HeaderCell.Value = "월간 노출 광고수";
                 dataGridView.Columns[9].HeaderCell.Value = "검색 상품수";
+                dataGridView.Columns[10].HeaderCell.Value = "상품수대비 키워드 경쟁강도";
 
                 foreach (var r in collection)
                 {
@@ -900,9 +901,11 @@ namespace keywordGOGO
                     double MonthlyAveMobileClkCnt = Convert.ToDouble(r.MonthlyAveMobileClkCnt);
                     double MonthlyAvePcCtr = Convert.ToDouble(r.MonthlyAvePcCtr);
                     double MonthlyAveMobileCtr = Convert.ToDouble(r.MonthlyAveMobileCtr);
-
-
-                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, r.PlAvgDepth, r.CompIdx, string.Format("{0:#,0}", SellPrdQcCnt));
+                    double sellprdQcCompldx = 0;
+                    if (SellPrdQcCnt > 0) {
+                         sellprdQcCompldx = Convert.ToDouble((MonthlyPcQcCnt + MonthlyMobileQcCnt) * 100 / SellPrdQcCnt);
+                    }
+                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, r.PlAvgDepth, r.CompIdx, string.Format("{0:#,0}", SellPrdQcCnt), string.Format("{0:#,0}", sellprdQcCompldx));
                 }
             }
         }
@@ -1432,7 +1435,7 @@ namespace keywordGOGO
 
         private void dataGridView6_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
-            if (e.Column.Index == 1 || e.Column.Index == 2 || e.Column.Index == 9)    // 정렬할 컬럼의 이름
+            if (e.Column.Index == 1 || e.Column.Index == 2 || e.Column.Index == 9|| e.Column.Index == 10)    // 정렬할 컬럼의 이름
 
             {
 
