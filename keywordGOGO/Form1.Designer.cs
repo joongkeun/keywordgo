@@ -195,6 +195,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -476,7 +477,7 @@
             // linkLabel11
             // 
             this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(14, 244);
+            this.linkLabel11.Location = new System.Drawing.Point(21, 244);
             this.linkLabel11.Name = "linkLabel11";
             this.linkLabel11.Size = new System.Drawing.Size(244, 12);
             this.linkLabel11.TabIndex = 20;
@@ -1476,6 +1477,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.label83);
             this.tabPage5.Controls.Add(this.webBrowser8);
             this.tabPage5.Controls.Add(this.label82);
@@ -2016,6 +2018,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 943);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(635, 477);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 52;
+            this.button4.Text = "엑셀출력";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2250,6 +2262,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Button button4;
     }
 }
 

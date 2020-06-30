@@ -55,6 +55,40 @@ namespace keywordGOGO
 
 
         /// <summary>
+        /// 네이버 광고 api 접속하여 JSON 형식으로 자료를 받아온다.
+        /// </summary>
+        /// <returns></returns>
+        public string NaverAdBizmoneyApi()
+        {
+            try
+            {
+                var baseUrl = "https://api.naver.com";
+                var apiKey = ini.GetIniValue("ADAPI", "apiKey");
+                var secretKey = ini.GetIniValue("ADAPI", "secretKey");
+                var managerCustomerId = long.Parse(ini.GetIniValue("ADAPI", "managerCustomerId"));
+
+                var rest = new SearchAdApi(baseUrl, apiKey, secretKey);
+
+                var request = new RestRequest("/billing/bizmoney", Method.GET);
+                //request.AddQueryParameter("hintKeywords", query);
+                //request.AddQueryParameter("showDetail", "1");
+                string jSonData = rest.Execute<Bizmoney>(request, managerCustomerId);
+           
+                return jSonData;
+            }
+            catch
+            {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("네이버광고에서 데이터를 불러오지 못했습니다.");
+                ReturnToMessage("광고 API 정보를 다시확인해주세요.");
+                ReturnToMessage("-------------------------------------------");
+                string jSonData = "";
+                return jSonData;
+            }
+        }
+
+
+        /// <summary>
         /// 네이버에서 자료를 조회하여 JSON 형식으로 자료를 받아온다.
         /// </summary>
         public string NaverOpenApi(string query)

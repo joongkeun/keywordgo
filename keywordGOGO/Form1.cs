@@ -24,7 +24,8 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.3";
+        string version = "1.9.4";
+
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
         delegate void DsetLabel(string data); //라벨 델리게이트
@@ -2047,5 +2048,16 @@ namespace keywordGOGO
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "전체상품순위";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView8);
+            }
+        }
     }
 }

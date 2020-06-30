@@ -63,6 +63,14 @@ namespace keywordGOGO
         public string compIdx { get; set; }
     }
 
+    class Bizmoney
+    {
+        public long bizmoney { get; set; }
+        public bool budgetLock { get; set; }
+        public long customerId { get; set; }
+        public bool refundLock { get; set; }
+    }
+
     enum UserLock
     {
         ENABLED = 0,
