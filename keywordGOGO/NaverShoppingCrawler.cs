@@ -411,20 +411,27 @@ namespace keywordGOGO
             doc.LoadHtml(textHtml);
 
             var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
-            string jsonDataset = htmlNode.InnerHtml;
-            JObject obj = JObject.Parse(jsonDataset);
-            JObject props = JObject.Parse(obj["props"].ToString());
-            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
-            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
-            JObject products = JObject.Parse(initialState["products"].ToString());
-
-
-            if (products["total"] != null)
+            if (htmlNode != null)
             {
-                tempProductSet_total = products["total"].ToString();
-            }
+                string jsonDataset = htmlNode.InnerHtml;
+                JObject obj = JObject.Parse(jsonDataset);
+                JObject props = JObject.Parse(obj["props"].ToString());
+                JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+                JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+                JObject products = JObject.Parse(initialState["products"].ToString());
 
-            totalNo = Convert.ToInt32(tempProductSet_total);
+
+                if (products["total"] != null)
+                {
+                    tempProductSet_total = products["total"].ToString();
+                }
+
+                totalNo = Convert.ToInt32(tempProductSet_total);
+            }
+            else
+            {
+                totalNo = 0;
+            }
             return totalNo;
         }
 
@@ -437,22 +444,26 @@ namespace keywordGOGO
             doc.LoadHtml(textHtml);
 
             var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
-            string jsonDataset = htmlNode.InnerHtml;
-            JObject obj = JObject.Parse(jsonDataset);
-            JObject props = JObject.Parse(obj["props"].ToString());
-            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
-           
-
-            if(pageProps["tags"] !=null)
+            if (htmlNode != null)
             {
-                JArray array = JArray.Parse(pageProps["tags"].ToString());
-                foreach (JObject item in array)
+                string jsonDataset = htmlNode.InnerHtml;
+                JObject obj = JObject.Parse(jsonDataset);
+                JObject props = JObject.Parse(obj["props"].ToString());
+                JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+
+
+                if (pageProps["tags"] != null)
                 {
-                    string refKeyword  = item["tagName"].ToString();
-                    ReturnToLabel(refKeyword);
-                    Datalist.Add(refKeyword);
+                    JArray array = JArray.Parse(pageProps["tags"].ToString());
+                    foreach (JObject item in array)
+                    {
+                        string refKeyword = item["tagName"].ToString();
+                        ReturnToLabel(refKeyword);
+                        Datalist.Add(refKeyword);
+                    }
                 }
             }
+
             return Datalist;
         }
 

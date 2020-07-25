@@ -271,34 +271,42 @@ namespace keywordGOGO
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
             var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
-            string jsonDataset = htmlNode.InnerHtml;
-            JObject obj = JObject.Parse(jsonDataset);
-            JObject props = JObject.Parse(obj["props"].ToString());
-            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
-
-            if (pageProps["tags"] != null)
+            if (htmlNode != null)
             {
-                JArray array = JArray.Parse(pageProps["tags"].ToString());
-                foreach (JObject item in array)
+                string jsonDataset = htmlNode.InnerHtml;
+                JObject obj = JObject.Parse(jsonDataset);
+                JObject props = JObject.Parse(obj["props"].ToString());
+                JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+
+                if (pageProps["tags"] != null)
                 {
-                    string refKeyword = item["tagName"].ToString();
-                    ReturnToLabel(refKeyword);
-                    Datalist.Add(new KeywordList() { Keyword = refKeyword, Kind = "S" });
+                    JArray array = JArray.Parse(pageProps["tags"].ToString());
+                    foreach (JObject item in array)
+                    {
+                        string refKeyword = item["tagName"].ToString();
+                        ReturnToLabel(refKeyword);
+                        Datalist.Add(new KeywordList() { Keyword = refKeyword, Kind = "S" });
+                    }
                 }
+
+
+                JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+                JObject products = JObject.Parse(initialState["products"].ToString());
+
+
+                if (products["total"] != null)
+                {
+                    tempProductSet_total = products["total"].ToString();
+                }
+
+                totalNo = Convert.ToInt32(tempProductSet_total);
+                TotalProdutCount = totalNo;
             }
-
-
-            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
-            JObject products = JObject.Parse(initialState["products"].ToString());
-
-
-            if (products["total"] != null)
+            else
             {
-                tempProductSet_total = products["total"].ToString();
+                TotalProdutCount = 0;
             }
 
-            totalNo = Convert.ToInt32(tempProductSet_total);
-            TotalProdutCount = totalNo;
             return Datalist;
         }
 
