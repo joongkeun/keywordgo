@@ -30,118 +30,127 @@ namespace keywordGOGO
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
             var htmlNode = doc.DocumentNode.SelectSingleNode("//*[@id=\"__NEXT_DATA__\"]");
-            string jsonDataset = htmlNode.InnerHtml;
-            JObject obj = JObject.Parse(jsonDataset);
-            JObject props = JObject.Parse(obj["props"].ToString());
-            JObject pageProps = JObject.Parse(props["pageProps"].ToString());
-            JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
-            JObject products = JObject.Parse(initialState["products"].ToString());
-            JArray array = JArray.Parse(products["list"].ToString());
-            foreach (JObject item in array)
+            if (htmlNode != null)
             {
-                Dictionary<string, string> dicData = new Dictionary<string, string>();
-                string smartFarmYn = string.Empty;
+                string jsonDataset = htmlNode.InnerHtml;
+                JObject obj = JObject.Parse(jsonDataset);
+                JObject props = JObject.Parse(obj["props"].ToString());
+                JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+                JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
+                JObject products = JObject.Parse(initialState["products"].ToString());
+                JArray array = JArray.Parse(products["list"].ToString());
+                foreach (JObject item in array)
+                {
+                    Dictionary<string, string> dicData = new Dictionary<string, string>();
+                    string smartFarmYn = string.Empty;
 
-                JObject productitem = JObject.Parse(item["item"].ToString());
-                string classInfo = "";
-                string productNo = "";
-                string mallName = "";
+                    JObject productitem = JObject.Parse(item["item"].ToString());
+                    string classInfo = "";
+                    string productNo = "";
+                    string mallName = "";
 
-                if (productitem["mallProductId"] != null)
-                {
-                    productNo = productitem["mallProductId"].ToString(); // 상품번호
-                    mallName = productitem["mallName"].ToString();// 몰네임
-                }
-                else
-                {
-                    productNo = "";
-                    mallName = "";
-                }
-
-                if (productitem["adId"] != null)
-                {
-                    classInfo = productitem["adId"].ToString();
-                }
-                else
-                {
-                    classInfo = "";
-                }
-
-                string productUrl = "";//상품주소
-
-                string productPrice = productitem["price"].ToString(); // 상품가격
-                string productName = productitem["productName"].ToString();// 상품명
-                string categoryText = "";
-                if (productitem["category3Name"] != null)
-                {
-                    categoryText = productitem["category3Name"].ToString();
-                }
-                
-                Console.WriteLine("++++++++++++++++++++++++++");
-
-                if (classInfo.IndexOf("ad") > -1)
-                {
-                    naverArea = "";
-                    addT++;
-                }
-                else
-                {
-                    if (productitem["mallProductUrl"] != null)
+                    if (productitem["mallProductId"] != null)
                     {
-                        string url = productitem["mallProductUrl"].ToString(); //주소
-                        naverArea = url;
+                        productNo = productitem["mallProductId"].ToString(); // 상품번호
+                        mallName = productitem["mallName"].ToString();// 몰네임
+                    }
+                    else
+                    {
+                        productNo = "";
+                        mallName = "";
                     }
 
+                    if (productitem["adId"] != null)
+                    {
+                        classInfo = productitem["adId"].ToString();
+                    }
+                    else
+                    {
+                        classInfo = "";
+                    }
+
+                    string productUrl = "";//상품주소
+
+                    string productPrice = productitem["price"].ToString(); // 상품가격
+                    string productName = productitem["productName"].ToString();// 상품명
+                    string categoryText = "";
+                    if (productitem["category3Name"] != null)
+                    {
+                        categoryText = productitem["category3Name"].ToString();
+                    }
+
+                    Console.WriteLine("++++++++++++++++++++++++++");
+
+                    if (classInfo.IndexOf("ad") > -1)
+                    {
+                        naverArea = "";
+                        addT++;
+                    }
+                    else
+                    {
+                        if (productitem["mallProductUrl"] != null)
+                        {
+                            string url = productitem["mallProductUrl"].ToString(); //주소
+                            naverArea = url;
+                        }
+
+                    }
+
+                    if (naverArea.IndexOf("smartstore") > -1)
+                    {
+                        smartFarmYn = "true"; // 스마트팜유무
+                        productUrl = naverArea;
+                    }
+                    else
+                    {
+                        smartFarmYn = "false";
+                    }
+
+
+
+                    ReturnToLabel(keyword);
+
+                    dicData.Add("count", Convert.ToString(count)); // 1page의 상품수
+                    dicData.Add("Keyword", keyword); //조회키워드
+                    dicData.Add("pageNo", Convert.ToString(pageNo));
+                    dicData.Add("naverArea", naverArea);
+                    dicData.Add("productUrl", productUrl);
+                    dicData.Add("classInfo", classInfo);
+                    dicData.Add("productName", productName.Replace("\n", "").Trim());
+                    dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
+                    dicData.Add("smartFarmYn", smartFarmYn);
+                    dicData.Add("categoryText", categoryText);
+
+                    if (mallName != null)
+                    {
+                        dicData.Add("mallName", mallName.Replace("\n", "").Trim());
+                    }
+                    else
+                    {
+                        dicData.Add("mallName", "가격비교");
+                    }
+
+                    dicData.Add("categoryName", categoryText);
+
+
+                    Console.WriteLine(Convert.ToString(count));
+                    Console.WriteLine(productUrl);
+                    Console.WriteLine(productName.Replace("\n", "").Trim());
+                    Console.WriteLine(naverArea);
+                    Console.WriteLine(classInfo);
+                    Console.WriteLine(productPrice.Replace("\n", "").Trim());
+                    Console.WriteLine(mallName.Replace("\n", "").Trim());
+
+                    count++;
+                    dataList.Add(dicData);
+
                 }
-
-                if (naverArea.IndexOf("smartstore") > -1)
-                {
-                    smartFarmYn = "true"; // 스마트팜유무
-                    productUrl = naverArea;
-                }
-                else
-                {
-                    smartFarmYn = "false";
-                }
-
-
-
-                ReturnToLabel(keyword);
-
-                dicData.Add("count", Convert.ToString(count)); // 1page의 상품수
-                dicData.Add("Keyword", keyword); //조회키워드
-                dicData.Add("pageNo", Convert.ToString(pageNo));
-                dicData.Add("naverArea", naverArea);
-                dicData.Add("productUrl", productUrl);
-                dicData.Add("classInfo", classInfo);
-                dicData.Add("productName", productName.Replace("\n", "").Trim());
-                dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
-                dicData.Add("smartFarmYn", smartFarmYn);
-                dicData.Add("categoryText", categoryText);
-
-                if (mallName != null)
-                {
-                    dicData.Add("mallName", mallName.Replace("\n", "").Trim());
-                }
-                else
-                {
-                    dicData.Add("mallName", "가격비교");
-                }
-
-                dicData.Add("categoryName", categoryText);
-
-
-                Console.WriteLine(Convert.ToString(count));
-                Console.WriteLine(productUrl);
-                Console.WriteLine(productName.Replace("\n", "").Trim());
-                Console.WriteLine(naverArea);
-                Console.WriteLine(classInfo);
-                Console.WriteLine(productPrice.Replace("\n", "").Trim());
-                Console.WriteLine(mallName.Replace("\n", "").Trim());
-
-                count++;
-                dataList.Add(dicData);
-
+            }
+            else
+            {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("연령제한 키워드 이거나 다른 이유로 자료를 불러올 수 없습니다.");
+                ReturnToMessage("-------------------------------------------");
             }
 
             adCnt = addT;
@@ -430,6 +439,9 @@ namespace keywordGOGO
             }
             else
             {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("연령제한 키워드 이거나 다른 이유로 자료를 불러올 수 없습니다.");
+                ReturnToMessage("-------------------------------------------");
                 totalNo = 0;
             }
             return totalNo;

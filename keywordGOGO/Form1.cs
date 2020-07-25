@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.4";
+        string version = "1.9.5";
 
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
@@ -80,9 +80,15 @@ namespace keywordGOGO
             OutData.ReturnToLabel += OutData_ReturnToLabel; ;
             OutData.ReturnToMessage += OutData_ReturnToMessage; ;
             NaverShoppingCrawler.ReturnToLabel += NaverShoppingCrawler_ReturnToLabel;
+            NaverShoppingCrawler.ReturnToMessage += NaverShoppingCrawler_ReturnToMessage;
             bizranking.ReturnToLabel += Bizranking_ReturnToLabel;
             bizranking.ReturnToMessage += Bizranking_ReturnToMessage;
             timer.Tick += Timer_Tick;
+        }
+
+        private void NaverShoppingCrawler_ReturnToMessage(string msgText)
+        {
+            SetListBox(msgText);
         }
 
         private void Bizranking_ReturnToMessage(string msgText)
@@ -492,7 +498,7 @@ namespace keywordGOGO
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
             webBrowser5.Navigate("https://blackkiwi.net");
 
-            webBrowser6.Navigate("https://www.instagram.com/");
+            //webBrowser6.Navigate("https://www.instagram.com/");
             webBrowser8.Navigate("https://analytics.naver.com/");
             checkBox2.Checked = true;
         }
@@ -1880,7 +1886,7 @@ namespace keywordGOGO
 
             //해시태그 
             SetInstaDataGrid(InstaWordList, instaDataGridView);
-            webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
+            //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
 
             SetInstaButton(true);
         }
@@ -1897,7 +1903,7 @@ namespace keywordGOGO
                 string instatag = instaDataGridView.CurrentCell.Value.ToString();
                 string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
                 string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
-                webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
+                //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
 
             }
         }

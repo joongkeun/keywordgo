@@ -144,6 +144,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.label83 = new System.Windows.Forms.Label();
             this.webBrowser8 = new System.Windows.Forms.WebBrowser();
             this.label82 = new System.Windows.Forms.Label();
@@ -183,7 +184,6 @@
             this.label72 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.instaDataGridView = new System.Windows.Forms.DataGridView();
-            this.webBrowser6 = new System.Windows.Forms.WebBrowser();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.instatagBox = new System.Windows.Forms.TextBox();
             this.instarTagBtn = new System.Windows.Forms.Button();
@@ -195,7 +195,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1499,6 +1498,16 @@
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(635, 477);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 52;
+            this.button4.Text = "엑셀출력";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label83
             // 
             this.label83.AutoSize = true;
@@ -1860,7 +1869,6 @@
             this.tabPage8.Controls.Add(this.label72);
             this.tabPage8.Controls.Add(this.label71);
             this.tabPage8.Controls.Add(this.instaDataGridView);
-            this.tabPage8.Controls.Add(this.webBrowser6);
             this.tabPage8.Controls.Add(this.groupBox13);
             this.tabPage8.ForeColor = System.Drawing.Color.Black;
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
@@ -1898,17 +1906,6 @@
             this.instaDataGridView.TabIndex = 4;
             this.instaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellClick);
             this.instaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellDoubleClick);
-            // 
-            // webBrowser6
-            // 
-            this.webBrowser6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser6.Location = new System.Drawing.Point(348, 13);
-            this.webBrowser6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser6.Name = "webBrowser6";
-            this.webBrowser6.Size = new System.Drawing.Size(1110, 881);
-            this.webBrowser6.TabIndex = 3;
             // 
             // groupBox13
             // 
@@ -2017,16 +2014,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 943);
             this.flowLayoutPanel1.TabIndex = 21;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(635, 477);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "엑셀출력";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -2238,7 +2225,6 @@
         private System.Windows.Forms.TextBox instatagBox;
         private System.Windows.Forms.Button instarTagBtn;
         private System.Windows.Forms.DataGridView instaDataGridView;
-        private System.Windows.Forms.WebBrowser webBrowser6;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label71;

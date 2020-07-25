@@ -304,6 +304,9 @@ namespace keywordGOGO
             }
             else
             {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("쇼핑연관 키워드를 찾지 못했습니다..");
+                ReturnToMessage("-------------------------------------------");
                 TotalProdutCount = 0;
             }
 
