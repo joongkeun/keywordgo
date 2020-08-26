@@ -1471,8 +1471,10 @@
             this.dataGridView6.RowTemplate.Height = 23;
             this.dataGridView6.Size = new System.Drawing.Size(1443, 298);
             this.dataGridView6.TabIndex = 31;
+            this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             this.dataGridView6.SelectionChanged += new System.EventHandler(this.dataGridView6_SelectionChanged);
             this.dataGridView6.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView6_SortCompare);
+            this.dataGridView6.Click += new System.EventHandler(this.dataGridView6_Click);
             // 
             // tabPage5
             // 

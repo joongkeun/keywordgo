@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.5";
+        string version = "1.9.6";
 
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
@@ -851,6 +851,7 @@ namespace keywordGOGO
         private void saveBtn_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+           
             SetDataGridClear();
 
 
@@ -879,6 +880,7 @@ namespace keywordGOGO
             else
             {
                 dataGridView.Rows.Clear();
+                
                 List<KeyWordResult> collection = msgData as List<KeyWordResult>;
                 dataGridView.ColumnHeadersVisible = true;
                 dataGridView.RowHeadersVisible = false;
@@ -925,7 +927,9 @@ namespace keywordGOGO
             DataResult = outData.GridDataSet(keywordTbox.Text, RefMaxCount, conn);
 
             SetDataGrid(DataResult.AdRefGrid, dataGridView6); //전체 연관 검색어 리스트
-
+            // SEO태그 검색유무
+            bool tagYn = checkBox2.Checked;
+            SubDataReturn(keywordTbox.Text, tagYn);
             // api 사용량 
             string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd");
             string sql2 = "select* from apicount where apicount.date ='" + sqlFormattedDate + "'";
@@ -948,6 +952,54 @@ namespace keywordGOGO
             SetButton(true);
         }
 
+        private void dataGridView6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView6.CurrentCell == null || dataGridView6.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (dataGridView6.CurrentCell.ColumnIndex.Equals(0))
+            {
+                string data = dataGridView6.CurrentCell.Value.ToString();
+                // SEO태그 검색유무
+                bool tagYn = checkBox2.Checked;
+
+                if (dataGridView6.CurrentRow.Index != curRow)
+                {
+                    if (dataGridView6.CurrentRow.Index >= 0)
+                    {
+                        curRow = dataGridView6.CurrentRow.Index;
+                        if (dataGridView6.CurrentRow.Cells[0].Value != null)
+                        {
+                            data = dataGridView6.CurrentRow.Cells[0].Value.ToString();
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+
+                        Console.WriteLine(curRow);
+                        Console.WriteLine(data);
+
+                        SetDataGridClear();
+
+                        Thread t2 = new Thread(() => SubDataReturn(data, tagYn));
+                        t2.Start();
+
+
+                    }
+                }
+
+            }
+        }
+
         /// <summary>
         /// 그리드 데이터를 선택하면 데이터를 더 불러온다.
         /// </summary>
@@ -955,36 +1007,7 @@ namespace keywordGOGO
         /// <param name="e"></param>
         private void dataGridView6_SelectionChanged(object sender, EventArgs e)
         {
-            // SEO태그 검색유무
-            bool tagYn = checkBox2.Checked;
-
-            if (dataGridView6.CurrentRow.Index != curRow)
-            {
-                if (dataGridView6.CurrentRow.Index >=0)
-                {
-                    curRow = dataGridView6.CurrentRow.Index;
-                    string data = "";
-                    if(dataGridView6.CurrentRow.Cells[0].Value !=null)
-                    {
-                        data = dataGridView6.CurrentRow.Cells[0].Value.ToString();
-                    }
-                    else
-                    {
-                        return;
-                    }
-                    
-
-                    Console.WriteLine(curRow);
-                    Console.WriteLine(data);
-
-                    SetDataGridClear();
-
-                    Thread t2 = new Thread(() => SubDataReturn(data, tagYn));
-                    t2.Start();
-
-
-                }
-            }
+           
         }
 
 
@@ -1435,6 +1458,7 @@ namespace keywordGOGO
         {
             dataGridView1.Rows.Clear();
             dataGridView4.Rows.Clear();
+            dataGridView6.Rows.Clear();
             dataGridView5.Rows.Clear();
             dataGridView7.Rows.Clear();
         }
@@ -2065,5 +2089,7 @@ namespace keywordGOGO
                 dataGridView_ExportToExcel(sfd.FileName, dataGridView8);
             }
         }
+
+
     }
 }
