@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.6";
+        string version = "1.9.7";
 
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트

@@ -359,13 +359,17 @@ namespace keywordGOGO
                                         }
                                     }
                                 }
-                                agi.HtmlNode tagNode = redoc.DocumentNode.SelectSingleNode("//*[@class='goods_tag']");
+                                agi.HtmlNode tagNode = tagNode = redoc.DocumentNode.SelectSingleNode("//*[@name='keywords']");
+                              
 
 
                                 string tagData = string.Empty;
+
+                                
+                         
                                 if (tagNode != null)
                                 {
-                                    tagData = tagNode.InnerText.Replace("\n", "").Replace("#", ",").Replace("Tag", "").Replace("				", "").Trim();
+                                    tagData = tagNode.Attributes["content"].Value;
                                     List<string> tagDataList = new List<string>(tagData.Split(','));
                                     foreach (var data in tagDataList)
                                     {
@@ -374,7 +378,7 @@ namespace keywordGOGO
                                             tagList.Add(new KeywordList() { Keyword = data, Kind = "T" });
                                     }
 
-                                    Console.WriteLine(tagNode.InnerText.Replace("\n", "").Replace("#", ",").Replace("Tag", "").Replace("				", "").Trim());
+                                    Console.WriteLine(tagData.Trim());
                                 }
                                 ReturnToLabel(mallName);
                                 mallList.Add(mallName);
