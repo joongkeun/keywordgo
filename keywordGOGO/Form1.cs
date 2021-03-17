@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.8";
+        string version = "1.9.9";
 
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
@@ -304,7 +304,7 @@ namespace keywordGOGO
         {
             try
             {
-                string url = "http://221.154.72.203/api/version/read_version.php"; // 결과가 JSON 포맷
+                string url = "http://193.123.251.70/api/version/read_version.php"; // 결과가 JSON 포맷
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
@@ -331,7 +331,7 @@ namespace keywordGOGO
         {
             try
             {
-                string url = "http://221.154.72.203/api/version/read_version.php"; // 결과가 JSON 포맷
+                string url = "http://193.123.251.70/api/version/read_version.php"; // 결과가 JSON 포맷
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
