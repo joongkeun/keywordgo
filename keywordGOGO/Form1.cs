@@ -496,7 +496,7 @@ namespace keywordGOGO
             webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
 
             webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
-            webBrowser5.Navigate("https://blackkiwi.net");
+            //webBrowser5.Navigate("https://blackkiwi.net");
 
             //webBrowser6.Navigate("https://www.instagram.com/");
             webBrowser8.Navigate("https://analytics.naver.com/");

@@ -187,8 +187,6 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.instatagBox = new System.Windows.Forms.TextBox();
             this.instarTagBtn = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webBrowser7 = new System.Windows.Forms.WebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -225,7 +223,6 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
             this.groupBox13.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -433,7 +430,6 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(10, 24);
             this.tabControl1.Name = "tabControl1";
@@ -1937,26 +1933,6 @@
             this.instarTagBtn.UseVisualStyleBackColor = true;
             this.instarTagBtn.Click += new System.EventHandler(this.instarTagBtn_Click);
             // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.webBrowser5);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1461, 897);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "블랙키위";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser5
-            // 
-            this.webBrowser5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser5.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser5.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser5.Name = "webBrowser5";
-            this.webBrowser5.ScriptErrorsSuppressed = true;
-            this.webBrowser5.Size = new System.Drawing.Size(1461, 897);
-            this.webBrowser5.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.webBrowser7);
@@ -2074,7 +2050,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -2133,8 +2108,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.WebBrowser webBrowser5;
         private System.Windows.Forms.WebBrowser webBrowser7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ListBox listBox2;
