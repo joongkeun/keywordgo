@@ -124,6 +124,7 @@
   <ItemGroup>
     <Compile Include="bizranking.cs" />
     <Compile Include="ExcelExport.cs" />
+    <Compile Include="ExcelTOfile.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

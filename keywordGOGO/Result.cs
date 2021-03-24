@@ -9,6 +9,21 @@ namespace keywordGOGO
         public string Kind { get; set; }
     }
 
+    
+    class RelKeyWordResult
+    {
+        public string RelKeyword { get; set; } // 연관 키워드
+        public int SellPrdQcCnt { get; set; } // 해당 키워드의 전체 상품수
+        public string MonthlyPcQcCnt { get; set; } // 월간 PC 검색수
+        public string MonthlyMobileQcCnt { get; set; } // 월간 모바일 검색수
+        public string MonthlyAvePcClkCnt { get; set; } // 월간  PC 클릭수
+        public string MonthlyAveMobileClkCnt { get; set; } // 월간 모바일 클릭수
+        public string MonthlyAvePcCtr { get; set; } // 월간 PC 클릭률 
+        public string MonthlyAveMobileCtr { get; set; } // 월간 모바일 클릭률
+        public string PlAvgDepth { get; set; } // 경쟁정도
+        public string CompIdx { get; set; } // 월간노출 광고수
+    }
+
     class KeyWordResult
     {
         public string RelKeyword { get; set; } // 연관 키워드

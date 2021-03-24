@@ -83,7 +83,19 @@ namespace keywordGOGO
             NaverShoppingCrawler.ReturnToMessage += NaverShoppingCrawler_ReturnToMessage;
             bizranking.ReturnToLabel += Bizranking_ReturnToLabel;
             bizranking.ReturnToMessage += Bizranking_ReturnToMessage;
+            ExcelTOfile.ReturnToLabel += ExcelTOfile_ReturnToLabel;
+            ExcelTOfile.ReturnToMessage += ExcelTOfile_ReturnToMessage;
             timer.Tick += Timer_Tick;
+        }
+
+        private void ExcelTOfile_ReturnToMessage(string msgText)
+        {
+            SetListBox(msgText);
+        }
+
+        private void ExcelTOfile_ReturnToLabel(string msgText)
+        {
+            SetLabel2(msgText);
         }
 
         private void NaverShoppingCrawler_ReturnToMessage(string msgText)
@@ -930,6 +942,7 @@ namespace keywordGOGO
             // SEO태그 검색유무
             bool tagYn = checkBox2.Checked;
             SubDataReturn(keywordTbox.Text, tagYn);
+
             // api 사용량 
             string sqlFormattedDate = DateTime.Now.ToString("yyyy-MM-dd");
             string sql2 = "select* from apicount where apicount.date ='" + sqlFormattedDate + "'";
@@ -1087,8 +1100,12 @@ namespace keywordGOGO
             //연관검색어
             SetDataGrid5(SubDataResult.ShoppingRefGrid, dataGridView5);
 
-            //연관검색어
+            //SEO 태그
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
+
+            ExcelTOfile excelTOfile = new ExcelTOfile();
+
+            excelTOfile.dataSheet(DataResult.AdRefGrid, SubDataResult.ShopWebDataResult.OutTagList ,ProductWordList);
 
             SetGrid(true);
             SetButton(true);
