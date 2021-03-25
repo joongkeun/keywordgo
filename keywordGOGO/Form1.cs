@@ -26,6 +26,7 @@ namespace keywordGOGO
     {
         string version = "1.9.9";
 
+        string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
         delegate void DsetListBox(string data); //리스트박스 델리게이트
         delegate void DsetLabel(string data); //라벨 델리게이트
@@ -873,6 +874,29 @@ namespace keywordGOGO
                 return;
             }
 
+            if (checkBox1.Checked == true)
+            {
+
+
+                using (SaveFileDialog dlg = new SaveFileDialog())
+                {
+                    dlg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                    dlg.Filter = "모든파일 (*.*)|*.*|모든파일 (*.*)|*.*";
+                    dlg.FilterIndex = 1;
+                    dlg.RestoreDirectory = true;
+
+                    if (dlg.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
+
+                    reportSaveFileName = dlg.FileName;
+                    SetListBox(reportSaveFileName);
+                }
+
+
+            }
+
             if (radioButton1.Checked == true) RefMaxCount = 50;
             if (radioButton2.Checked == true) RefMaxCount = 100;
             if (radioButton3.Checked == true) RefMaxCount = 300;
@@ -923,10 +947,11 @@ namespace keywordGOGO
                     double MonthlyAvePcCtr = Convert.ToDouble(r.MonthlyAvePcCtr);
                     double MonthlyAveMobileCtr = Convert.ToDouble(r.MonthlyAveMobileCtr);
                     double sellprdQcCompldx = 0;
+                    int plAvgDepth = Convert.ToInt32(r.PlAvgDepth);
                     if (SellPrdQcCnt > 0) {
                          sellprdQcCompldx = Convert.ToDouble((MonthlyPcQcCnt + MonthlyMobileQcCnt) * 100 / SellPrdQcCnt);
                     }
-                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, r.PlAvgDepth, r.CompIdx, string.Format("{0:#,0}", SellPrdQcCnt), string.Format("{0:#,0}", sellprdQcCompldx));
+                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, plAvgDepth, r.CompIdx , string.Format("{0:#,0}", SellPrdQcCnt), string.Format("{0:#,0}", sellprdQcCompldx));
                 }
             }
         }
@@ -1104,8 +1129,7 @@ namespace keywordGOGO
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
 
             ExcelTOfile excelTOfile = new ExcelTOfile();
-
-            excelTOfile.dataSheet(DataResult.AdRefGrid, SubDataResult.ShopWebDataResult.OutTagList ,ProductWordList);
+            excelTOfile.dataSheet(DataResult.AdRefGrid, SubDataResult.ShopWebDataResult.OutTagList, ProductWordList, reportSaveFileName);
 
             SetGrid(true);
             SetButton(true);
@@ -2107,6 +2131,9 @@ namespace keywordGOGO
             }
         }
 
-
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

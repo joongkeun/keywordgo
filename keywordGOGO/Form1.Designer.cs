@@ -193,6 +193,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -336,7 +337,7 @@
             // 
             this.saveBtn.Location = new System.Drawing.Point(380, 57);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(335, 111);
+            this.saveBtn.Size = new System.Drawing.Size(335, 82);
             this.saveBtn.TabIndex = 16;
             this.saveBtn.Text = "키워드 분석";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -1192,6 +1193,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.label80);
             this.tabPage1.Controls.Add(this.label79);
             this.tabPage1.Controls.Add(this.label75);
@@ -1993,6 +1995,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 943);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(382, 148);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 16);
+            this.checkBox1.TabIndex = 56;
+            this.checkBox1.Text = "보고서 파일 생성";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2224,6 +2237,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

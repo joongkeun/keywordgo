@@ -437,6 +437,10 @@ namespace keywordGOGO
                 if (products["total"] != null)
                 {
                     tempProductSet_total = products["total"].ToString();
+                    if(String.IsNullOrEmpty(tempProductSet_total))
+                    {
+                        tempProductSet_total = "0";
+                    }
                 }
 
                 totalNo = Convert.ToInt32(tempProductSet_total);
