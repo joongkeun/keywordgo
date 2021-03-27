@@ -50,6 +50,15 @@ namespace keywordGOGO
                 return Result;
             }
 
+            if(array.Count < 1)
+            {
+                ReturnToMessage("-------------------------------------------");
+                ReturnToMessage("네이버광고에서 데이터를 불러오지 못했습니다.");
+                ReturnToMessage("검색된 키워드가 없습니다.");
+                ReturnToMessage("-------------------------------------------");
+                return Result;
+            }
+
             // 네이버 키워드 도구 연관 검색어(조회키워드만)
             foreach (JObject itemObj in array)
             {
