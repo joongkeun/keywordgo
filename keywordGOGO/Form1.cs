@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.9.9";
+        string version = "1.10.1";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -1128,8 +1128,11 @@ namespace keywordGOGO
             //SEO 태그
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
 
-            ExcelTOfile excelTOfile = new ExcelTOfile();
-            excelTOfile.dataSheet(DataResult.AdRefGrid, SubDataResult.ShopWebDataResult.OutTagList, ProductWordList, reportSaveFileName);
+            if(checkBox1.Checked == true)
+            { 
+                ExcelTOfile excelTOfile = new ExcelTOfile();
+                excelTOfile.dataSheet(DataResult.AdRefGrid, SubDataResult.ShopWebDataResult.OutTagList, ProductWordList, reportSaveFileName);
+            }
 
             SetGrid(true);
             SetButton(true);
