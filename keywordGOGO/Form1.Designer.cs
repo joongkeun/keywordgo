@@ -1472,7 +1472,7 @@
             this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             this.dataGridView6.SelectionChanged += new System.EventHandler(this.dataGridView6_SelectionChanged);
             this.dataGridView6.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dataGridView6_SortCompare);
-            this.dataGridView6.Click += new System.EventHandler(this.dataGridView6_Click);
+
             // 
             // tabPage5
             // 

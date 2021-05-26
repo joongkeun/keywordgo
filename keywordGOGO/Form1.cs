@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.10.1";
+        string version = "1.10.2";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -990,11 +990,6 @@ namespace keywordGOGO
             SetButton(true);
         }
 
-        private void dataGridView6_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView6.CurrentCell == null || dataGridView6.CurrentCell.Value == null || e.RowIndex == -1)
@@ -1026,7 +1021,7 @@ namespace keywordGOGO
                         Console.WriteLine(curRow);
                         Console.WriteLine(data);
 
-                        SetDataGridClear();
+                        SetDataGridClear3();
 
                         Thread t2 = new Thread(() => SubDataReturn(data, tagYn));
                         t2.Start();
@@ -1503,6 +1498,13 @@ namespace keywordGOGO
             dataGridView1.Rows.Clear();
             dataGridView4.Rows.Clear();
             dataGridView6.Rows.Clear();
+            dataGridView5.Rows.Clear();
+            dataGridView7.Rows.Clear();
+        }
+        public void SetDataGridClear3()
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView4.Rows.Clear();
             dataGridView5.Rows.Clear();
             dataGridView7.Rows.Clear();
         }
