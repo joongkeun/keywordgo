@@ -204,8 +204,8 @@ namespace keywordGOGO
 
         public int AdCount { get; set; }
 
-        private List<string> shoppingRefKeyWord = new List<string>();
-        public List<string> ShoppingRefKeyWord
+        private List<KeywordList> shoppingRefKeyWord = new List<KeywordList>();
+        public List<KeywordList> ShoppingRefKeyWord
         {
             set { shoppingRefKeyWord = value; }
             get { return shoppingRefKeyWord; }

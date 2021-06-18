@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.10.2";
+        string version = "1.10.3";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -1118,7 +1118,7 @@ namespace keywordGOGO
             SetDataGrid2(ProductWordList, dataGridView4);
 
             //연관검색어
-            SetDataGrid5(SubDataResult.ShoppingRefGrid, dataGridView5);
+            SetDataGrid5(SubDataResult.ShopWebDataResult.ShoppingRefKeyWord, dataGridView5);
 
             //SEO 태그
             SetDataGrid5(SubDataResult.ShopWebDataResult.OutTagList, dataGridView1);
@@ -1314,6 +1314,7 @@ namespace keywordGOGO
                 }
             }
         }
+
 
 
         public void SetDataAdRankGrid(object msgData, DataGridView dataGridView)

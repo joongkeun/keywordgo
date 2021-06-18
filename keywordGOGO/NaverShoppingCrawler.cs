@@ -289,7 +289,7 @@ namespace keywordGOGO
 
             string textHtml = HttpWebRequestText(url);
             int totalCount = totalProdutCount(textHtml);
-            List<string> shoppingRefKeyWord = ShoppingKeywordHtml(textHtml);
+            List<KeywordList> shoppingRefKeyWord = ShoppingKeywordHtml(textHtml);
 
 
             resultDataList = JSONParser(textHtml, 1, relKeyword, out int adCount);
@@ -455,11 +455,15 @@ namespace keywordGOGO
             return totalNo;
         }
 
-
-        public List<string> ShoppingKeywordHtml(string textHtml)
+        /// <summary>
+        /// 쇼핑연관검색어
+        /// </summary>
+        /// <param name="textHtml"></param>
+        /// <returns></returns>
+        public List<KeywordList> ShoppingKeywordHtml(string textHtml)
         {
 
-            List<string> Datalist = new List<string>();
+            List<KeywordList> tagList = new List<KeywordList>();
             agi.HtmlDocument doc = new agi.HtmlDocument();
             doc.LoadHtml(textHtml);
 
@@ -470,21 +474,27 @@ namespace keywordGOGO
                 JObject obj = JObject.Parse(jsonDataset);
                 JObject props = JObject.Parse(obj["props"].ToString());
                 JObject pageProps = JObject.Parse(props["pageProps"].ToString());
+                JObject initialState = JObject.Parse(pageProps["initialState"].ToString());
 
-
-                if (pageProps["tags"] != null)
+                if (initialState["relatedTags"] != null)
                 {
-                    JArray array = JArray.Parse(pageProps["tags"].ToString());
-                    foreach (JObject item in array)
+                    JArray array = JArray.Parse(initialState["relatedTags"].ToString());
+
+                    Console.WriteLine(initialState["relatedTags"].ToString());  // 정상이면 "OK"
+
+
+                    foreach (string item in array)
                     {
-                        string refKeyword = item["tagName"].ToString();
-                        ReturnToLabel(refKeyword);
-                        Datalist.Add(refKeyword);
+                        
+                        ReturnToLabel(item);
+                        if (item.Length > 0)
+                            tagList.Add(new KeywordList() { Keyword = item, Kind = "T" });
+
                     }
                 }
             }
 
-            return Datalist;
+            return tagList;
         }
 
 
