@@ -9,6 +9,20 @@ namespace keywordGOGO
         public string Kind { get; set; }
     }
 
+    class SaleAmountResult
+    {
+        public string productName { get; set; } // 상품명
+        public string adYn { get; set; } // 광고여부
+        public string categoryName { get; set; } // 카테고리
+        public string openDate { get; set; } // 오픈일
+        public string mallName { get; set; } // 몰이름
+        public string totalReviewCount { get; set; } // 리뷰수
+        public string averageReviewScore { get; set; } // 평점
+        public string cumulationSaleCount { get; set; } // 6개월
+        public string recentSaleCount { get; set; } // 최근 3일
+        public string urlLink { get; set; } //url
+    }
+
     class ExcellOutResult
     {
         public string RelKeyword { get; set; } // 연관 키워드

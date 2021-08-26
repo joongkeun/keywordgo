@@ -48,6 +48,16 @@ namespace keywordGOGO
                     string classInfo = "";
                     string productNo = "";
                     string mallName = "";
+                    string openDate = "";
+                    string adYn = "";
+                    if (productitem["openDate"] != null)
+                    {
+                        openDate = productitem["openDate"].ToString();
+                    }
+                    else
+                    {
+                        openDate = "";
+                    }
 
                     if (productitem["mallProductId"] != null)
                     {
@@ -63,10 +73,12 @@ namespace keywordGOGO
                     if (productitem["adId"] != null)
                     {
                         classInfo = productitem["adId"].ToString();
+                        adYn = "광고";
                     }
                     else
                     {
                         classInfo = "";
+                        adYn = "일반";
                     }
 
                     string productUrl = "";//상품주소
@@ -120,7 +132,8 @@ namespace keywordGOGO
                     dicData.Add("productPrice", productPrice.Replace("\n", "").Trim());
                     dicData.Add("smartFarmYn", smartFarmYn);
                     dicData.Add("categoryText", categoryText);
-
+                    dicData.Add("openDate", openDate);
+                    dicData.Add("adYn", adYn);
                     if (mallName != null)
                     {
                         dicData.Add("mallName", mallName.Replace("\n", "").Trim());

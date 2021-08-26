@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.10.3";
+        string version = "1.11.1";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -42,6 +42,9 @@ namespace keywordGOGO
         delegate void DataGrid6(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid7(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
         delegate void DataGrid9(List<RankingList> data, DataGridView dataGridView); //데이터그리드 델리게이트
+        
+        // 판매량 
+        delegate void DataGrid10(List<SaleAmountResult> data, DataGridView dataGridView); //데이터그리드 델리게이트
 
         // 인스타
         delegate void DataGrid8(List<InstagramTagWordList> data, DataGridView dataGridView); //데이터그리드 델리게이트
@@ -53,6 +56,8 @@ namespace keywordGOGO
         private SQLiteConnection conn = null;
         private int RefMaxCount = 0;
         private int curRow = -1;
+        private string SortQuery = "rel";
+        private string npayType = "NVSHTTL";
 
         private GridResultData DataResult = new GridResultData();
 
@@ -75,7 +80,9 @@ namespace keywordGOGO
             //this.MaximizeBox = false;
             // 기본 50건을 조회하도록 미리체크
             radioButton1.Checked = true;
-
+            radioButton5.Checked = true;
+            SaleAmount.ReturnToLabel += SaleAmount_ReturnToLabel;
+            SaleAmount.ReturnToMessage += SaleAmount_ReturnToMessage;
             NaverApi.ReturnToMessage += NaverApi_ReturnToMessage;
             NaverApi.ReturnToLabel += NaverApi_ReturnToLabel;
             OutData.ReturnToLabel += OutData_ReturnToLabel; ;
@@ -87,6 +94,16 @@ namespace keywordGOGO
             ExcelTOfile.ReturnToLabel += ExcelTOfile_ReturnToLabel;
             ExcelTOfile.ReturnToMessage += ExcelTOfile_ReturnToMessage;
             timer.Tick += Timer_Tick;
+        }
+
+        private void SaleAmount_ReturnToMessage(string msgText)
+        {
+            SetListBox3(msgText);
+        }
+
+        private void SaleAmount_ReturnToLabel(string msgText)
+        {
+            SetLabel3(msgText);
         }
 
         private void ExcelTOfile_ReturnToMessage(string msgText)
@@ -186,7 +203,7 @@ namespace keywordGOGO
 
         public void SetLabel2(string data)
         {
-            if (label12.InvokeRequired)
+            if (label15.InvokeRequired)
             {
                 DsetLabel call = new DsetLabel(SetLabel2);
                 this.Invoke(call, data);
@@ -195,6 +212,21 @@ namespace keywordGOGO
             {
 
                 label15.Text = data;
+            }
+        }
+
+
+        public void SetLabel3(string data)
+        {
+            if (label88.InvokeRequired)
+            {
+                DsetLabel call = new DsetLabel(SetLabel3);
+                this.Invoke(call, data);
+            }
+            else
+            {
+
+                label88.Text = data;
             }
         }
 
@@ -228,7 +260,7 @@ namespace keywordGOGO
 
         public void SetListBox2(string data)
         {
-            if (listBox1.InvokeRequired)
+            if (listBox2.InvokeRequired)
             {
 
                 DsetListBox call = new DsetListBox(SetListBox2);
@@ -240,6 +272,22 @@ namespace keywordGOGO
                 listBox2.SelectedIndex = listBox2.Items.Count - 1;
             }
         }
+
+        public void SetListBox3(string data)
+        {
+            if (listBox3.InvokeRequired)
+            {
+
+                DsetListBox call = new DsetListBox(SetListBox3);
+                this.Invoke(call, data);
+            }
+            else
+            {
+                listBox3.Items.Add(data);
+                listBox3.SelectedIndex = listBox3.Items.Count - 1;
+            }
+        }
+
 
         private void SetButton(bool data)
         {
@@ -291,6 +339,23 @@ namespace keywordGOGO
             else
             {
                 instarTagBtn.Enabled = data;
+            }
+        }
+
+        private void SetButton4(bool data)
+        {
+            if (SaleAmountBtn.InvokeRequired)
+
+            {
+
+                ButtonEnable call = new ButtonEnable(SetButton4);
+                this.Invoke(call, data);
+
+            }
+
+            else
+            {
+                SaleAmountBtn.Enabled = data;
             }
         }
 
@@ -1486,6 +1551,63 @@ namespace keywordGOGO
         }
 
 
+
+        public void SaleAmountDataGrid(object msgData, DataGridView dataGridView)
+        {
+            if (dataGridView.InvokeRequired)
+            {
+                DataGrid10 call = new DataGrid10(SaleAmountDataGrid);
+                this.Invoke(call, msgData, dataGridView);
+            }
+            else
+            {
+                dataGridView.Rows.Clear();
+
+                List<SaleAmountResult> collection = msgData as List<SaleAmountResult>;
+
+                dataGridView.Rows.Clear();
+
+                dataGridView.ColumnHeadersVisible = true;
+                dataGridView.RowHeadersVisible = false;
+                DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+                columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
+                columnHeaderStyle.BackColor = Color.Beige;
+                dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+                dataGridView.ColumnCount = 9;
+                dataGridView.Columns[0].HeaderCell.Value = "상품명";
+                dataGridView.Columns[1].HeaderCell.Value = "카테고리";
+                dataGridView.Columns[2].HeaderCell.Value = "오픈일";
+                dataGridView.Columns[3].HeaderCell.Value = "몰이름";
+                dataGridView.Columns[4].HeaderCell.Value = "리뷰수";
+                dataGridView.Columns[5].HeaderCell.Value = "평점";
+                dataGridView.Columns[6].HeaderCell.Value = "6개월 판매량";
+                dataGridView.Columns[7].HeaderCell.Value = "최근3일 판매량";
+                dataGridView.Columns[8].HeaderCell.Value = "상품주소";
+
+                int count = 1;
+
+                foreach (var r in collection)
+                {
+
+                    dataGridView.Rows.Add(
+                    r.productName,
+                    r.categoryName,
+                    r.openDate,
+                    r.mallName,
+                    r.totalReviewCount,
+                    r.averageReviewScore,
+                    r.cumulationSaleCount,
+                    r.recentSaleCount,
+                    r.urlLink
+                    );
+
+                }
+            }
+        }
+
+
+
+
         public void SetDataGridClear2()
         {
             dataGridView2.Rows.Clear();
@@ -1508,6 +1630,13 @@ namespace keywordGOGO
             dataGridView4.Rows.Clear();
             dataGridView5.Rows.Clear();
             dataGridView7.Rows.Clear();
+        }
+
+
+        public void SetDataGridClear4()
+        {
+
+            dataGridView9.Rows.Clear();
         }
 
 
@@ -2141,5 +2270,46 @@ namespace keywordGOGO
         {
             
         }
+
+        private void SaleAmountBtn_Click(object sender, EventArgs e)
+        {
+            listBox3.Items.Clear();
+
+            SetDataGridClear4();
+
+
+            if (textBox8.Text.Length < 1)
+            {
+                MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (npayChkBox.Checked == true)
+            {
+
+                npayType = "NVSHCHK&npayType=2";
+            }
+
+            if (radioButton5.Checked == true) SortQuery = "rel";
+            if (radioButton7.Checked == true) SortQuery = "date";
+            if (radioButton8.Checked == true) SortQuery = "review";
+            Thread t1 = new Thread(new ThreadStart(SaleAmountDataReturn));
+            t1.Start();
+        }
+
+
+        public void SaleAmountDataReturn()
+        {
+            SetButton4(false);
+            SetListBox3("데이터를 조회하기 위해 초기화 중입니다.");
+
+            SaleAmount saleAmount = new SaleAmount();
+            List<SaleAmountResult> saleAmountResults = saleAmount.SmartStoreSaleAmountFinder(textBox8.Text,npayType,SortQuery);
+             
+            SaleAmountDataGrid(saleAmountResults, dataGridView9); //전체 연관 검색어 리스트
+
+            SetButton4(true);
+        }
+
     }
 }
