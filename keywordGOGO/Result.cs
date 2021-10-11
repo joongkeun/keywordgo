@@ -42,6 +42,7 @@ namespace keywordGOGO
         public string MonthlyAveMobileCtr { get; set; } // 월간 모바일 클릭률
         public string PlAvgDepth { get; set; } // 경쟁정도
         public string CompIdx { get; set; } // 월간노출 광고수
+
     }
 
     class KeyWordResult
@@ -56,6 +57,7 @@ namespace keywordGOGO
         public string MonthlyAveMobileCtr { get; set; } // 월간 모바일 클릭률
         public string PlAvgDepth { get; set; } // 경쟁정도
         public string CompIdx { get; set; } // 월간노출 광고수
+        public string category { get; set; } // 대표카테고리
 
         private List<ShopAPIResult> shopResult = new List<ShopAPIResult>();
         public List<ShopAPIResult> ShopResult
@@ -76,6 +78,11 @@ namespace keywordGOGO
         public string MallName { get; set; }
         public string ProductId { get; set; }
         public string ProductType { get; set; }
+        public string category1 { get; set; }
+        public string category2 { get; set; }
+        public string category3 { get; set; }
+        public string category4 { get; set; }
+
         private List<String> titleKeywordList = new List<String>();
         public List<String> TitleKeywordList
         {
@@ -87,6 +94,7 @@ namespace keywordGOGO
     class OpenApiDataSetResult
     {
         public int Total { get; set; }
+        public string category { get; set; }
 
         private List<String> titleKeywordList = new List<String>();
         public List<String> TitleKeywordList
@@ -247,6 +255,12 @@ namespace keywordGOGO
         }
     }
     class ProductKeyWordList
+    {
+        public string value { get; set; }
+        public int count { get; set; }
+    }
+
+    class CategoryListData
     {
         public string value { get; set; }
         public int count { get; set; }

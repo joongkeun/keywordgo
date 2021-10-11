@@ -126,7 +126,8 @@ namespace keywordGOGO
             List<string> titleKeywordListResult = new List<string>();
             OpenApiDataSetResult Result = new OpenApiDataSetResult();
             List<ShopAPIResult> ShopResult = new List<ShopAPIResult>();
-        
+            List<string> categorCntList = new List<string>();
+            List<CategoryListData> CategoryWordList = new List<CategoryListData>();
             string naver = NaverOpenApi(keyWord);
             JObject obj = JObject.Parse(naver);
             total = Convert.ToInt32(obj["total"]);
@@ -143,7 +144,10 @@ namespace keywordGOGO
                 string mallName = "";//상품을 판매하는 쇼핑몰의 상호이다. 정보가 없을 경우 네이버로 표기된다.
                 string productId = "";//해당 상품에 대한 ID 이다.
                 string productType = "";//상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다.
-
+                string category1 = "";//해당 상품의 카테고리, 대분류이다.
+                string category2 = "";//해당 상품의 카테고리, 중분류이다.
+                string category3 = "";//해당 상품의 카테고리, 소분류이다.
+                string category4 = "";//해당 상품의 카테고리, 세분류이다.
                 ShopResult.Add(new ShopAPIResult
                 {
                     RelKeyword = keyWord,
@@ -153,6 +157,10 @@ namespace keywordGOGO
                     Hprice = hprice,
                     MallName = mallName,
                     ProductId = productId,
+                    category1 = category1,
+                    category2 = category2,
+                    category3 = category3,
+                    category4 = category4,
                     ProductType = productType
 
                 });
@@ -174,6 +182,12 @@ namespace keywordGOGO
                         string mallName = itemObj["mallName"].ToString();//상품을 판매하는 쇼핑몰의 상호이다. 정보가 없을 경우 네이버로 표기된다.
                         string productId = itemObj["productId"].ToString();//해당 상품에 대한 ID 이다.
                         string productType = itemObj["productType"].ToString();//상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다.
+                        string category1 = itemObj["category1"].ToString();//해당 상품의 카테고리, 대분류이다.
+                        string category2 = itemObj["category2"].ToString();//해당 상품의 카테고리, 중분류이다.
+                        string category3 = itemObj["category3"].ToString();//해당 상품의 카테고리, 소분류이다.
+                        string category4 = itemObj["category4"].ToString();//해당 상품의 카테고리, 세분류이다.
+                        
+                        categorCntList.Add(category1 + ">" + category2 + ">" + category3 + ">" + category4);
 
                         if (lprice.Equals(""))
                         {
@@ -199,6 +213,10 @@ namespace keywordGOGO
                             MallName = mallName,
                             ProductId = productId,
                             ProductType = productType,
+                            category1 = category1,
+                            category2 = category2,
+                            category3 = category3,
+                            category4 = category4,
                             TitleKeywordList = titleKeywordList
 
                         });
@@ -214,6 +232,12 @@ namespace keywordGOGO
                         string mallName = itemObj["mallName"].ToString();//상품을 판매하는 쇼핑몰의 상호이다. 정보가 없을 경우 네이버로 표기된다.
                         string productId = itemObj["productId"].ToString();//해당 상품에 대한 ID 이다.
                         string productType = itemObj["productType"].ToString();//상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다.
+                        string category1 = itemObj["category1"].ToString();//해당 상품의 카테고리, 대분류이다.
+                        string category2 = itemObj["category2"].ToString();//해당 상품의 카테고리, 중분류이다.
+                        string category3 = itemObj["category3"].ToString();//해당 상품의 카테고리, 소분류이다.
+                        string category4 = itemObj["category4"].ToString();//해당 상품의 카테고리, 세분류이다.
+
+                        categorCntList.Add(category1 + ">" + category2 + ">" + category3 + ">" + category4);
 
 
                         if (lprice.Equals(""))
@@ -240,6 +264,10 @@ namespace keywordGOGO
                             ProductId = productId,
                             ProductType = productType,
                             Link = link,
+                            category1 = category1,
+                            category2 = category2,
+                            category3 = category3,
+                            category4 = category4,
                             TitleKeywordList = titleKeywordList
                         });
                         roop++;
@@ -248,7 +276,27 @@ namespace keywordGOGO
 
             } // 물품 다수 END
 
-            Result = (new OpenApiDataSetResult { TitleKeywordList = titleKeywordListResult, ShopAPIResultList = ShopResult, Total = total });
+            int count = categorCntList.Count;
+            string category = "";
+            if (count > 0)
+            {
+                // 중복 단어의 수를 체크한다.
+                var q = categorCntList.GroupBy(x => x)
+               .Select(g => new { Value = g.Key, Count = g.Count() })
+               .OrderByDescending(x => x.Count).ToList();
+                //중복 키워드를 리스트에 담는다.
+                foreach (var temp in q)
+                {
+                    CategoryWordList.Add(new CategoryListData() { value = temp.Value, count = temp.Count });
+                }
+                category = CategoryWordList[0].value.ToString();
+            }
+            else
+            {
+                category = "";
+            }
+
+            Result = (new OpenApiDataSetResult { TitleKeywordList = titleKeywordListResult, ShopAPIResultList = ShopResult, Total = total, category = category });
             return Result;
         }
 

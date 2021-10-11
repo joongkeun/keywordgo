@@ -15,6 +15,7 @@ namespace keywordGOGO
             int sellPrdCnt = 0;
             int apiUseCount = 0;
             int refAdTotalQcCnt = 0;
+            string category = "";
             GridResultData Result = new GridResultData();
             List<KeyWordResult> ADResult = new List<KeyWordResult>();
             List<KeyWordResult> RefShopResult = new List<KeyWordResult>();
@@ -93,7 +94,8 @@ namespace keywordGOGO
                 }
                 
                 sellPrdCnt = openApiDataSetResult.Total; // 키워드의 전체 상품수
-                ADResult.Add(new KeyWordResult() { RelKeyword = relKeyword, MonthlyPcQcCnt = monthlyPcQcCnt, MonthlyMobileQcCnt = monthlyMobileQcCnt, MonthlyAvePcClkCnt = monthlyAvePcClkCnt, MonthlyAveMobileClkCnt = monthlyAveMobileClkCnt, MonthlyAvePcCtr = monthlyAvePcCtr, MonthlyAveMobileCtr = monthlyAveMobileCtr, PlAvgDepth = plAvgDepth, CompIdx = compIdx, SellPrdQcCnt = sellPrdCnt, ShopResult = openApiDataSetResult.ShopAPIResultList });
+                category = openApiDataSetResult.category; // 키워드의 카테고리
+                ADResult.Add(new KeyWordResult() { RelKeyword = relKeyword, MonthlyPcQcCnt = monthlyPcQcCnt, MonthlyMobileQcCnt = monthlyMobileQcCnt, MonthlyAvePcClkCnt = monthlyAvePcClkCnt, MonthlyAveMobileClkCnt = monthlyAveMobileClkCnt, MonthlyAvePcCtr = monthlyAvePcCtr, MonthlyAveMobileCtr = monthlyAveMobileCtr, PlAvgDepth = plAvgDepth, CompIdx = compIdx, SellPrdQcCnt = sellPrdCnt, category= category, ShopResult = openApiDataSetResult.ShopAPIResultList });
 
                 apiUseCount++; // 오픈 api 사용량 체크
 

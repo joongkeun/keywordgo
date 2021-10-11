@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.11.1";
+        string version = "1.12.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -989,7 +989,7 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 11;
+                dataGridView.ColumnCount = 12;
                 dataGridView.Columns[0].HeaderCell.Value = "키워드";
                 dataGridView.Columns[1].HeaderCell.Value = "월간 PC 검색수";
                 dataGridView.Columns[2].HeaderCell.Value = "월간 모바일 검색수";
@@ -1001,6 +1001,7 @@ namespace keywordGOGO
                 dataGridView.Columns[8].HeaderCell.Value = "월간 노출 광고수";
                 dataGridView.Columns[9].HeaderCell.Value = "검색 상품수";
                 dataGridView.Columns[10].HeaderCell.Value = "상품수대비 키워드 경쟁강도";
+                dataGridView.Columns[11].HeaderCell.Value = "대표카테고리";
 
                 foreach (var r in collection)
                 {
@@ -1016,7 +1017,7 @@ namespace keywordGOGO
                     if (SellPrdQcCnt > 0) {
                          sellprdQcCompldx = Convert.ToDouble((MonthlyPcQcCnt + MonthlyMobileQcCnt) * 100 / SellPrdQcCnt);
                     }
-                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, plAvgDepth, r.CompIdx , string.Format("{0:#,0}", SellPrdQcCnt), string.Format("{0:#,0}", sellprdQcCompldx));
+                    dataGridView.Rows.Add(r.RelKeyword, string.Format("{0:#,0}", MonthlyPcQcCnt), string.Format("{0:#,0}", MonthlyMobileQcCnt), MonthlyAvePcClkCnt, MonthlyAveMobileClkCnt, MonthlyAvePcCtr, MonthlyAveMobileCtr, plAvgDepth, r.CompIdx , string.Format("{0:#,0}", SellPrdQcCnt), string.Format("{0:#,0}", sellprdQcCompldx),r.category);
                 }
             }
         }
@@ -1295,13 +1296,17 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 6;
+                dataGridView.ColumnCount = 10;
                 dataGridView.Columns[0].HeaderCell.Value = "상품명";
                 dataGridView.Columns[1].HeaderCell.Value = "몰이름";
                 dataGridView.Columns[2].HeaderCell.Value = "최저가";
                 dataGridView.Columns[3].HeaderCell.Value = "최고가";
                 dataGridView.Columns[4].HeaderCell.Value = "상품ID";
                 dataGridView.Columns[5].HeaderCell.Value = "상품주소";
+                dataGridView.Columns[6].HeaderCell.Value = "대분류";
+                dataGridView.Columns[7].HeaderCell.Value = "중분류";
+                dataGridView.Columns[8].HeaderCell.Value = "소분류";
+                dataGridView.Columns[9].HeaderCell.Value = "세분류";
 
                 foreach (var a in collection)
                 {
@@ -1339,7 +1344,7 @@ namespace keywordGOGO
 
 
 
-                    dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link);
+                    dataGridView.Rows.Add(a.Title, mall, string.Format("{0:#,0}", Lprice), string.Format("{0:#,0}", Hprice), a.ProductId, a.Link,a.category1,a.category2,a.category3,a.category4);
                 }
             }
         }
