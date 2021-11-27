@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.12.0";
+        string version = "1.13.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -553,7 +553,10 @@ namespace keywordGOGO
             {
                 MessageBox.Show("config.ini 파일을 확인 하십시오.", "경고", MessageBoxButtons.OK);
                 Process.Start("notepad.exe", "config.ini");
-                Process.Start("iexplore.exe", "https://vitdeul.tistory.com/8");
+                
+                //기본브라우져 엣지로 변경
+                System.Diagnostics.Process.Start("microsoft-edge:https://vitdeul.tistory.com/8");
+                //Process.Start("chrome.exe", "https://vitdeul.tistory.com/8");
                 Application.ExitThread();
                 Environment.Exit(0);
 
@@ -567,18 +570,21 @@ namespace keywordGOGO
                                         "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
                                         "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
 
-            this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
+            //this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
 
 
-            webBrowser7.Navigate("https://vitdeul.tistory.com/8");
-            webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
+            //webBrowser7.Navigate("https://vitdeul.tistory.com/8");
+            //webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
 
-            webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
+            //webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
             //webBrowser5.Navigate("https://blackkiwi.net");
 
             //webBrowser6.Navigate("https://www.instagram.com/");
-            webBrowser8.Navigate("https://analytics.naver.com/");
+            //webBrowser8.Navigate("https://analytics.naver.com/");
             checkBox2.Checked = true;
+
+
+
         }
 
         public enum BrowserEmulationVersion
@@ -1829,8 +1835,11 @@ namespace keywordGOGO
                                         "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
                                         "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
 
-            this.webBrowser3.Navigate(murl, null, null, additionalHeaders);
-            webBrowser4.Navigate(url);
+            
+            this.webView23.CoreWebView2.Navigate(murl);
+            this.webView24.CoreWebView2.Navigate(url);
+            //this.webBrowser3.Navigate(murl, null, null, additionalHeaders);
+            //webBrowser4.Navigate(url);
         }
 
         // 쇼핑검색
@@ -2091,6 +2100,8 @@ namespace keywordGOGO
 
             //해시태그 
             SetInstaDataGrid(InstaWordList, instaDataGridView);
+            string tag = "https://www.instagram.com/explore/tags/" + input + "/";
+            //this.webView26.CoreWebView2.Navigate(tag);
             //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
 
             SetInstaButton(true);
@@ -2108,6 +2119,8 @@ namespace keywordGOGO
                 string instatag = instaDataGridView.CurrentCell.Value.ToString();
                 string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
                 string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
+                string tag = "https://www.instagram.com/explore/tags/" + input + "/";
+                //this.webView26.CoreWebView2.Navigate(tag);
                 //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
 
             }

@@ -147,7 +147,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.label83 = new System.Windows.Forms.Label();
-            this.webBrowser8 = new System.Windows.Forms.WebBrowser();
             this.label82 = new System.Windows.Forms.Label();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.g7_btn = new System.Windows.Forms.Button();
@@ -171,16 +170,31 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.saleCountTab = new System.Windows.Forms.TabPage();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.SaleAmountBtn = new System.Windows.Forms.Button();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.npayChkBox = new System.Windows.Forms.CheckBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.webView22 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.webView24 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.webView23 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.webBrowser4 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser3 = new System.Windows.Forms.WebBrowser();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label72 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
@@ -189,26 +203,13 @@
             this.instatagBox = new System.Windows.Forms.TextBox();
             this.instarTagBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.webBrowser7 = new System.Windows.Forms.WebBrowser();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.saleCountTab = new System.Windows.Forms.TabPage();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.SaleAmountBtn = new System.Windows.Forms.Button();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.npayChkBox = new System.Windows.Forms.CheckBox();
+            this.webView25 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.webView26 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,18 +234,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.saleCountTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView22)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView23)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.saleCountTab.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView26)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1506,9 +1513,9 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.webView25);
             this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.label83);
-            this.tabPage5.Controls.Add(this.webBrowser8);
             this.tabPage5.Controls.Add(this.label82);
             this.tabPage5.Controls.Add(this.dataGridView8);
             this.tabPage5.Controls.Add(this.g7_btn);
@@ -1546,17 +1553,6 @@
             this.label83.Size = new System.Drawing.Size(93, 12);
             this.label83.TabIndex = 51;
             this.label83.Text = "Naver analytics";
-            // 
-            // webBrowser8
-            // 
-            this.webBrowser8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser8.Location = new System.Drawing.Point(716, 502);
-            this.webBrowser8.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser8.Name = "webBrowser8";
-            this.webBrowser8.Size = new System.Drawing.Size(742, 354);
-            this.webBrowser8.TabIndex = 50;
             // 
             // label82
             // 
@@ -1789,9 +1785,168 @@
             this.textBox3.Size = new System.Drawing.Size(252, 21);
             this.textBox3.TabIndex = 3;
             // 
+            // saleCountTab
+            // 
+            this.saleCountTab.Controls.Add(this.dataGridView9);
+            this.saleCountTab.Controls.Add(this.SaleAmountBtn);
+            this.saleCountTab.Controls.Add(this.listBox3);
+            this.saleCountTab.Controls.Add(this.label87);
+            this.saleCountTab.Controls.Add(this.label88);
+            this.saleCountTab.Controls.Add(this.groupBox15);
+            this.saleCountTab.Controls.Add(this.groupBox14);
+            this.saleCountTab.Location = new System.Drawing.Point(4, 22);
+            this.saleCountTab.Name = "saleCountTab";
+            this.saleCountTab.Size = new System.Drawing.Size(1461, 872);
+            this.saleCountTab.TabIndex = 9;
+            this.saleCountTab.Text = "스마트스토어 판매량조회";
+            this.saleCountTab.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Location = new System.Drawing.Point(9, 83);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.RowTemplate.Height = 23;
+            this.dataGridView9.Size = new System.Drawing.Size(1443, 811);
+            this.dataGridView9.TabIndex = 32;
+            // 
+            // SaleAmountBtn
+            // 
+            this.SaleAmountBtn.Location = new System.Drawing.Point(743, 4);
+            this.SaleAmountBtn.Name = "SaleAmountBtn";
+            this.SaleAmountBtn.Size = new System.Drawing.Size(105, 73);
+            this.SaleAmountBtn.TabIndex = 22;
+            this.SaleAmountBtn.Text = "상품검색";
+            this.SaleAmountBtn.UseVisualStyleBackColor = true;
+            this.SaleAmountBtn.Click += new System.EventHandler(this.SaleAmountBtn_Click);
+            // 
+            // listBox3
+            // 
+            this.listBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 12;
+            this.listBox3.Location = new System.Drawing.Point(857, 23);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(601, 52);
+            this.listBox3.TabIndex = 20;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(854, 4);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(61, 12);
+            this.label87.TabIndex = 19;
+            this.label87.Text = "진행사항 :";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(929, 4);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(11, 12);
+            this.label88.TabIndex = 21;
+            this.label88.Text = "-";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.npayChkBox);
+            this.groupBox15.Controls.Add(this.radioButton5);
+            this.groupBox15.Controls.Add(this.radioButton8);
+            this.groupBox15.Controls.Add(this.radioButton7);
+            this.groupBox15.Location = new System.Drawing.Point(377, 3);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(360, 74);
+            this.groupBox15.TabIndex = 18;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "검색조건";
+            // 
+            // npayChkBox
+            // 
+            this.npayChkBox.AutoSize = true;
+            this.npayChkBox.Location = new System.Drawing.Point(15, 50);
+            this.npayChkBox.Name = "npayChkBox";
+            this.npayChkBox.Size = new System.Drawing.Size(132, 16);
+            this.npayChkBox.TabIndex = 26;
+            this.npayChkBox.Text = "Npay + 상품만 검색";
+            this.npayChkBox.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(15, 26);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(59, 16);
+            this.radioButton5.TabIndex = 13;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "랭킹순";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(183, 26);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(71, 16);
+            this.radioButton8.TabIndex = 25;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "등록일순";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(87, 26);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(83, 16);
+            this.radioButton7.TabIndex = 24;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "리뷰많은순";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.textBox8);
+            this.groupBox14.Controls.Add(this.label85);
+            this.groupBox14.Controls.Add(this.label86);
+            this.groupBox14.Location = new System.Drawing.Point(3, 3);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(368, 74);
+            this.groupBox14.TabIndex = 6;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "키워드 검색";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(61, 20);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(297, 21);
+            this.textBox8.TabIndex = 2;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(64, 49);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(167, 12);
+            this.label85.TabIndex = 3;
+            this.label85.Text = "* 검색할 키워드를 넣어주세요";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(6, 26);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(53, 12);
+            this.label86.TabIndex = 1;
+            this.label86.Text = "검색어 : ";
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.webBrowser2);
+            this.tabPage3.Controls.Add(this.webView22);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1461, 872);
@@ -1799,28 +1954,61 @@
             this.tabPage3.Text = "쇼핑인사이트";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // webBrowser2
+            // webView22
             // 
-            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser2.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(1461, 872);
-            this.webBrowser2.TabIndex = 0;
+            this.webView22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView22.CreationProperties = null;
+            this.webView22.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView22.Location = new System.Drawing.Point(3, 3);
+            this.webView22.Name = "webView22";
+            this.webView22.Size = new System.Drawing.Size(1455, 866);
+            this.webView22.Source = new System.Uri("https://datalab.naver.com/shoppingInsight/sCategory.naver", System.UriKind.Absolute);
+            this.webView22.TabIndex = 0;
+            this.webView22.ZoomFactor = 1D;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.webView24);
+            this.tabPage4.Controls.Add(this.webView23);
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label3);
-            this.tabPage4.Controls.Add(this.webBrowser4);
-            this.tabPage4.Controls.Add(this.webBrowser3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1461, 872);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "쇼핑검색";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // webView24
+            // 
+            this.webView24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView24.CreationProperties = null;
+            this.webView24.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView24.Location = new System.Drawing.Point(546, 92);
+            this.webView24.Name = "webView24";
+            this.webView24.Size = new System.Drawing.Size(912, 777);
+            this.webView24.Source = new System.Uri("https://shopping.naver.com/home/p/index.nhn", System.UriKind.Absolute);
+            this.webView24.TabIndex = 7;
+            this.webView24.ZoomFactor = 1D;
+            // 
+            // webView23
+            // 
+            this.webView23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView23.CreationProperties = null;
+            this.webView23.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView23.Location = new System.Drawing.Point(21, 92);
+            this.webView23.Name = "webView23";
+            this.webView23.Size = new System.Drawing.Size(515, 777);
+            this.webView23.Source = new System.Uri("https://m.shopping.naver.com/home/m/index.nhn", System.UriKind.Absolute);
+            this.webView23.TabIndex = 6;
+            this.webView23.ZoomFactor = 1D;
             // 
             // groupBox5
             // 
@@ -1871,31 +2059,9 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "모바일";
             // 
-            // webBrowser4
-            // 
-            this.webBrowser4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser4.Location = new System.Drawing.Point(558, 92);
-            this.webBrowser4.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser4.Name = "webBrowser4";
-            this.webBrowser4.ScriptErrorsSuppressed = true;
-            this.webBrowser4.Size = new System.Drawing.Size(900, 767);
-            this.webBrowser4.TabIndex = 1;
-            // 
-            // webBrowser3
-            // 
-            this.webBrowser3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.webBrowser3.Location = new System.Drawing.Point(3, 92);
-            this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser3.Name = "webBrowser3";
-            this.webBrowser3.ScriptErrorsSuppressed = true;
-            this.webBrowser3.Size = new System.Drawing.Size(533, 767);
-            this.webBrowser3.TabIndex = 0;
-            // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.webView26);
             this.tabPage8.Controls.Add(this.label72);
             this.tabPage8.Controls.Add(this.label71);
             this.tabPage8.Controls.Add(this.instaDataGridView);
@@ -1967,21 +2133,26 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.webBrowser7);
+            this.tabPage2.Controls.Add(this.webView21);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1461, 872);
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "업데이트 정보";
             // 
-            // webBrowser7
+            // webView21
             // 
-            this.webBrowser7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser7.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser7.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser7.Name = "webBrowser7";
-            this.webBrowser7.Size = new System.Drawing.Size(1461, 872);
-            this.webBrowser7.TabIndex = 0;
+            this.webView21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Location = new System.Drawing.Point(0, 0);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(1461, 869);
+            this.webView21.Source = new System.Uri("https://vitdeul.tistory.com/8", System.UriKind.Absolute);
+            this.webView21.TabIndex = 0;
+            this.webView21.ZoomFactor = 1D;
             // 
             // webBrowser1
             // 
@@ -2025,164 +2196,31 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 918);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // saleCountTab
+            // webView25
             // 
-            this.saleCountTab.Controls.Add(this.dataGridView9);
-            this.saleCountTab.Controls.Add(this.SaleAmountBtn);
-            this.saleCountTab.Controls.Add(this.listBox3);
-            this.saleCountTab.Controls.Add(this.label87);
-            this.saleCountTab.Controls.Add(this.label88);
-            this.saleCountTab.Controls.Add(this.groupBox15);
-            this.saleCountTab.Controls.Add(this.groupBox14);
-            this.saleCountTab.Location = new System.Drawing.Point(4, 22);
-            this.saleCountTab.Name = "saleCountTab";
-            this.saleCountTab.Size = new System.Drawing.Size(1461, 872);
-            this.saleCountTab.TabIndex = 9;
-            this.saleCountTab.Text = "스마트스토어 판매량조회";
-            this.saleCountTab.UseVisualStyleBackColor = true;
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.textBox8);
-            this.groupBox14.Controls.Add(this.label85);
-            this.groupBox14.Controls.Add(this.label86);
-            this.groupBox14.Location = new System.Drawing.Point(3, 3);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(368, 74);
-            this.groupBox14.TabIndex = 6;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "키워드 검색";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(61, 20);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(297, 21);
-            this.textBox8.TabIndex = 2;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(64, 49);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(167, 12);
-            this.label85.TabIndex = 3;
-            this.label85.Text = "* 검색할 키워드를 넣어주세요";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(6, 26);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(53, 12);
-            this.label86.TabIndex = 1;
-            this.label86.Text = "검색어 : ";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.npayChkBox);
-            this.groupBox15.Controls.Add(this.radioButton5);
-            this.groupBox15.Controls.Add(this.radioButton8);
-            this.groupBox15.Controls.Add(this.radioButton7);
-            this.groupBox15.Location = new System.Drawing.Point(377, 3);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(360, 74);
-            this.groupBox15.TabIndex = 18;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "검색조건";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(15, 26);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(59, 16);
-            this.radioButton5.TabIndex = 13;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "랭킹순";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(87, 26);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(83, 16);
-            this.radioButton7.TabIndex = 24;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "리뷰많은순";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(183, 26);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(71, 16);
-            this.radioButton8.TabIndex = 25;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "등록일순";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // listBox3
-            // 
-            this.listBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.webView25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 12;
-            this.listBox3.Location = new System.Drawing.Point(857, 23);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(601, 52);
-            this.listBox3.TabIndex = 20;
+            this.webView25.CreationProperties = null;
+            this.webView25.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView25.Location = new System.Drawing.Point(716, 502);
+            this.webView25.Name = "webView25";
+            this.webView25.Size = new System.Drawing.Size(742, 354);
+            this.webView25.Source = new System.Uri("https://analytics.naver.com/", System.UriKind.Absolute);
+            this.webView25.TabIndex = 53;
+            this.webView25.ZoomFactor = 1D;
             // 
-            // label87
+            // webView26
             // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(854, 4);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(61, 12);
-            this.label87.TabIndex = 19;
-            this.label87.Text = "진행사항 :";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(929, 4);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(11, 12);
-            this.label88.TabIndex = 21;
-            this.label88.Text = "-";
-            // 
-            // SaleAmountBtn
-            // 
-            this.SaleAmountBtn.Location = new System.Drawing.Point(743, 4);
-            this.SaleAmountBtn.Name = "SaleAmountBtn";
-            this.SaleAmountBtn.Size = new System.Drawing.Size(105, 73);
-            this.SaleAmountBtn.TabIndex = 22;
-            this.SaleAmountBtn.Text = "상품검색";
-            this.SaleAmountBtn.UseVisualStyleBackColor = true;
-            this.SaleAmountBtn.Click += new System.EventHandler(this.SaleAmountBtn_Click);
-            // 
-            // dataGridView9
-            // 
-            this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.webView26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(9, 83);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.RowTemplate.Height = 23;
-            this.dataGridView9.Size = new System.Drawing.Size(1443, 811);
-            this.dataGridView9.TabIndex = 32;
-            // 
-            // npayChkBox
-            // 
-            this.npayChkBox.AutoSize = true;
-            this.npayChkBox.Location = new System.Drawing.Point(15, 50);
-            this.npayChkBox.Name = "npayChkBox";
-            this.npayChkBox.Size = new System.Drawing.Size(132, 16);
-            this.npayChkBox.TabIndex = 26;
-            this.npayChkBox.Text = "Npay + 상품만 검색";
-            this.npayChkBox.UseVisualStyleBackColor = true;
+            this.webView26.CreationProperties = null;
+            this.webView26.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView26.Location = new System.Drawing.Point(347, 3);
+            this.webView26.Name = "webView26";
+            this.webView26.Size = new System.Drawing.Size(1111, 866);
+            this.webView26.Source = new System.Uri("https://www.instagram.com/", System.UriKind.Absolute);
+            this.webView26.TabIndex = 7;
+            this.webView26.ZoomFactor = 1D;
             // 
             // Form1
             // 
@@ -2231,9 +2269,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.saleCountTab.ResumeLayout(false);
+            this.saleCountTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView22)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView23)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabPage8.ResumeLayout(false);
@@ -2242,15 +2290,11 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.saleCountTab.ResumeLayout(false);
-            this.saleCountTab.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView26)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2295,18 +2339,13 @@
         private System.Windows.Forms.Button g3_btn;
         private System.Windows.Forms.Button g2_btn;
         private System.Windows.Forms.Button g1_btn;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.WebBrowser webBrowser4;
-        private System.Windows.Forms.WebBrowser webBrowser3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.WebBrowser webBrowser7;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -2417,7 +2456,6 @@
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.DataGridView dataGridView8;
         private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.WebBrowser webBrowser8;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label84;
@@ -2438,6 +2476,13 @@
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.DataGridView dataGridView9;
         private System.Windows.Forms.CheckBox npayChkBox;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView22;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView23;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView24;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView25;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView26;
     }
 }
 
