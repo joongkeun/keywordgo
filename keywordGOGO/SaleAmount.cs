@@ -87,37 +87,41 @@ namespace keywordGOGO
                         if (htmlNode != null)
                         {
                             string jsonDataset = htmlNode.InnerHtml;
-                            JObject obj = JObject.Parse(jsonDataset.Replace("window.__PRELOADED_STATE__=",""));
+                            JObject obj = JObject.Parse(jsonDataset.Replace("window.__PRELOADED_STATE__=", ""));
                             JObject product = JObject.Parse(obj["product"].ToString());
                             JObject A = JObject.Parse(product["A"].ToString());
-                            JObject saleAmount = JObject.Parse(A["saleAmount"].ToString());
+                            
+                            if (!string.IsNullOrEmpty(A["saleAmount"].ToString()))
+                            {
+                                JObject saleAmount = JObject.Parse(A["saleAmount"].ToString());
 
-                            string cumulationSaleCount = saleAmount["cumulationSaleCount"].ToString();
-                            string recentSaleCount = saleAmount["recentSaleCount"].ToString();
+                                string cumulationSaleCount = saleAmount["cumulationSaleCount"].ToString();
+                                string recentSaleCount = saleAmount["recentSaleCount"].ToString();
 
-                            JObject reviewAmount = JObject.Parse(A["reviewAmount"].ToString());
-                            string totalReviewCount = reviewAmount["totalReviewCount"].ToString();
-                            string averageReviewScore = reviewAmount["averageReviewScore"].ToString();
-       
-      
-                            saleAmountResults.Add(new SaleAmountResult()
-                        {
-                            productName = productName, // 상품명
-                            mallName = mallName, // 몰이름
-                            categoryName = categoryText, // 카테고리명
-                            openDate = openDate, // 오픈일
-                            totalReviewCount = totalReviewCount, // 리뷰수
-                            averageReviewScore = averageReviewScore,// 평점
-                            cumulationSaleCount = cumulationSaleCount,//6개월 판매수
-                            recentSaleCount = recentSaleCount, //최근 3일 판매수
-                            urlLink = productUrl
+                                JObject reviewAmount = JObject.Parse(A["reviewAmount"].ToString());
+                                string totalReviewCount = reviewAmount["totalReviewCount"].ToString();
+                                string averageReviewScore = reviewAmount["averageReviewScore"].ToString();
 
-                        });
 
-                        ReturnToLabel(mallName);
+                                saleAmountResults.Add(new SaleAmountResult()
+                                {
+                                    productName = productName, // 상품명
+                                    mallName = mallName, // 몰이름
+                                    categoryName = categoryText, // 카테고리명
+                                    openDate = openDate, // 오픈일
+                                    totalReviewCount = totalReviewCount, // 리뷰수
+                                    averageReviewScore = averageReviewScore,// 평점
+                                    cumulationSaleCount = cumulationSaleCount,//6개월 판매수
+                                    recentSaleCount = recentSaleCount, //최근 3일 판매수
+                                    urlLink = productUrl
 
-                        rowidx++;
+                                });
 
+                                ReturnToLabel(mallName);
+
+                                rowidx++;
+
+                            }
                         }
                     }
                 }

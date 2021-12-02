@@ -145,6 +145,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.webView25 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.button4 = new System.Windows.Forms.Button();
             this.label83 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -196,6 +197,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.webView26 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.label72 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.instaDataGridView = new System.Windows.Forms.DataGridView();
@@ -208,8 +210,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.webView25 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.webView26 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.sb1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -230,6 +231,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -245,13 +247,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView23)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webView26)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1535,6 +1536,19 @@
             this.tabPage5.Text = "순위검색";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // webView25
+            // 
+            this.webView25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView25.CreationProperties = null;
+            this.webView25.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView25.Location = new System.Drawing.Point(716, 502);
+            this.webView25.Name = "webView25";
+            this.webView25.Size = new System.Drawing.Size(742, 354);
+            this.webView25.Source = new System.Uri("https://analytics.naver.com/", System.UriKind.Absolute);
+            this.webView25.TabIndex = 53;
+            this.webView25.ZoomFactor = 1D;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(635, 477);
@@ -1787,6 +1801,7 @@
             // 
             // saleCountTab
             // 
+            this.saleCountTab.Controls.Add(this.sb1);
             this.saleCountTab.Controls.Add(this.dataGridView9);
             this.saleCountTab.Controls.Add(this.SaleAmountBtn);
             this.saleCountTab.Controls.Add(this.listBox3);
@@ -1806,11 +1821,12 @@
             this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(9, 83);
+            this.dataGridView9.Location = new System.Drawing.Point(9, 104);
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.RowTemplate.Height = 23;
-            this.dataGridView9.Size = new System.Drawing.Size(1443, 811);
+            this.dataGridView9.Size = new System.Drawing.Size(1443, 790);
             this.dataGridView9.TabIndex = 32;
+            this.dataGridView9.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellClick);
             // 
             // SaleAmountBtn
             // 
@@ -2074,6 +2090,19 @@
             this.tabPage8.Text = "인별고고";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // webView26
+            // 
+            this.webView26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView26.CreationProperties = null;
+            this.webView26.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView26.Location = new System.Drawing.Point(347, 3);
+            this.webView26.Name = "webView26";
+            this.webView26.Size = new System.Drawing.Size(1111, 866);
+            this.webView26.Source = new System.Uri("https://www.instagram.com/", System.UriKind.Absolute);
+            this.webView26.TabIndex = 7;
+            this.webView26.ZoomFactor = 1D;
+            // 
             // label72
             // 
             this.label72.AutoSize = true;
@@ -2196,31 +2225,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 918);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // webView25
+            // sb1
             // 
-            this.webView25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webView25.CreationProperties = null;
-            this.webView25.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView25.Location = new System.Drawing.Point(716, 502);
-            this.webView25.Name = "webView25";
-            this.webView25.Size = new System.Drawing.Size(742, 354);
-            this.webView25.Source = new System.Uri("https://analytics.naver.com/", System.UriKind.Absolute);
-            this.webView25.TabIndex = 53;
-            this.webView25.ZoomFactor = 1D;
-            // 
-            // webView26
-            // 
-            this.webView26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webView26.CreationProperties = null;
-            this.webView26.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView26.Location = new System.Drawing.Point(347, 3);
-            this.webView26.Name = "webView26";
-            this.webView26.Size = new System.Drawing.Size(1111, 866);
-            this.webView26.Source = new System.Uri("https://www.instagram.com/", System.UriKind.Absolute);
-            this.webView26.TabIndex = 7;
-            this.webView26.ZoomFactor = 1D;
+            this.sb1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sb1.Location = new System.Drawing.Point(1377, 78);
+            this.sb1.Name = "sb1";
+            this.sb1.Size = new System.Drawing.Size(75, 23);
+            this.sb1.TabIndex = 46;
+            this.sb1.Text = "엑셀출력";
+            this.sb1.UseVisualStyleBackColor = true;
+            this.sb1.Click += new System.EventHandler(this.sb1_Click);
             // 
             // Form1
             // 
@@ -2264,6 +2278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -2286,6 +2301,7 @@
             this.groupBox5.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
@@ -2293,8 +2309,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webView26)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2483,6 +2497,7 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webView24;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView25;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView26;
+        private System.Windows.Forms.Button sb1;
     }
 }
 

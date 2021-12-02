@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.13.0";
+        string version = "1.14.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -2006,47 +2006,56 @@ namespace keywordGOGO
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.photopea.com/");
+            //System.Diagnostics.Process.Start("https://www.photopea.com/");
+            System.Diagnostics.Process.Start("microsoft-edge:https://www.photopea.com/");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.remove.bg/ko");
+            //System.Diagnostics.Process.Start("https://www.remove.bg/ko");
+            System.Diagnostics.Process.Start("microsoft-edge:https://www.remove.bg/ko");
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.canva.com/");
+            //System.Diagnostics.Process.Start("https://www.canva.com/");
+            System.Diagnostics.Process.Start("microsoft-edge:https://www.canva.com/");
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.mangoboard.net/ ");
+            //System.Diagnostics.Process.Start("https://www.mangoboard.net/ ");
+            System.Diagnostics.Process.Start("microsoft-edge:https://www.mangoboard.net/");
         }
 
         private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://x.photoscape.org/");
+            //System.Diagnostics.Process.Start("http://x.photoscape.org/");
+            System.Diagnostics.Process.Start("microsoft-edge:http://x.photoscape.org/");
         }
 
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://blog.naver.com/darkwalk77");
+            //System.Diagnostics.Process.Start("https://blog.naver.com/darkwalk77");
+            System.Diagnostics.Process.Start("microsoft-edge:https://blog.naver.com/darkwalk77");
         }
 
         private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://modu-print.tistory.com/");
+            //System.Diagnostics.Process.Start("https://modu-print.tistory.com/");
+            System.Diagnostics.Process.Start("microsoft-edge:https://modu-print.tistory.com/");
         }
 
         private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://gongu.copyright.or.kr/freeFontEvent.html");
+            //System.Diagnostics.Process.Start("https://gongu.copyright.or.kr/freeFontEvent.html");
+            System.Diagnostics.Process.Start("microsoft-edge:https://gongu.copyright.or.kr/freeFontEvent.html");
         }
 
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b");
+            //System.Diagnostics.Process.Start("https://open.kakao.com/o/g4wjxW1b");
+            System.Diagnostics.Process.Start("microsoft-edge:https://open.kakao.com/o/g4wjxW1b");
         }
 
         private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2059,14 +2068,16 @@ namespace keywordGOGO
             if (dataGridView7.CurrentCell.ColumnIndex.Equals(5))
             {
                 string linkurl = dataGridView7.CurrentCell.Value.ToString();
-                System.Diagnostics.Process.Start(linkurl);
+                //System.Diagnostics.Process.Start(linkurl);
+                System.Diagnostics.Process.Start("microsoft-edge:"+ linkurl);
 
             }
         }
 
         private void linkLabel10_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.parcelman.kr/");
+            //System.Diagnostics.Process.Start("http://www.parcelman.kr/");
+            System.Diagnostics.Process.Start("microsoft-edge:http://www.parcelman.kr/");
         }
 
         /// <summary>
@@ -2329,5 +2340,32 @@ namespace keywordGOGO
             SetButton4(true);
         }
 
+        private void dataGridView9_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView9.CurrentCell == null || dataGridView9.CurrentCell.Value == null || e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (dataGridView9.CurrentCell.ColumnIndex.Equals(8))
+            {
+                string linkurl = dataGridView9.CurrentCell.Value.ToString();
+                //System.Diagnostics.Process.Start(linkurl);
+                System.Diagnostics.Process.Start("microsoft-edge:" + linkurl);
+
+            }
+        }
+
+        private void sb1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save as Excel File";
+            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.FileName = "스마트스토어_판매량";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView_ExportToExcel(sfd.FileName, dataGridView9);
+            }
+        }
     }
 }
