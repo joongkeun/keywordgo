@@ -137,7 +137,7 @@ namespace keywordGOGO
             if (total == 0) //같은 물품이 없는 경우
             {
                 string title = "";//검색 결과 문서의 제목을 나타낸다. 제목에서 검색어와 일치하는 부분은 태그로 감싸져 있다.
-                string link = "";//검색 결과 문서의 하이퍼텍스트 link를 나타낸다.
+                //string link = "";//검색 결과 문서의 하이퍼텍스트 link를 나타낸다.
                 string image = "";//썸네일 이미지의 URL이다. 이미지가 있는 경우만 나타난다.
                 string lprice = "";//최저가 정보이다. 
                 string hprice = "";//최고가 정보이다. 최고가 정보가 없거나 가격비교 데이터가 없는 경우 0으로 표시된다.

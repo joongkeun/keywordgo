@@ -13,7 +13,7 @@ namespace keywordGOGO
     class SaleAmount
     {
         // 메인폼 전달 이벤트 선언
-        public static event listBoxText ReturnToMessage;
+        //public static event listBoxText ReturnToMessage;
         public static event labelText ReturnToLabel;
 
         /// <summary>

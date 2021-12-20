@@ -61,6 +61,7 @@ namespace keywordGOGO
             catch (Exception ex)
             {
                 obj = null;
+                Console.WriteLine(Convert.ToString(ex));
             }
             finally
             {

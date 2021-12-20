@@ -82,7 +82,7 @@ namespace keywordGOGO
             radioButton1.Checked = true;
             radioButton5.Checked = true;
             SaleAmount.ReturnToLabel += SaleAmount_ReturnToLabel;
-            SaleAmount.ReturnToMessage += SaleAmount_ReturnToMessage;
+            //SaleAmount.ReturnToMessage += SaleAmount_ReturnToMessage;
             NaverApi.ReturnToMessage += NaverApi_ReturnToMessage;
             NaverApi.ReturnToLabel += NaverApi_ReturnToLabel;
             OutData.ReturnToLabel += OutData_ReturnToLabel; ;
@@ -461,6 +461,9 @@ namespace keywordGOGO
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            
+
             string notice = "";
             try
             {
@@ -566,9 +569,9 @@ namespace keywordGOGO
             SetBrowserEmulationVersion();
 
 
-            var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
-                                        "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
-                                        "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
+            //var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
+            //                           "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
+            //                            "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
 
             //this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
 
@@ -583,6 +586,9 @@ namespace keywordGOGO
             //webBrowser8.Navigate("https://analytics.naver.com/");
             checkBox2.Checked = true;
 
+            //interstitialAd1.ShowInterstitialAd("nhj5qs6snck8");
+
+            bannerAds1.ShowAd(468, 60, "nhj5qs6snck8");
 
 
         }
@@ -1379,7 +1385,7 @@ namespace keywordGOGO
                 dataGridView.ColumnCount = 1;
                 dataGridView.Columns[0].HeaderCell.Value = "키워드";
 
-                int count = 1;
+                //int count = 1;
                 foreach (var r in collection)
                 {
                     if (r.Kind == "S" || r.Kind == "T")
@@ -1427,7 +1433,7 @@ namespace keywordGOGO
                 dataGridView.Columns[9].HeaderCell.Value = "관련성랭킹";
                 dataGridView.Columns[10].HeaderCell.Value = "상품주소";
 
-                int count = 1;
+                //int count = 1;
                 foreach (var r in collection)
                 {
 
@@ -1481,7 +1487,7 @@ namespace keywordGOGO
                 dataGridView.Columns[7].HeaderCell.Value = "관련성랭킹";
                 dataGridView.Columns[8].HeaderCell.Value = "상품주소";
 
-                int count = 1;
+                //int count = 1;
 
                 foreach (var r in collection)
                 {
@@ -1537,8 +1543,8 @@ namespace keywordGOGO
                 dataGridView.Columns[11].HeaderCell.Value = "랭킹";
                 dataGridView.Columns[12].HeaderCell.Value = "상품주소";
 
-                int count = 1;
-
+                //int count = 1;
+                //
                 foreach (var r in collection)
                 {
 
@@ -1595,7 +1601,7 @@ namespace keywordGOGO
                 dataGridView.Columns[7].HeaderCell.Value = "최근3일 판매량";
                 dataGridView.Columns[8].HeaderCell.Value = "상품주소";
 
-                int count = 1;
+                //int count = 1;
 
                 foreach (var r in collection)
                 {
@@ -1814,6 +1820,7 @@ namespace keywordGOGO
             catch (Exception e)
             {
                 obj = null;
+                Console.WriteLine(Convert.ToString(e));
             }
             finally
             {
@@ -1830,12 +1837,13 @@ namespace keywordGOGO
 
             string url = "https://search.shopping.naver.com/search/all.nhn?query=" + keyword + "&cat_id=&frm=NVSHATC";
             string murl = "https://msearch.shopping.naver.com/search/all?query=" + keyword + "&cat_id=&frm=NVSHATC";
-
+            /**
             var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
                                         "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
                                         "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
 
-            
+            **/
+
             this.webView23.CoreWebView2.Navigate(murl);
             this.webView24.CoreWebView2.Navigate(url);
             //this.webBrowser3.Navigate(murl, null, null, additionalHeaders);

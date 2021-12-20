@@ -50,6 +50,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.bannerAds1 = new AdsJumboWinForm.BannerAds();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
             this.label70 = new System.Windows.Forms.Label();
@@ -77,8 +78,6 @@
             this.label74 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
@@ -172,6 +171,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.saleCountTab = new System.Windows.Forms.TabPage();
+            this.sb1 = new System.Windows.Forms.Button();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
             this.SaleAmountBtn = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -210,7 +210,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.sb1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -482,8 +481,25 @@
             this.tabPage7.Text = "프로그램 안내";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // bannerAds1
+            // 
+            this.bannerAds1.ApplicationId = null;
+            this.bannerAds1.BackColor = System.Drawing.Color.White;
+            this.bannerAds1.HeightAd = 0;
+            this.bannerAds1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.bannerAds1.Location = new System.Drawing.Point(8, 262);
+            this.bannerAds1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bannerAds1.Name = "bannerAds1";
+            this.bannerAds1.Size = new System.Drawing.Size(456, 60);
+            this.bannerAds1.TabIndex = 14;
+            this.bannerAds1.WidthAd = 0;
+            // 
             // groupBox12
             // 
+            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox12.Controls.Add(this.bannerAds1);
             this.groupBox12.Controls.Add(this.linkLabel11);
             this.groupBox12.Controls.Add(this.label70);
             this.groupBox12.Controls.Add(this.label69);
@@ -493,7 +509,7 @@
             this.groupBox12.Controls.Add(this.pictureBox2);
             this.groupBox12.Location = new System.Drawing.Point(20, 541);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(998, 342);
+            this.groupBox12.Size = new System.Drawing.Size(771, 328);
             this.groupBox12.TabIndex = 13;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "유용한 정보";
@@ -501,7 +517,7 @@
             // linkLabel11
             // 
             this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(21, 244);
+            this.linkLabel11.Location = new System.Drawing.Point(21, 223);
             this.linkLabel11.Name = "linkLabel11";
             this.linkLabel11.Size = new System.Drawing.Size(244, 12);
             this.linkLabel11.TabIndex = 20;
@@ -511,7 +527,7 @@
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(50, 188);
+            this.label70.Location = new System.Drawing.Point(50, 173);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(173, 12);
             this.label70.TabIndex = 19;
@@ -521,7 +537,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label69.Location = new System.Drawing.Point(69, 210);
+            this.label69.Location = new System.Drawing.Point(69, 193);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(135, 24);
             this.label69.TabIndex = 18;
@@ -568,8 +584,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.Controls.Add(this.label68);
             this.groupBox11.Controls.Add(this.label65);
@@ -583,9 +598,9 @@
             this.groupBox11.Controls.Add(this.label58);
             this.groupBox11.Controls.Add(this.label56);
             this.groupBox11.Controls.Add(this.label57);
-            this.groupBox11.Location = new System.Drawing.Point(1024, 540);
+            this.groupBox11.Location = new System.Drawing.Point(797, 540);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(417, 318);
+            this.groupBox11.Size = new System.Drawing.Size(644, 318);
             this.groupBox11.TabIndex = 12;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "프로그램 정보";
@@ -719,8 +734,6 @@
             this.groupBox10.Controls.Add(this.label74);
             this.groupBox10.Controls.Add(this.label54);
             this.groupBox10.Controls.Add(this.label55);
-            this.groupBox10.Controls.Add(this.label52);
-            this.groupBox10.Controls.Add(this.label53);
             this.groupBox10.Controls.Add(this.label50);
             this.groupBox10.Controls.Add(this.label51);
             this.groupBox10.Controls.Add(this.label48);
@@ -774,7 +787,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 491);
+            this.label54.Location = new System.Drawing.Point(6, 431);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(251, 12);
             this.label54.TabIndex = 30;
@@ -785,31 +798,11 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label55.Location = new System.Drawing.Point(6, 469);
+            this.label55.Location = new System.Drawing.Point(6, 405);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(88, 12);
             this.label55.TabIndex = 29;
             this.label55.Text = "업데이트 정보";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 425);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(327, 12);
-            this.label52.TabIndex = 28;
-            this.label52.Text = "- 빅데이터 기반 키워드 통계, 분석 서비스 웹페이지 입니다.";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label53.Location = new System.Drawing.Point(6, 403);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(57, 12);
-            this.label53.TabIndex = 27;
-            this.label53.Text = "블랙키위";
             // 
             // label50
             // 
@@ -1816,6 +1809,17 @@
             this.saleCountTab.Text = "스마트스토어 판매량조회";
             this.saleCountTab.UseVisualStyleBackColor = true;
             // 
+            // sb1
+            // 
+            this.sb1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sb1.Location = new System.Drawing.Point(1377, 78);
+            this.sb1.Name = "sb1";
+            this.sb1.Size = new System.Drawing.Size(75, 23);
+            this.sb1.TabIndex = 46;
+            this.sb1.Text = "엑셀출력";
+            this.sb1.UseVisualStyleBackColor = true;
+            this.sb1.Click += new System.EventHandler(this.sb1_Click);
+            // 
             // dataGridView9
             // 
             this.dataGridView9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2225,17 +2229,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1469, 918);
             this.flowLayoutPanel1.TabIndex = 21;
             // 
-            // sb1
-            // 
-            this.sb1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sb1.Location = new System.Drawing.Point(1377, 78);
-            this.sb1.Name = "sb1";
-            this.sb1.Size = new System.Drawing.Size(75, 23);
-            this.sb1.TabIndex = 46;
-            this.sb1.Text = "엑셀출력";
-            this.sb1.UseVisualStyleBackColor = true;
-            this.sb1.Click += new System.EventHandler(this.sb1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2421,8 +2414,6 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label48;
@@ -2498,6 +2489,7 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webView25;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView26;
         private System.Windows.Forms.Button sb1;
+        private AdsJumboWinForm.BannerAds bannerAds1;
     }
 }
 
