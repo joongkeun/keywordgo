@@ -50,8 +50,8 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.bannerAds1 = new AdsJumboWinForm.BannerAds();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.bannerAds1 = new AdsJumboWinForm.BannerAds();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
             this.label70 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
@@ -481,19 +481,6 @@
             this.tabPage7.Text = "프로그램 안내";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // bannerAds1
-            // 
-            this.bannerAds1.ApplicationId = null;
-            this.bannerAds1.BackColor = System.Drawing.Color.White;
-            this.bannerAds1.HeightAd = 0;
-            this.bannerAds1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.bannerAds1.Location = new System.Drawing.Point(8, 262);
-            this.bannerAds1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bannerAds1.Name = "bannerAds1";
-            this.bannerAds1.Size = new System.Drawing.Size(456, 60);
-            this.bannerAds1.TabIndex = 14;
-            this.bannerAds1.WidthAd = 0;
-            // 
             // groupBox12
             // 
             this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -513,6 +500,19 @@
             this.groupBox12.TabIndex = 13;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "유용한 정보";
+            // 
+            // bannerAds1
+            // 
+            this.bannerAds1.ApplicationId = null;
+            this.bannerAds1.BackColor = System.Drawing.Color.White;
+            this.bannerAds1.HeightAd = 0;
+            this.bannerAds1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.bannerAds1.Location = new System.Drawing.Point(391, 31);
+            this.bannerAds1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bannerAds1.Name = "bannerAds1";
+            this.bannerAds1.Size = new System.Drawing.Size(300, 250);
+            this.bannerAds1.TabIndex = 14;
+            this.bannerAds1.WidthAd = 0;
             // 
             // linkLabel11
             // 

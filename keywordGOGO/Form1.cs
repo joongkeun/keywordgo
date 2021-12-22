@@ -24,7 +24,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.14.0";
+        string version = "1.15.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -588,7 +588,7 @@ namespace keywordGOGO
 
             //interstitialAd1.ShowInterstitialAd("nhj5qs6snck8");
 
-            bannerAds1.ShowAd(468, 60, "nhj5qs6snck8");
+            bannerAds1.ShowAd(300, 250, "nhj5qs6snck8");
 
 
         }
@@ -1609,7 +1609,7 @@ namespace keywordGOGO
                     dataGridView.Rows.Add(
                     r.productName,
                     r.categoryName,
-                    r.openDate,
+                    DateTime.ParseExact(r.openDate, "yyyyMMddHHmmss", null).ToString("yyyy-MM-dd HH:mm:ss"),
                     r.mallName,
                     r.totalReviewCount,
                     r.averageReviewScore,
