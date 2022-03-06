@@ -1708,6 +1708,7 @@ namespace keywordGOGO
 
         private void g1_btn_Click(object sender, EventArgs e)
         {
+            /**
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
             sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
@@ -1716,13 +1717,29 @@ namespace keywordGOGO
             {
                 dataGridView_ExportToExcel(sfd.FileName, dataGridView6);
             }
+            **/
+
+            using (SaveFileDialog dlg = new SaveFileDialog())
+            {
+                dlg.Title = "Save as Excel File";
+                dlg.FileName = "연관 검색어";
+                dlg.Filter = "csv (*.csv) | *.csv";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.dataGridView_ExportToExcel(dlg.FileName, dataGridView6); // dataGridView에 데이터를 세팅하는 메서드를 호출
+                }
+            }
+
+      
+
         }
 
         private void g2_btn_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "쇼핑 연관";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -1734,7 +1751,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "상품명";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -1746,7 +1764,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "SEO";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -1758,7 +1777,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "쇼핑몰정보";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -1770,6 +1790,7 @@ namespace keywordGOGO
 
         private void dataGridView_ExportToExcel(string fileName, DataGridView dgv)
         {
+            /**
             Excel.Application excelApp = new Excel.Application();
             if (excelApp == null)
             {
@@ -1810,10 +1831,56 @@ namespace keywordGOGO
             releaseObject(workSheet);
             releaseObject(wb);
 
+            **/
+
+            string delimiter = ",";  // 구분자
+            FileStream fs = new FileStream(fileName, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+            StreamWriter csvExport = new StreamWriter(fs, System.Text.Encoding.UTF8);
+
+            if (dgv.Rows.Count == 0) return;
+
+            // 헤더정보 출력
+
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                csvExport.Write(dgv.Columns[i].HeaderText);
+                if (i != dgv.Columns.Count - 1)
+                {
+                    csvExport.Write(delimiter);
+                }
+            }
+       
+
+            csvExport.Write(csvExport.NewLine); // add new line
+
+            // 데이터 출력
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    for (int i = 0; i < dgv.Columns.Count; i++)
+                    {
+                        csvExport.Write("\""+row.Cells[i].Value+"\"");
+                        if (i != dgv.Columns.Count - 1)
+                        {
+                            csvExport.Write(delimiter);
+                        }
+                    }
+                    csvExport.Write(csvExport.NewLine); // write new line
+                }
+            }
+
+            csvExport.Flush(); // flush from the buffers.
+            csvExport.Close();
+            fs.Close();
+
+
             SetListBox("엑셀파일 생성을 완료하였습니다.");
+
+
         }
 
-
+        /**
         private static void releaseObject(object obj)
         {
             try
@@ -1831,6 +1898,7 @@ namespace keywordGOGO
                 GC.Collect();
             }
         }
+        **/
 
         private void keyword()
         {
@@ -1994,7 +2062,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "광고상품순위";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -2007,7 +2076,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "일반상품순위";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -2299,7 +2369,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "전체상품순위";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -2372,7 +2443,8 @@ namespace keywordGOGO
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Title = "Save as Excel File";
-            sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            sfd.Filter = "csv (*.csv) | *.csv";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
             sfd.FileName = "스마트스토어_판매량";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
