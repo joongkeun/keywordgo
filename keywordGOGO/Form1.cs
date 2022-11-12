@@ -14,7 +14,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+
+//using Excel = Microsoft.Office.Interop.Excel;
+
+
 
 namespace keywordGOGO
 {
@@ -24,7 +27,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.17.0";
+        string version = "1.18.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -69,6 +72,7 @@ namespace keywordGOGO
         private const string InternetExplorerRootKey = @"Software\Microsoft\Internet Explorer";
         private const string BrowserEmulationKey = InternetExplorerRootKey + @"\Main\FeatureControl\FEATURE_BROWSER_EMULATION";
 
+       
 
 
         /// <summary>
@@ -94,6 +98,9 @@ namespace keywordGOGO
             ExcelTOfile.ReturnToLabel += ExcelTOfile_ReturnToLabel;
             ExcelTOfile.ReturnToMessage += ExcelTOfile_ReturnToMessage;
             timer.Tick += Timer_Tick;
+
+
+
         }
 
         private void SaleAmount_ReturnToMessage(string msgText)
@@ -325,22 +332,7 @@ namespace keywordGOGO
         }
 
 
-        private void SetInstaButton(bool data)
-        {
-            if (instarTagBtn.InvokeRequired)
 
-            {
-
-                ButtonEnable call = new ButtonEnable(SetInstaButton);
-                this.Invoke(call, data);
-
-            }
-
-            else
-            {
-                instarTagBtn.Enabled = data;
-            }
-        }
 
         private void SetButton4(bool data)
         {
@@ -568,27 +560,11 @@ namespace keywordGOGO
 
             SetBrowserEmulationVersion();
 
-
-            //var additionalHeaders = "User-Agent:Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; " +
-            //                           "Microsoft; Lumia 950 XL Dual SIM) AppleWebKit/537.36 (KHTML, like Gecko) " +
-            //                            "Chrome/52.0.2743.116 Mobile Safari/537.36 Edge/15.15063\r\n";
-
-            //this.webBrowser3.Navigate("https://m.shopping.naver.com/home/m/index.nhn", null, null, additionalHeaders);
-
-
-            //webBrowser7.Navigate("https://vitdeul.tistory.com/8");
-            //webBrowser2.Navigate("https://datalab.naver.com/shoppingInsight/sCategory.naver");
-
-            //webBrowser4.Navigate("https://shopping.naver.com/home/p/index.nhn");
-            //webBrowser5.Navigate("https://blackkiwi.net");
-
-            //webBrowser6.Navigate("https://www.instagram.com/");
-            //webBrowser8.Navigate("https://analytics.naver.com/");
             checkBox2.Checked = true;
 
-            //interstitialAd1.ShowInterstitialAd("nhj5qs6snck8");
+            interstitialAd1.ShowInterstitialAd("nhj5qs6snck8");
 
-            bannerAds1.ShowAd(300, 250, "nhj5qs6snck8");
+            bannerAds1.ShowAd(728, 90, "nhj5qs6snck8");
 
 
         }
@@ -2162,91 +2138,7 @@ namespace keywordGOGO
             System.Diagnostics.Process.Start("microsoft-edge:http://www.parcelman.kr/");
         }
 
-        /// <summary>
-        /// 인스타그램 태그 검색
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void instarTagBtn_Click(object sender, EventArgs e)
-        {
-
-            if (instatagBox.Text.Length < 1)
-            {
-                MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            // 그리드 클리어
-            instaDataGridView.Rows.Clear();
-
-            Thread t1 = new Thread(new ThreadStart(instargramTagDataSet));
-            t1.Start();
-        }
-
-        public void instargramTagDataSet()
-        {
-            SetInstaButton(false);
-            List<InstagramTagWordList> InstaWordList = new List<InstagramTagWordList>();
-            InstagramAPI instagram = new InstagramAPI();
-            string result = string.Concat(instatagBox.Text.Where(c => !char.IsWhiteSpace(c)));
-            string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
-            InstaWordList = instagram.InstagramJsonDataSet(input);
-
-            //해시태그 
-            SetInstaDataGrid(InstaWordList, instaDataGridView);
-            string tag = "https://www.instagram.com/explore/tags/" + input + "/";
-            //this.webView26.CoreWebView2.Navigate(tag);
-            //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
-
-            SetInstaButton(true);
-        }
-
-        private void instaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (instaDataGridView.CurrentCell == null || instaDataGridView.CurrentCell.Value == null || e.RowIndex == -1)
-            {
-                return;
-            }
-
-            if (instaDataGridView.CurrentCell.ColumnIndex.Equals(0))
-            {
-                string instatag = instaDataGridView.CurrentCell.Value.ToString();
-                string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
-                string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
-                string tag = "https://www.instagram.com/explore/tags/" + input + "/";
-                //this.webView26.CoreWebView2.Navigate(tag);
-                //webBrowser6.Navigate("https://www.instagram.com/explore/tags/" + input);
-
-            }
-        }
-
-        private void instaDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (instaDataGridView.CurrentCell == null || instaDataGridView.CurrentCell.Value == null || e.RowIndex == -1)
-            {
-                return;
-            }
-
-            if (instaDataGridView.CurrentCell.ColumnIndex.Equals(0))
-            {
-                string instatag = instaDataGridView.CurrentCell.Value.ToString();
-                string result = string.Concat(instatag.Where(c => !char.IsWhiteSpace(c)));
-                string input = Regex.Replace(result, @"[^a-zA-Z0-9가-힣_]", "", RegexOptions.Singleline);
-                instatagBox.Text = input;
-
-                if (instatagBox.Text.Length < 1)
-                {
-                    MessageBox.Show("키워드를 넣어주세요!", "경고", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                // 그리드 클리어
-                instaDataGridView.Rows.Clear();
-
-                Thread t1 = new Thread(new ThreadStart(instargramTagDataSet));
-                t1.Start();
-
-            }
-
-        }
+       
 
         private void catebnt_Click(object sender, EventArgs e)
         {
@@ -2451,5 +2343,6 @@ namespace keywordGOGO
                 dataGridView_ExportToExcel(sfd.FileName, dataGridView9);
             }
         }
+
     }
 }

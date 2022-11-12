@@ -73,9 +73,9 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
@@ -196,16 +196,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.webView26 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.instaDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.instatagBox = new System.Windows.Forms.TextBox();
-            this.instarTagBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.adpage = new System.Windows.Forms.TabPage();
+            this.interstitialAd1 = new AdsJumboWinForm.InterstitialAd();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -245,12 +239,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webView23)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).BeginInit();
-            this.groupBox13.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
+            this.adpage.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -457,8 +448,8 @@
             this.tabControl1.Controls.Add(this.saleCountTab);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.adpage);
             this.tabControl1.Location = new System.Drawing.Point(10, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -507,17 +498,17 @@
             this.bannerAds1.BackColor = System.Drawing.Color.White;
             this.bannerAds1.HeightAd = 0;
             this.bannerAds1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.bannerAds1.Location = new System.Drawing.Point(391, 31);
+            this.bannerAds1.Location = new System.Drawing.Point(23, 222);
             this.bannerAds1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bannerAds1.Name = "bannerAds1";
-            this.bannerAds1.Size = new System.Drawing.Size(300, 250);
+            this.bannerAds1.Size = new System.Drawing.Size(728, 90);
             this.bannerAds1.TabIndex = 14;
             this.bannerAds1.WidthAd = 0;
             // 
             // linkLabel11
             // 
             this.linkLabel11.AutoSize = true;
-            this.linkLabel11.Location = new System.Drawing.Point(21, 223);
+            this.linkLabel11.Location = new System.Drawing.Point(448, 102);
             this.linkLabel11.Name = "linkLabel11";
             this.linkLabel11.Size = new System.Drawing.Size(244, 12);
             this.linkLabel11.TabIndex = 20;
@@ -527,7 +518,7 @@
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(50, 173);
+            this.label70.Location = new System.Drawing.Point(483, 45);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(173, 12);
             this.label70.TabIndex = 19;
@@ -537,7 +528,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label69.Location = new System.Drawing.Point(69, 193);
+            this.label69.Location = new System.Drawing.Point(496, 72);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(135, 24);
             this.label69.TabIndex = 18;
@@ -729,9 +720,9 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.label52);
+            this.groupBox10.Controls.Add(this.label53);
             this.groupBox10.Controls.Add(this.label81);
-            this.groupBox10.Controls.Add(this.label73);
-            this.groupBox10.Controls.Add(this.label74);
             this.groupBox10.Controls.Add(this.label54);
             this.groupBox10.Controls.Add(this.label55);
             this.groupBox10.Controls.Add(this.label50);
@@ -754,6 +745,26 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "메뉴설명";
             // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 263);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(251, 12);
+            this.label52.TabIndex = 35;
+            this.label52.Text = "- 스마트 스토어의 상품 판매량을 조회합니다.";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label53.Location = new System.Drawing.Point(6, 241);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(158, 12);
+            this.label53.TabIndex = 34;
+            this.label53.Text = "스마트스토어 판매량 조회";
+            // 
             // label81
             // 
             this.label81.AutoSize = true;
@@ -764,30 +775,10 @@
             this.label81.Text = "- 결과내 조건검색기능";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 367);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(335, 12);
-            this.label73.TabIndex = 32;
-            this.label73.Text = "- 같이사용한 해시태그를 검색하고 해당페이지로 이동합니다.";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label74.Location = new System.Drawing.Point(6, 345);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(57, 12);
-            this.label74.TabIndex = 31;
-            this.label74.Text = "인별고고";
-            // 
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 431);
+            this.label54.Location = new System.Drawing.Point(6, 448);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(251, 12);
             this.label54.TabIndex = 30;
@@ -798,7 +789,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label55.Location = new System.Drawing.Point(6, 405);
+            this.label55.Location = new System.Drawing.Point(6, 422);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(88, 12);
             this.label55.TabIndex = 29;
@@ -807,7 +798,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(6, 316);
+            this.label50.Location = new System.Drawing.Point(6, 393);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(159, 12);
             this.label50.TabIndex = 26;
@@ -818,7 +809,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label51.Location = new System.Drawing.Point(6, 294);
+            this.label51.Location = new System.Drawing.Point(6, 371);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(57, 12);
             this.label51.TabIndex = 25;
@@ -827,7 +818,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(6, 259);
+            this.label48.Location = new System.Drawing.Point(6, 336);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(195, 12);
             this.label48.TabIndex = 24;
@@ -838,7 +829,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label49.Location = new System.Drawing.Point(6, 237);
+            this.label49.Location = new System.Drawing.Point(6, 314);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(83, 12);
             this.label49.TabIndex = 23;
@@ -2080,92 +2071,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "모바일";
             // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.webView26);
-            this.tabPage8.Controls.Add(this.label72);
-            this.tabPage8.Controls.Add(this.label71);
-            this.tabPage8.Controls.Add(this.instaDataGridView);
-            this.tabPage8.Controls.Add(this.groupBox13);
-            this.tabPage8.ForeColor = System.Drawing.Color.Black;
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1461, 872);
-            this.tabPage8.TabIndex = 8;
-            this.tabPage8.Text = "인별고고";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // webView26
-            // 
-            this.webView26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webView26.CreationProperties = null;
-            this.webView26.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView26.Location = new System.Drawing.Point(347, 3);
-            this.webView26.Name = "webView26";
-            this.webView26.Size = new System.Drawing.Size(1111, 866);
-            this.webView26.Source = new System.Uri("https://www.instagram.com/", System.UriKind.Absolute);
-            this.webView26.TabIndex = 7;
-            this.webView26.ZoomFactor = 1D;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(9, 80);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(263, 12);
-            this.label72.TabIndex = 6;
-            this.label72.Text = "더블클릭 - 관련 해시태그를 조회후 페이지 이동";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(9, 60);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(271, 12);
-            this.label71.TabIndex = 5;
-            this.label71.Text = "한번클릭 - 해당 해시태그로 인별그램 페이지이동";
-            // 
-            // instaDataGridView
-            // 
-            this.instaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.instaDataGridView.Location = new System.Drawing.Point(9, 99);
-            this.instaDataGridView.Name = "instaDataGridView";
-            this.instaDataGridView.RowTemplate.Height = 23;
-            this.instaDataGridView.Size = new System.Drawing.Size(332, 794);
-            this.instaDataGridView.TabIndex = 4;
-            this.instaDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellClick);
-            this.instaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.instaDataGridView_CellDoubleClick);
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.instatagBox);
-            this.groupBox13.Controls.Add(this.instarTagBtn);
-            this.groupBox13.Location = new System.Drawing.Point(3, 3);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(338, 49);
-            this.groupBox13.TabIndex = 2;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "인별그램 해시태그";
-            // 
-            // instatagBox
-            // 
-            this.instatagBox.Location = new System.Drawing.Point(6, 17);
-            this.instatagBox.Name = "instatagBox";
-            this.instatagBox.Size = new System.Drawing.Size(245, 21);
-            this.instatagBox.TabIndex = 1;
-            // 
-            // instarTagBtn
-            // 
-            this.instarTagBtn.Location = new System.Drawing.Point(257, 15);
-            this.instarTagBtn.Name = "instarTagBtn";
-            this.instarTagBtn.Size = new System.Drawing.Size(75, 23);
-            this.instarTagBtn.TabIndex = 0;
-            this.instarTagBtn.Text = "검색";
-            this.instarTagBtn.UseVisualStyleBackColor = true;
-            this.instarTagBtn.Click += new System.EventHandler(this.instarTagBtn_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.webView21);
@@ -2188,6 +2093,27 @@
             this.webView21.Source = new System.Uri("https://vitdeul.tistory.com/8", System.UriKind.Absolute);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
+            // 
+            // adpage
+            // 
+            this.adpage.Controls.Add(this.interstitialAd1);
+            this.adpage.Location = new System.Drawing.Point(4, 22);
+            this.adpage.Name = "adpage";
+            this.adpage.Padding = new System.Windows.Forms.Padding(3);
+            this.adpage.Size = new System.Drawing.Size(1461, 872);
+            this.adpage.TabIndex = 10;
+            this.adpage.Text = "광고";
+            this.adpage.UseVisualStyleBackColor = true;
+            // 
+            // interstitialAd1
+            // 
+            this.interstitialAd1.ApplicationId = null;
+            this.interstitialAd1.BackColor = System.Drawing.Color.Black;
+            this.interstitialAd1.Location = new System.Drawing.Point(6, 3);
+            this.interstitialAd1.Name = "interstitialAd1";
+            this.interstitialAd1.Size = new System.Drawing.Size(50, 50);
+            this.interstitialAd1.TabIndex = 14;
+            this.interstitialAd1.Visible = false;
             // 
             // webBrowser1
             // 
@@ -2294,14 +2220,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView23)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.instaDataGridView)).EndInit();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
+            this.adpage.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
@@ -2440,15 +2361,6 @@
         private System.Windows.Forms.LinkLabel linkLabel11;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TextBox instatagBox;
-        private System.Windows.Forms.Button instarTagBtn;
-        private System.Windows.Forms.DataGridView instaDataGridView;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label78;
@@ -2489,9 +2401,12 @@
         private Microsoft.Web.WebView2.WinForms.WebView2 webView23;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView24;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView25;
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView26;
         private System.Windows.Forms.Button sb1;
         private AdsJumboWinForm.BannerAds bannerAds1;
+        private AdsJumboWinForm.InterstitialAd interstitialAd1;
+        private System.Windows.Forms.TabPage adpage;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
     }
 }
 
