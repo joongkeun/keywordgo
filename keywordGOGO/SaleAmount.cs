@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading;
 using agi = HtmlAgilityPack;
 using Newtonsoft.Json.Linq;
+using Microsoft.Office.Interop.Excel;
 
 
 namespace keywordGOGO
@@ -86,24 +87,68 @@ namespace keywordGOGO
                         var htmlNode = redoc.DocumentNode.SelectSingleNode("/html/body/script[1]/text()");
                         if (htmlNode != null)
                         {
+
+                            string leadTimeCount1 = "0";
+                            string leadTimeCount2 = "0";
+                            string leadTimeCount3 = "0";
+                            string leadTimeCount4 = "0";
+                            string totalReviewCount = "0";
+                            string averageReviewScore = "0";
+                            int total = 0;
                             string jsonDataset = htmlNode.InnerHtml;
-                            JObject obj = JObject.Parse(jsonDataset.Replace("window.__PRELOADED_STATE__=", ""));
-                            JObject product = JObject.Parse(obj["product"].ToString());
-                            JObject A = JObject.Parse(product["A"].ToString());
-                            
-                            if (!string.IsNullOrEmpty(A["saleAmount"].ToString()))
+                            try
                             {
-                                JObject saleAmount = JObject.Parse(A["saleAmount"].ToString());
-
-                                string cumulationSaleCount = saleAmount["cumulationSaleCount"].ToString();
-                                string recentSaleCount = saleAmount["recentSaleCount"].ToString();
-
-                                JObject reviewAmount = JObject.Parse(A["reviewAmount"].ToString());
-                                string totalReviewCount = reviewAmount["totalReviewCount"].ToString();
-                                string averageReviewScore = reviewAmount["averageReviewScore"].ToString();
+                                JObject obj = JObject.Parse(jsonDataset.Replace("window.__PRELOADED_STATE__=", ""));
+                                JObject product = JObject.Parse(obj["product"].ToString());
+                                JObject A = JObject.Parse(product["A"].ToString());
 
 
-                                saleAmountResults.Add(new SaleAmountResult()
+                                if (A["productDailyDeliveryLeadTimes"] != null)
+                                {
+                                    JObject productDeliveryLeadTimes = JObject.Parse(A["productDailyDeliveryLeadTimes"].ToString());
+
+                                    leadTimeCount1 = productDeliveryLeadTimes["leadTimeCount"][0].ToString();
+                                    leadTimeCount2 = productDeliveryLeadTimes["leadTimeCount"][1].ToString();
+                                    leadTimeCount3 = productDeliveryLeadTimes["leadTimeCount"][2].ToString();
+                                    leadTimeCount4 = productDeliveryLeadTimes["leadTimeCount"][3].ToString();
+                                }
+                                else
+                                {
+                                    leadTimeCount1 = "0";
+                                    leadTimeCount2 = "0";
+                                    leadTimeCount3 = "0";
+                                    leadTimeCount4 = "0";
+                                }
+
+                                if (A["reviewAmount"] != null)
+                                {
+
+                                    JObject reviewAmount = JObject.Parse(A["reviewAmount"].ToString());
+                                    totalReviewCount = reviewAmount["totalReviewCount"].ToString();
+                                    averageReviewScore = reviewAmount["averageReviewScore"].ToString();
+
+                                }
+                                else
+                                {
+                                    totalReviewCount = "0";
+                                    averageReviewScore = "0";
+                                }
+                            
+
+                            //string recentSaleCount = productDeliveryLeadTimes["recentSaleCount"].ToString();
+
+                                 total = int.Parse(leadTimeCount1) + int.Parse(leadTimeCount2) + int.Parse(leadTimeCount3) + int.Parse(leadTimeCount4);
+                            }
+                            catch (Exception ex)
+                            {
+                                leadTimeCount1 = "parsing error";
+                                leadTimeCount2 = "parsing error";
+                                leadTimeCount3 = "parsing error";
+                                leadTimeCount4 = "parsing error";
+                                totalReviewCount = "parsing error";
+                                averageReviewScore = "parsing error";
+                            }
+                            saleAmountResults.Add(new SaleAmountResult()
                                 {
                                     productName = productName, // 상품명
                                     mallName = mallName, // 몰이름
@@ -111,8 +156,13 @@ namespace keywordGOGO
                                     openDate = openDate, // 오픈일
                                     totalReviewCount = totalReviewCount, // 리뷰수
                                     averageReviewScore = averageReviewScore,// 평점
-                                    cumulationSaleCount = cumulationSaleCount,//6개월 판매수
-                                    recentSaleCount = recentSaleCount, //최근 3일 판매수
+                                    leadTimeCount1 = leadTimeCount1,
+                                    leadTimeCount2 = leadTimeCount2,
+                                    leadTimeCount3 = leadTimeCount3,
+                                    leadTimeCount4 = leadTimeCount4, 
+                                    totalleadTimeCount1 = total.ToString() ,
+                                    //cumulationSaleCount = cumulationSaleCount,//6개월 판매수
+                                    //recentSaleCount = recentSaleCount, //최근 3일 판매수
                                     urlLink = productUrl
 
                                 });
@@ -121,7 +171,7 @@ namespace keywordGOGO
 
                                 rowidx++;
 
-                            }
+                            
                         }
                     }
                 }

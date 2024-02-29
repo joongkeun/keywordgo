@@ -29,7 +29,7 @@ namespace keywordGOGO
         {
             try
             {
-                var baseUrl = "https://api.naver.com";
+                var baseUrl = "https://api.searchad.naver.com";
                 var apiKey = ini.GetIniValue("ADAPI", "apiKey");
                 var secretKey = ini.GetIniValue("ADAPI", "secretKey");
                 var managerCustomerId = long.Parse(ini.GetIniValue("ADAPI", "managerCustomerId"));
@@ -62,7 +62,7 @@ namespace keywordGOGO
         {
             try
             {
-                var baseUrl = "https://api.naver.com";
+                var baseUrl = "https://api.searchad.naver.com";
                 var apiKey = ini.GetIniValue("ADAPI", "apiKey");
                 var secretKey = ini.GetIniValue("ADAPI", "secretKey");
                 var managerCustomerId = long.Parse(ini.GetIniValue("ADAPI", "managerCustomerId"));

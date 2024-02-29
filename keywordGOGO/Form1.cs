@@ -27,7 +27,7 @@ namespace keywordGOGO
    
     public partial class Form1 : Form
     {
-        string version = "1.18.0";
+        string version = "1.21.0";
 
         string reportSaveFileName = string.Empty; // 보고서 파일 생성
 
@@ -1570,16 +1570,21 @@ namespace keywordGOGO
                 columnHeaderStyle.Font = new Font("Veradna", 10, FontStyle.Bold);
                 columnHeaderStyle.BackColor = Color.Beige;
                 dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-                dataGridView.ColumnCount = 9;
+                dataGridView.ColumnCount = 12;
                 dataGridView.Columns[0].HeaderCell.Value = "상품명";
                 dataGridView.Columns[1].HeaderCell.Value = "카테고리";
                 dataGridView.Columns[2].HeaderCell.Value = "오픈일";
                 dataGridView.Columns[3].HeaderCell.Value = "몰이름";
                 dataGridView.Columns[4].HeaderCell.Value = "리뷰수";
                 dataGridView.Columns[5].HeaderCell.Value = "평점";
-                dataGridView.Columns[6].HeaderCell.Value = "6개월 판매량";
-                dataGridView.Columns[7].HeaderCell.Value = "최근3일 판매량";
-                dataGridView.Columns[8].HeaderCell.Value = "상품주소";
+                dataGridView.Columns[6].HeaderCell.Value = "1일전배송";
+                dataGridView.Columns[7].HeaderCell.Value = "2일전배송";
+                dataGridView.Columns[8].HeaderCell.Value = "3일전배송";
+                dataGridView.Columns[9].HeaderCell.Value = "4일전배송";
+                dataGridView.Columns[10].HeaderCell.Value = "최근배송의 합";
+                // dataGridView.Columns[6].HeaderCell.Value = "6개월 판매량";
+                // dataGridView.Columns[7].HeaderCell.Value = "최근3일 판매량";
+                dataGridView.Columns[11].HeaderCell.Value = "상품주소";
 
                 //int count = 1;
 
@@ -1593,8 +1598,13 @@ namespace keywordGOGO
                     r.mallName,
                     r.totalReviewCount,
                     r.averageReviewScore,
-                    r.cumulationSaleCount,
-                    r.recentSaleCount,
+                    r.leadTimeCount1,
+                    r.leadTimeCount2,
+                    r.leadTimeCount3,
+                    r.leadTimeCount4,
+                    r.totalleadTimeCount1,
+                    //r.cumulationSaleCount,
+                    //r.recentSaleCount,
                     r.urlLink
                     );
 

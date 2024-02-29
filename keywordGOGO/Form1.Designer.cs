@@ -1126,7 +1126,7 @@
             this.label24.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label24.Location = new System.Drawing.Point(163, 42);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(76, 16);
+            this.label24.Size = new System.Drawing.Size(75, 16);
             this.label24.TabIndex = 1;
             this.label24.Text = "후원안내";
             // 
@@ -1798,7 +1798,7 @@
             this.saleCountTab.Name = "saleCountTab";
             this.saleCountTab.Size = new System.Drawing.Size(1461, 872);
             this.saleCountTab.TabIndex = 9;
-            this.saleCountTab.Text = "스마트스토어 판매량조회";
+            this.saleCountTab.Text = "스마트스토어 배송량조회";
             this.saleCountTab.UseVisualStyleBackColor = true;
             // 
             // sb1

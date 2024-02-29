@@ -18,8 +18,15 @@ namespace keywordGOGO
         public string mallName { get; set; } // 몰이름
         public string totalReviewCount { get; set; } // 리뷰수
         public string averageReviewScore { get; set; } // 평점
-        public string cumulationSaleCount { get; set; } // 6개월
-        public string recentSaleCount { get; set; } // 최근 3일
+
+        public string leadTimeCount1 { get; set; } // 평점
+        public string leadTimeCount2 { get; set; } // 평점
+        public string leadTimeCount3 { get; set; } // 평점
+        public string leadTimeCount4 { get; set; } // 평점
+        public string totalleadTimeCount1 { get; set; } // 평점
+
+        //public string cumulationSaleCount { get; set; } // 6개월
+        //public string recentSaleCount { get; set; } // 최근 3일
         public string urlLink { get; set; } //url
     }
 
